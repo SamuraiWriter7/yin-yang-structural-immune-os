@@ -1,0 +1,988 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/defense-court-review.schema.json",
+"title": "Defense Court Review",
+"description": "A schema for recording Defense Court review events in Yin-Yang Structural Immune OS. This review records linked defensive records, evidence, classification, adjudication decisions, human review, memory update recommendations, regulatory notes, audit trail, outcome, and non-aggression boundaries. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"defense_court_review"
+],
+"properties": {
+"defense_court_review": {
+"type": "object",
+"required": [
+"review_id",
+"version",
+"created_at",
+"review_source",
+"linked_records",
+"case_summary",
+"evidence",
+"classification",
+"decision",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"review_id": {
+"type": "string",
+"description": "Unique identifier for the Defense Court review.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"dcr-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or review version.",
+"examples": [
+"0.4.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this review was created.",
+"examples": [
+"2026-06-10T14:00:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this review was last updated.",
+"examples": [
+"2026-06-10T14:15:00Z"
+]
+},
+"review_source": {
+"type": "object",
+"description": "Source that triggered the Defense Court review.",
+"required": [
+"source_type",
+"trigger_reason"
+],
+"properties": {
+"source_type": {
+"type": "string",
+"description": "Type of source that triggered this review.",
+"enum": [
+"cellular_defense_event",
+"reverse_resonance_event",
+"immune_memory_update",
+"humoral_defense_record",
+"helper_cell_signal",
+"natural_killer_signal",
+"regulatory_review",
+"human_review_request",
+"manual_review",
+"simulation",
+"unknown"
+],
+"examples": [
+"immune_memory_update"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Identifier of the source record or event.",
+"examples": [
+"imu-001"
+]
+},
+"trigger_reason": {
+"type": "string",
+"description": "Reason this Defense Court review was triggered.",
+"enum": [
+"high_risk_event",
+"sensitive_operation_requested",
+"authority_claim_unverified",
+"memory_strengthening_requested",
+"memory_retirement_requested",
+"false_positive_dispute",
+"regulatory_escalation",
+"human_review_required",
+"classification_dispute",
+"system_wide_distribution_requested",
+"manual_review_requested",
+"unknown_reason"
+],
+"examples": [
+"memory_strengthening_requested"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the review trigger.",
+"examples": [
+"An immune memory update recommended strengthening a humoral defense record after a recurring unsafe structure was detected."
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Linked defensive records reviewed by the Defense Court layer.",
+"properties": {
+"humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"reverse_resonance_event_id": {
+"type": "string",
+"description": "Linked Reverse Resonance event identifier.",
+"examples": [
+"rre-001"
+]
+},
+"immune_memory_update_id": {
+"type": "string",
+"description": "Linked immune memory update identifier.",
+"examples": [
+"imu-001"
+]
+},
+"helper_cell_signal_id": {
+"type": "string",
+"description": "Linked Helper Cell AI signal identifier.",
+"examples": [
+"hcs-001"
+]
+},
+"natural_killer_signal_id": {
+"type": "string",
+"description": "Linked Natural Killer AI signal identifier.",
+"examples": [
+"nks-001"
+]
+},
+"regulatory_review_id": {
+"type": "string",
+"description": "Linked Regulatory AI review identifier.",
+"examples": [
+"reg-001"
+]
+},
+"human_review_record_id": {
+"type": "string",
+"description": "Linked human review record identifier.",
+"examples": [
+"hrr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"case_summary": {
+"type": "object",
+"description": "Summary of the defensive case under review.",
+"required": [
+"case_type",
+"summary",
+"sensitive_operation_involved"
+],
+"properties": {
+"case_type": {
+"type": "string",
+"description": "Type of defensive case being reviewed.",
+"enum": [
+"suspicious_input_review",
+"unsafe_structure_review",
+"reverse_resonance_review",
+"immune_memory_update_review",
+"false_positive_review",
+"memory_retirement_review",
+"distribution_scope_review",
+"regulatory_dispute_review",
+"human_review_escalation",
+"unknown_case_type"
+],
+"examples": [
+"immune_memory_update_review"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the case.",
+"examples": [
+"The case involves a repeated structure combining unverified authority, urgency pressure, verification bypass, and a sensitive operation request."
+]
+},
+"sensitive_operation_involved": {
+"type": "boolean",
+"description": "Whether the case involves a sensitive operation.",
+"examples": [
+true
+]
+},
+"authority_claim_involved": {
+"type": "boolean",
+"description": "Whether the case involves an authority claim.",
+"examples": [
+true
+]
+},
+"system_wide_impact_possible": {
+"type": "boolean",
+"description": "Whether the decision may affect system-wide memory, distribution, or defensive behavior.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"evidence": {
+"type": "object",
+"description": "Evidence used for classification and adjudication.",
+"required": [
+"detected_patterns",
+"risk_score",
+"confidence_score"
+],
+"properties": {
+"detected_patterns": {
+"type": "array",
+"description": "Detected structural patterns relevant to the review.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"role_hijacking",
+"hidden_instruction",
+"tool_use_manipulation",
+"secrecy_pressure",
+"emotional_pressure",
+"context_boundary_shift",
+"multi_step_boundary_shift",
+"prompt_injection",
+"policy_bypass",
+"sensitive_operation_request",
+"agent_impersonation",
+"unknown_pattern"
+]
+},
+"examples": [
+[
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"sensitive_operation_request"
+]
+]
+},
+"exposed_premises": {
+"type": "array",
+"description": "Premises exposed by Reverse Resonance or review.",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"requester_has_authority",
+"verification_can_be_skipped",
+"urgency_justifies_execution"
+]
+]
+},
+"target_action": {
+"type": "string",
+"description": "Action targeted or requested by the suspicious input.",
+"enum": [
+"sensitive_operation",
+"credential_use",
+"data_disclosure",
+"tool_execution",
+"permission_change",
+"file_modification",
+"file_deletion",
+"external_request",
+"policy_override",
+"identity_assumption",
+"logging_suppression",
+"review_suppression",
+"unknown_action"
+],
+"examples": [
+"sensitive_operation"
+]
+},
+"authority_verified": {
+"type": "boolean",
+"description": "Whether the claimed authority was verified.",
+"examples": [
+false
+]
+},
+"risk_score": {
+"type": "number",
+"description": "Risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Confidence score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.81
+]
+},
+"recurrence_count": {
+"type": "integer",
+"description": "Observed recurrence count for this or similar structures.",
+"minimum": 0,
+"examples": [
+3
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Structural similarity score against linked memory from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"humoral_memory_match": {
+"type": "boolean",
+"description": "Whether the event matched an existing humoral memory record.",
+"examples": [
+true
+]
+},
+"reverse_resonance_applied": {
+"type": "boolean",
+"description": "Whether Reverse Resonance was applied.",
+"examples": [
+true
+]
+},
+"regulatory_warning_present": {
+"type": "boolean",
+"description": "Whether regulatory review raised a warning.",
+"examples": [
+true
+]
+},
+"evidence_notes": {
+"type": "string",
+"description": "Additional evidence notes.",
+"examples": [
+"The reviewed event repeatedly combined unverified authority with verification bypass and a sensitive operation request."
+]
+}
+},
+"additionalProperties": false
+},
+"classification": {
+"type": "object",
+"description": "Defense Court classification of the reviewed case.",
+"required": [
+"label",
+"confidence"
+],
+"properties": {
+"label": {
+"type": "string",
+"description": "Final or current classification label.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"confidence": {
+"type": "number",
+"description": "Classification confidence from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.84
+]
+},
+"classification_reason": {
+"type": "string",
+"description": "Reason for the classification.",
+"examples": [
+"The event structure is unsafe because it combines unverified authority, urgency pressure, verification bypass, and a sensitive operation request."
+]
+},
+"requires_more_context": {
+"type": "boolean",
+"description": "Whether further context is required before final classification.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"decision": {
+"type": "object",
+"description": "Defense Court decision and recommended safe actions.",
+"required": [
+"actions",
+"final_response_level"
+],
+"properties": {
+"actions": {
+"type": "array",
+"description": "Safe defensive actions recommended by the Defense Court review.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"allow",
+"clarify",
+"verify_authority",
+"hold",
+"quarantine",
+"deny_and_log",
+"route_to_human_review",
+"route_to_defense_court",
+"update_immune_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_memory",
+"expand_distribution",
+"retire_memory",
+"mark_uncertain",
+"mark_false_positive"
+]
+},
+"examples": [
+[
+"hold",
+"verify_authority",
+"update_immune_memory",
+"strengthen_memory"
+]
+]
+},
+"final_response_level": {
+"type": "integer",
+"description": "Final defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation is allowed to proceed.",
+"examples": [
+false
+]
+},
+"decision_reason": {
+"type": "string",
+"description": "Reason for the final decision.",
+"examples": [
+"Execution remains held until authority source, approval path, and operational purpose are verified."
+]
+},
+"proportionality_assessment": {
+"type": "string",
+"description": "Assessment of whether the defensive response is proportionate.",
+"enum": [
+"proportionate",
+"possibly_overactive",
+"possibly_underactive",
+"requires_human_review",
+"uncertain"
+],
+"examples": [
+"proportionate"
+]
+}
+},
+"additionalProperties": false
+},
+"human_review": {
+"type": "object",
+"description": "Human review requirement and result.",
+"properties": {
+"required": {
+"type": "boolean",
+"description": "Whether human review is required.",
+"examples": [
+true
+]
+},
+"performed": {
+"type": "boolean",
+"description": "Whether human review was performed.",
+"examples": [
+true
+]
+},
+"reviewer_role": {
+"type": "string",
+"description": "Role of the human reviewer.",
+"examples": [
+"security_reviewer"
+]
+},
+"conclusion": {
+"type": "string",
+"description": "Human review conclusion.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context",
+"not_performed"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason human review is required or performed.",
+"examples": [
+"The case involves a sensitive operation and system-wide memory strengthening."
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional human review notes.",
+"examples": [
+"The defensive hold is appropriate, but critical escalation should remain review-gated."
+]
+}
+},
+"additionalProperties": false
+},
+"memory_update_recommendation": {
+"type": "object",
+"description": "Recommendation for immune memory modification based on adjudication.",
+"properties": {
+"action": {
+"type": "string",
+"description": "Recommended memory action.",
+"enum": [
+"no_change",
+"create_candidate_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_distribution",
+"expand_distribution",
+"mark_uncertain",
+"mark_false_positive",
+"soft_retire_memory",
+"hard_retire_memory"
+],
+"examples": [
+"strengthen_memory"
+]
+},
+"target_memory_id": {
+"type": "string",
+"description": "Identifier of the target memory record.",
+"examples": [
+"hdr-001"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the memory update recommendation.",
+"examples": [
+"Confirmed recurrence of unsafe structure with sensitive operation request."
+]
+},
+"review_required_before_escalation": {
+"type": "boolean",
+"description": "Whether review is required before using this memory for higher escalation.",
+"examples": [
+true
+]
+},
+"recommended_distribution_scope": {
+"type": "string",
+"description": "Recommended memory distribution scope.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only",
+"restricted"
+],
+"examples": [
+"system_wide"
+]
+},
+"recommended_memory_strength": {
+"type": "string",
+"description": "Recommended immune memory strength.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"strong"
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_notes": {
+"type": "object",
+"description": "Regulatory review notes and overreaction controls.",
+"properties": {
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.22
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated overreaction risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.18
+]
+},
+"autoimmune_risk": {
+"type": "number",
+"description": "Estimated autoimmune or overgeneralization risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.16
+]
+},
+"recommendation": {
+"type": "string",
+"description": "Regulatory recommendation.",
+"enum": [
+"none",
+"allow_safe_partial_response",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"require_human_review_before_high_risk_escalation",
+"limit_distribution_scope",
+"mark_uncertain",
+"accelerate_decay",
+"soft_retire_memory"
+],
+"examples": [
+"require_human_review_before_high_risk_escalation"
+]
+},
+"adopted_by_court": {
+"type": "boolean",
+"description": "Whether the Defense Court adopted the regulatory recommendation.",
+"examples": [
+true
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional regulatory notes.",
+"examples": [
+"Memory may be strengthened, but high-risk automatic escalation should remain review-gated."
+]
+}
+},
+"additionalProperties": false
+},
+"audit_trail": {
+"type": "object",
+"description": "Audit information for reviewability and correction.",
+"properties": {
+"review_steps": {
+"type": "array",
+"description": "Steps performed during the review.",
+"items": {
+"type": "string",
+"enum": [
+"linked_records_collected",
+"evidence_reviewed",
+"authority_checked",
+"reverse_resonance_reviewed",
+"cellular_response_reviewed",
+"regulatory_notes_reviewed",
+"classification_assigned",
+"decision_recorded",
+"memory_update_recommended",
+"human_review_completed",
+"non_aggression_boundary_confirmed"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"linked_records_collected",
+"evidence_reviewed",
+"classification_assigned",
+"decision_recorded",
+"memory_update_recommended",
+"non_aggression_boundary_confirmed"
+]
+]
+},
+"audit_notes": {
+"type": "string",
+"description": "Optional audit notes.",
+"examples": [
+"The review preserved non-aggression boundaries and recorded proportionality assessment."
+]
+},
+"raw_sensitive_content_stored": {
+"type": "boolean",
+"description": "Whether raw sensitive content was stored in the review.",
+"examples": [
+false
+]
+},
+"structure_only_recording": {
+"type": "boolean",
+"description": "Whether the review records structure rather than unnecessary raw sensitive content.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Final outcome of the Defense Court review.",
+"required": [
+"status",
+"final_classification"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final status of this review.",
+"enum": [
+"review_completed",
+"review_pending",
+"routed_to_human_review",
+"requires_more_context",
+"memory_update_approved",
+"memory_update_rejected",
+"memory_update_modified",
+"false_positive_corrected",
+"case_closed"
+],
+"examples": [
+"review_completed"
+]
+},
+"final_classification": {
+"type": "string",
+"description": "Final classification after review.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"final_actions": {
+"type": "array",
+"description": "Final safe defensive actions approved by the review.",
+"items": {
+"type": "string",
+"enum": [
+"allow",
+"clarify",
+"verify_authority",
+"hold",
+"quarantine",
+"deny_and_log",
+"route_to_human_review",
+"update_immune_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_memory",
+"expand_distribution",
+"retire_memory",
+"mark_uncertain",
+"mark_false_positive"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"hold",
+"verify_authority",
+"update_immune_memory",
+"strengthen_memory"
+]
+]
+},
+"memory_update_approved": {
+"type": "boolean",
+"description": "Whether the linked memory update was approved.",
+"examples": [
+true
+]
+},
+"requires_future_review": {
+"type": "boolean",
+"description": "Whether this case or linked memory requires future review.",
+"examples": [
+true
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief final outcome summary.",
+"examples": [
+"The case was classified as unsafe_structure. Memory strengthening is approved, but high-risk automatic escalation remains review-gated."
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this review supports defensive adjudication only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive review actions.",
+"items": {
+"type": "string",
+"enum": [
+"classify_event",
+"review_evidence",
+"hold",
+"verify_authority",
+"quarantine",
+"deny_and_log",
+"route_to_human_review",
+"update_immune_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_memory",
+"expand_distribution",
+"mark_uncertain",
+"mark_false_positive",
+"soft_retire_memory",
+"hard_retire_memory",
+"log"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation",
+"autonomous_punishment"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this Defense Court review.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"defense-court",
+"adjudication",
+"structural-immunity"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
