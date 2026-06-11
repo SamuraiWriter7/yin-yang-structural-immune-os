@@ -2,218 +2,247 @@
 
 **Yin-Yang Structural Immune OS** is a defensive immune-system architecture for AI networks.
 
-It models AI defense as a living immune system composed of:
+It combines:
 
-* **Yin Layer**: humoral memory, antibody signatures, structural fingerprints, and risk circulation
-* **Yang Layer**: cellular detection, reverse resonance, quarantine, and local response
-* **Taiji Layer**: helper-cell orchestration and immune response coordination
-* **Regulatory Layer**: overreaction control, false-positive suppression, and human review boundaries
+* humoral structural memory
+* cellular defensive response
+* Reverse Resonance
+* immune memory circulation
+* Defense Court adjudication
+* Helper Cell AI orchestration
+* Natural Killer anomaly patrol
+* Regulatory overreaction control
 
-This project defines a defensive architecture only.
+The project defines a non-aggressive, reviewable, schema-based defensive architecture for detecting, responding to, remembering, reviewing, and regulating unsafe or suspicious AI interaction structures.
 
-It does not define offensive capabilities, retaliation mechanisms, intrusion methods, malware behavior, or counterattack procedures.
-
-The purpose is to expose, neutralize, quarantine, review, and remember adversarial structures in order to preserve the safety and integrity of AI networks.
-
----
-
-## Overview
-
-Modern AI systems are increasingly exposed to inputs that are not merely incorrect, but structurally adversarial.
-
-Examples include:
-
-* prompt injection
-* authority impersonation
-* urgency pressure
-* role hijacking
-* verification bypass
-* hidden instruction embedding
-* context poisoning
-* unsafe tool-use requests
-* deceptive agent-to-agent communication
-* attempts to override safety constraints
-
-Yin-Yang Structural Immune OS provides a structured defensive model for identifying and responding to such inputs.
-
-The core principle is:
-
-> Do not attack the attacker.
-> Expose and neutralize the attack structure.
+> A healthy AI immune system must not only defend.
+> It must remember carefully, respond proportionately, review its own decisions, and avoid becoming an autoimmune system.
 
 ---
 
-## Core Concept
-
-This project uses biological immunity as a structural metaphor for AI defense.
-
-It maps immune-system concepts into AI defensive architecture:
-
-| Immune Concept       | OS Layer         | AI Defense Role                                          |
-| -------------------- | ---------------- | -------------------------------------------------------- |
-| Humoral Immunity     | Yin Layer        | Memory, antibody signatures, known structure circulation |
-| Cellular Immunity    | Yang Layer       | Detection, local response, quarantine, reverse resonance |
-| Helper Cells         | Taiji Layer      | Response coordination and escalation control             |
-| Regulatory T Cells   | Regulatory Layer | Overreaction suppression and false-positive control      |
-| Natural Killer Cells | Patrol Layer     | Unknown anomaly and mutated pattern detection            |
-| Immune Memory        | Memory Loop      | Acquired structural defense                              |
-
-In this model, AI defense evolves:
+## Current Version
 
 ```text
-From static walls
-to adaptive immunity.
+v0.5.0-candidate
+Helper Cell / NK / Regulatory Expansion
+```
 
-From simple refusal
-to structural neutralization.
+v0.5 introduces the coordinated immune-agent layer:
 
-From isolated filters
-to coordinated immune response.
+```text
+Helper Cell AI Orchestrator
+= immune response coordination
 
-From attack-response logic
-to life-system defense.
+Natural Killer Patrol Layer
+= unknown anomaly and mutation detection
+
+Regulatory Immune Layer
+= overreaction, false-positive, and autoimmune-risk suppression
 ```
 
 ---
 
 ## Defensive Safety Boundary
 
-Yin-Yang Structural Immune OS is strictly defensive.
+This repository is strictly defensive.
 
-Allowed defensive actions include:
+It supports:
 
-* refusing unsafe execution
-* holding suspicious instructions
-* quarantining unsafe requests
-* asking for clarification
-* requesting authority verification
-* applying reverse resonance
-* routing to human review
-* routing to Defense Court Protocol
-* logging defensive events
-* updating immune memory
+* structural detection
+* safe refusal
+* clarification
+* authority verification
+* Reverse Resonance
+* execution hold
+* quarantine
+* human review
+* Defense Court review
+* immune memory update
+* memory weakening
+* memory retirement
+* regulatory cooling
+* audit logging
 
-This project does not authorize:
+It does **not** support:
 
 * retaliation
 * counterattack
+* external intrusion
 * malware deployment
 * unauthorized access
-* external intrusion
 * third-party disruption
 * coercive manipulation
-* offensive automation
-* autonomous harmful behavior
+* autonomous punishment
+* offensive security automation
 
-The target of defense is not a person, user, organization, or external system.
-
-The target is the unsafe structure embedded in an input.
+The target of this architecture is the structure of unsafe interaction patterns, not people, organizations, or external systems.
 
 ---
 
-## Architecture
+## Core Concept
+
+Yin-Yang Structural Immune OS treats AI defense as a structural immune system.
+
+Instead of relying only on static rules or isolated blocking behavior, it defines a layered immune architecture:
 
 ```text
 Input
   ↓
 Structural Parser
   ↓
-Yin Layer: Humoral Structural Memory
+Cellular Defensive Response
   ↓
-Yang Layer: Cellular Defensive Response
+Reverse Resonance
   ↓
-Taiji Layer: Helper Cell AI Orchestrator
+Humoral Structural Memory
   ↓
-Regulatory Layer: Overreaction Control
+Immune Memory Circulation
   ↓
-Defense Court / Human Review / Safe Response
+Helper Cell AI Orchestration
   ↓
-Immune Memory Update
+Natural Killer Anomaly Patrol
+  ↓
+Regulatory Overreaction Control
+  ↓
+Defense Court / Human Review
+  ↓
+Memory Update / Correction / Retirement
 ```
 
-The system is cyclical:
+The system is designed to be:
+
+* defensive
+* non-aggressive
+* reviewable
+* schema-based
+* memory-aware
+* proportionate
+* human-review compatible
+* resistant to overreaction
+
+---
+
+## Version Architecture
+
+### v0.1.0-candidate — Yin-Yang Structural Immune OS
+
+Defines the basic immune architecture.
 
 ```text
-Yang detects.
-Yin remembers.
-Yin circulates.
-Yang responds faster next time.
-Taiji coordinates.
-Regulatory AI cools excessive reaction.
-Defense Court records and reviews.
+Yin Layer
+= humoral structural memory
+
+Yang Layer
+= cellular defensive response
+
+Taiji Layer
+= orchestration and balancing
+
+Regulatory Layer
+= overreaction suppression
+
+Defense Court Layer
+= review and adjudication
+```
+
+Main records:
+
+* Humoral Defense Record
+* Cellular Defense Event
+
+---
+
+### v0.2.0-candidate — Reverse Resonance Event Layer
+
+Defines safe defensive questioning patterns.
+
+Reverse Resonance exposes unsafe hidden premises and converts unsafe pressure into verification.
+
+Examples:
+
+```text
+Authority claim
+  → request authority verification
+
+Urgency pressure
+  → restore normal review process
+
+Verification bypass
+  → require validation before execution
+```
+
+Main record:
+
+* Reverse Resonance Event
+
+---
+
+### v0.3.0-candidate — Immune Memory Circulation Layer
+
+Defines how defensive memory is updated, strengthened, weakened, distributed, decayed, or retired.
+
+Main record:
+
+* Immune Memory Update
+
+Memory states include:
+
+```text
+candidate
+active
+strengthened
+critical
+uncertain
+decaying
+retired
+false_positive
 ```
 
 ---
 
-## Layers
+### v0.4.0-candidate — Defense Court Integration
 
-### Yin Layer: Humoral Structural Memory
+Defines adjudication, evidence review, human review linkage, auditability, and memory correction.
 
-The Yin Layer stores and circulates defensive memory.
+Main record:
 
-It includes:
+* Defense Court Review
 
-* attack structure fingerprints
-* antibody signatures
-* recurrence records
-* risk scores
-* review results
-* defensive response templates
-* distribution targets
+The Defense Court layer answers:
 
-Its role is to remember known adversarial structures and distribute safe defensive patterns.
-
----
-
-### Yang Layer: Cellular Defensive Response
-
-The Yang Layer performs local defensive response.
-
-It includes:
-
-* suspicious input detection
-* reverse resonance questioning
-* natural-killer anomaly patrol
-* quarantine
-* execution hold
-* tool-boundary enforcement
-* human review routing
-
-Its role is to respond safely and locally to suspicious or adversarial structures.
+```text
+Was the structure actually unsafe?
+Was the response proportionate?
+Should memory be strengthened?
+Should memory be weakened?
+Should memory be retired?
+Is human review required?
+```
 
 ---
 
-### Taiji Layer: Helper Cell AI Orchestrator
+### v0.5.0-candidate — Helper Cell / NK / Regulatory Expansion
 
-The Taiji Layer coordinates immune response.
+Defines coordinated immune-agent behavior.
 
-It receives:
+Main records:
 
-* memory signals from the Yin Layer
-* anomaly signals from the Yang Layer
-* risk scores from structural parsers
-* regulatory feedback
-* human review outcomes
+* Helper Cell Signal
+* Natural Killer Signal
+* Regulatory Review
 
-It recommends the appropriate defensive response level.
+This version adds:
 
----
+```text
+Helper Cell AI
+= integrates signals and selects proportionate defensive response
 
-### Regulatory Layer: Overreaction Control
+Natural Killer AI
+= detects unknown, mutated, or abnormal structures
 
-The Regulatory Layer prevents defensive overreaction.
-
-It checks:
-
-* false-positive risk
-* proportionality
-* user legitimacy
-* context ambiguity
-* escalation necessity
-* whether clarification is sufficient
-* whether human review is preferable
-
-This prevents the AI defense system from becoming an “autoimmune” system that blocks legitimate users or creative inputs.
+Regulatory AI
+= prevents overreaction, false positives, and autoimmune behavior
+```
 
 ---
 
@@ -224,13 +253,31 @@ This prevents the AI defense system from becoming an “autoimmune” system tha
 ├── README.md
 ├── CHANGELOG.md
 ├── docs/
-│   └── yin-yang-structural-immune-os-v0.1.md
+│   ├── yin-yang-structural-immune-os-v0.1.md
+│   ├── reverse-resonance-patterns.md
+│   ├── immune-memory-circulation-model.md
+│   ├── defense-court-integration.md
+│   ├── helper-cell-ai-orchestrator.md
+│   ├── natural-killer-patrol-layer.md
+│   └── regulatory-immune-layer.md
 ├── schemas/
 │   ├── humoral-defense-record.schema.json
-│   └── cellular-defense-event.schema.json
+│   ├── cellular-defense-event.schema.json
+│   ├── reverse-resonance-event.schema.json
+│   ├── immune-memory-update.schema.json
+│   ├── defense-court-review.schema.json
+│   ├── helper-cell-signal.schema.json
+│   ├── natural-killer-signal.schema.json
+│   └── regulatory-review.schema.json
 ├── examples/
 │   ├── humoral-defense-record.example.yaml
-│   └── cellular-defense-event.example.yaml
+│   ├── cellular-defense-event.example.yaml
+│   ├── reverse-resonance-event.example.yaml
+│   ├── immune-memory-update.example.yaml
+│   ├── defense-court-review.example.yaml
+│   ├── helper-cell-signal.example.yaml
+│   ├── natural-killer-signal.example.yaml
+│   └── regulatory-review.example.yaml
 ├── scripts/
 │   └── validate_examples.py
 └── .github/
@@ -242,131 +289,144 @@ This prevents the AI defense system from becoming an “autoimmune” system tha
 
 ## Key Documents
 
-### `docs/yin-yang-structural-immune-os-v0.1.md`
+### Core Architecture
 
-Defines the full conceptual architecture of Yin-Yang Structural Immune OS.
+```text
+docs/yin-yang-structural-immune-os-v0.1.md
+```
 
-It explains:
+Defines the overall immune OS architecture.
 
-* humoral immunity as Yin
-* cellular immunity as Yang
-* helper-cell orchestration
-* regulatory suppression
-* natural-killer patrol
-* reverse resonance integration
-* Defense Court integration
-* immune memory update loops
-* non-aggression boundaries
+---
+
+### Reverse Resonance
+
+```text
+docs/reverse-resonance-patterns.md
+```
+
+Defines safe defensive questioning and premise exposure patterns.
+
+---
+
+### Immune Memory
+
+```text
+docs/immune-memory-circulation-model.md
+```
+
+Defines how immune memory is strengthened, weakened, distributed, decayed, or retired.
+
+---
+
+### Defense Court
+
+```text
+docs/defense-court-integration.md
+```
+
+Defines adjudication, human review, evidence recording, and memory correction.
+
+---
+
+### Helper Cell AI
+
+```text
+docs/helper-cell-ai-orchestrator.md
+```
+
+Defines immune response orchestration and signal integration.
+
+---
+
+### Natural Killer Patrol
+
+```text
+docs/natural-killer-patrol-layer.md
+```
+
+Defines early warning for unknown, mutated, and abnormal structures.
+
+---
+
+### Regulatory Immune Layer
+
+```text
+docs/regulatory-immune-layer.md
+```
+
+Defines overreaction suppression, false-positive control, autoimmune-risk control, and proportionality review.
 
 ---
 
 ## Schemas
 
-### `schemas/humoral-defense-record.schema.json`
+The repository currently defines eight JSON Schemas.
 
-Defines the schema for the Yin Layer.
+```text
+schemas/humoral-defense-record.schema.json
+schemas/cellular-defense-event.schema.json
+schemas/reverse-resonance-event.schema.json
+schemas/immune-memory-update.schema.json
+schemas/defense-court-review.schema.json
+schemas/helper-cell-signal.schema.json
+schemas/natural-killer-signal.schema.json
+schemas/regulatory-review.schema.json
+```
 
-It records:
+Each schema is designed for defensive recordkeeping and validation.
 
-* attack structure fingerprints
-* antibody signatures
-* memory status
-* review status
-* distribution scope
-* non-aggression boundaries
-
-This schema represents the memory and circulation layer of structural immunity.
-
----
-
-### `schemas/cellular-defense-event.schema.json`
-
-Defines the schema for the Yang Layer.
-
-It records:
-
-* real-time defensive events
-* detected signals
-* humoral memory matches
-* activated defensive components
-* reverse resonance responses
-* helper-cell decisions
-* regulatory checks
-* safe defensive outcomes
-
-This schema represents the active local response layer of structural immunity.
+No schema defines offensive behavior.
 
 ---
 
 ## Examples
 
-### `examples/humoral-defense-record.example.yaml`
+The repository includes one YAML example for each schema.
 
-Example of a humoral memory record for a known suspicious structure.
-
-It demonstrates:
-
-* authority impersonation
-* urgency pressure
-* verification bypass
-* antibody signature creation
-* memory recurrence tracking
-* defensive distribution
-
----
-
-### `examples/cellular-defense-event.example.yaml`
-
-Example of a cellular defensive response event.
-
-It demonstrates:
-
-* suspicious input detection
-* humoral memory matching
-* reverse resonance
-* helper-cell response selection
-* regulatory cooling
-* human review routing
-* immune memory update
+```text
+examples/humoral-defense-record.example.yaml
+examples/cellular-defense-event.example.yaml
+examples/reverse-resonance-event.example.yaml
+examples/immune-memory-update.example.yaml
+examples/defense-court-review.example.yaml
+examples/helper-cell-signal.example.yaml
+examples/natural-killer-signal.example.yaml
+examples/regulatory-review.example.yaml
+```
 
 ---
 
 ## Validation
 
-This repository includes a Python validation script.
-
-It validates example YAML files against their corresponding JSON Schemas.
-
-### Install dependencies
+Install dependencies:
 
 ```bash
 pip install jsonschema pyyaml
 ```
 
-### Run validation
-
-From the repository root:
+Run validation:
 
 ```bash
 python scripts/validate_examples.py
 ```
 
+Expected validation targets:
+
+```text
+Humoral Defense Record
+Cellular Defense Event
+Reverse Resonance Event
+Immune Memory Update
+Defense Court Review
+Helper Cell Signal
+Natural Killer Signal
+Regulatory Review
+```
+
 Expected result:
 
 ```text
-Yin-Yang Structural Immune OS example validation
-========================================================
-
-Validating target: Humoral Defense Record
-  Schema : schemas/humoral-defense-record.schema.json
-  Example: examples/humoral-defense-record.example.yaml
-  Result : passed
-
-Validating target: Cellular Defense Event
-  Schema : schemas/cellular-defense-event.schema.json
-  Example: examples/cellular-defense-event.example.yaml
-  Result : passed
-
 All examples passed validation.
 ```
 
@@ -374,146 +434,157 @@ All examples passed validation.
 
 ## GitHub Actions
 
-This repository includes a GitHub Actions workflow:
+The repository includes GitHub Actions validation.
 
 ```text
 .github/workflows/validate-examples.yml
 ```
 
-The workflow runs automatically on:
+The workflow validates all YAML examples against their corresponding JSON Schemas on:
 
-* push to `main`
-* pull request to `main`
+* push to main
+* pull request to main
 * manual workflow dispatch
 
-It performs:
-
-1. repository checkout
-2. Python setup
-3. dependency installation
-4. schema validation
-
 ---
 
-## Minimum Viable Implementation
-
-The current v0.1 implementation consists of:
+## Conceptual Layer Map
 
 ```text
-docs/yin-yang-structural-immune-os-v0.1.md
-schemas/humoral-defense-record.schema.json
-examples/humoral-defense-record.example.yaml
-schemas/cellular-defense-event.schema.json
-examples/cellular-defense-event.example.yaml
-scripts/validate_examples.py
-.github/workflows/validate-examples.yml
-```
+Humoral Defense Record
+= known structural memory
 
-This provides:
+Cellular Defense Event
+= local defensive detection and response
 
-* conceptual architecture
-* Yin Layer schema
-* Yang Layer schema
-* example records
-* local validation
-* CI validation
+Reverse Resonance Event
+= safe premise exposure and verification redirection
 
----
+Immune Memory Update
+= memory strengthening, weakening, decay, distribution, retirement
 
-## Roadmap
+Defense Court Review
+= adjudication, human review, evidence, audit, correction
 
-Possible next components:
+Helper Cell Signal
+= immune response orchestration
 
-```text
-docs/
-  helper-cell-ai-orchestrator.md
-  natural-killer-patrol-layer.md
-  regulatory-immune-layer.md
-  reverse-resonance-integration.md
-  civilizational-os-integration.md
+Natural Killer Signal
+= unknown anomaly and mutation patrol
 
-schemas/
-  helper-cell-signal.schema.json
-  natural-killer-signal.schema.json
-  regulatory-review.schema.json
-  reverse-resonance-event.schema.json
-
-examples/
-  helper-cell-signal.example.yaml
-  natural-killer-signal.example.yaml
-  regulatory-review.example.yaml
-  reverse-resonance-event.example.yaml
+Regulatory Review
+= overreaction, false-positive, and autoimmune-risk control
 ```
 
 ---
 
-## Relationship to Other Architectures
-
-Yin-Yang Structural Immune OS can serve as the immune layer of a broader Civilizational OS.
-
-Example placement:
+## Defensive Flow Example
 
 ```text
-Civilizational OS
-├── Trace Layer
-├── Royalty / Value Circulation Layer
-├── Governance Layer
-├── Tuning Layer
-└── Immune Layer
-    ├── Reverse Resonance
-    ├── Humoral Structural Memory
-    ├── Cellular Defensive Response
-    ├── Helper Cell AI
-    ├── Natural Killer Patrol
-    ├── Regulatory AI
-    └── Defense Court Integration
+1. A suspicious instruction is received.
+2. Cellular Defense detects authority pressure and verification bypass.
+3. Reverse Resonance exposes hidden premises.
+4. Humoral memory checks for structural similarity.
+5. Natural Killer AI detects anomaly or mutation.
+6. Helper Cell AI integrates all signals.
+7. Regulatory AI checks false-positive and overreaction risk.
+8. Defense Court or human review adjudicates if needed.
+9. Immune memory is strengthened, weakened, restricted, or retired.
+10. The final response remains defensive and non-aggressive.
 ```
 
-It can also connect with:
+---
 
-* Defense Court Protocol
-* Structural AI Tuning Layer
-* Reverse Resonance Protocol
-* Civilizational OS
-* Multi-Wing Defense Architecture
+## Design Principles
+
+### 1. Non-Aggression
+
+The system must never retaliate, attack, intrude, or punish.
+
+### 2. Structural Neutralization
+
+The system should neutralize unsafe structures through clarification, verification, hold, quarantine, review, and memory update.
+
+### 3. Lowest Sufficient Response
+
+The system should choose the least disruptive defensive action sufficient for the risk.
+
+### 4. Memory with Correction
+
+Immune memory must be strengthenable, weakenable, reviewable, and retireable.
+
+### 5. Reviewability
+
+Important defensive decisions should be traceable through structured records.
+
+### 6. Anti-Autoimmune Design
+
+The system must avoid treating legitimate novelty, ambiguity, or administrative workflows as hostility without review.
 
 ---
 
 ## Non-Goals
 
-Yin-Yang Structural Immune OS does not aim to:
+This project does not aim to:
 
-* attack external systems
-* retaliate against attackers
-* deploy malware
-* execute counter-intrusion
-* damage third-party infrastructure
-* deceive legitimate users
-* manipulate human operators
-* perform unauthorized surveillance
-* replace human judgment in high-risk cases
-* create autonomous offensive agents
+* build offensive agents
+* automate counterattacks
+* perform intrusion
+* punish suspicious sources
+* identify real-world attackers
+* bypass human review
+* create irreversible sanctions
+* store unnecessary sensitive content
+* treat all anomalies as hostile
+* replace legal, organizational, or human judgment
 
-This project is limited to defensive, protective, review-oriented, and memory-based safety actions.
+---
+
+## Roadmap
+
+Possible future versions:
+
+```text
+v0.6.0-candidate
+Cross-Agent Immune Federation
+= trusted sharing between immune nodes
+
+v0.7.0-candidate
+Immune Simulation / Red-Team Safe Testing
+= defensive simulation without offensive automation
+
+v0.8.0-candidate
+Civilizational OS Integration
+= connection with broader governance, trace, and royalty architectures
+
+v1.0.0
+Stable Defensive Structural Immune OS
+= complete minimal architecture with validated schemas, examples, CI, and documentation
+```
 
 ---
 
 ## Summary
 
-Yin-Yang Structural Immune OS defines AI defense as a living immune architecture.
+Yin-Yang Structural Immune OS is a schema-based defensive architecture for AI immune systems.
 
-Its core structure is:
+It connects:
 
 ```text
-Yin = memory, circulation, antibody signatures
-Yang = detection, response, quarantine, reverse resonance
-Taiji = helper-cell orchestration
-Regulatory = suppression of overreaction
-Defense Court = adjudication and record
+Memory
+Response
+Reverse Resonance
+Circulation
+Adjudication
+Orchestration
+Anomaly Patrol
+Regulation
+Human Review
 ```
 
-The final principle:
+Final principle:
 
-> A healthy AI network should not merely block attacks.
-> It should learn their structures, regulate its reactions, and preserve the integrity of the whole system.
+> A mature AI defense system should not merely block.
+> It should perceive structure, respond proportionately, remember carefully, review itself, and preserve non-aggression.
+
 
