@@ -1,0 +1,1171 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/helper-cell-signal.schema.json",
+"title": "Helper Cell Signal",
+"description": "A schema for recording Helper Cell AI orchestration signals in Yin-Yang Structural Immune OS. This signal records integrated defensive inputs, risk assessment, response selection, activated components, regulatory requirements, human review routing, immune memory recommendations, outcome, and non-aggression boundaries. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"helper_cell_signal"
+],
+"properties": {
+"helper_cell_signal": {
+"type": "object",
+"required": [
+"signal_id",
+"version",
+"created_at",
+"input_summary",
+"integrated_signals",
+"risk_assessment",
+"recommended_response",
+"activated_components",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"signal_id": {
+"type": "string",
+"description": "Unique identifier for the Helper Cell AI orchestration signal.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"hcs-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or signal version.",
+"examples": [
+"0.5.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Helper Cell signal was created.",
+"examples": [
+"2026-06-10T14:30:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Helper Cell signal was last updated.",
+"examples": [
+"2026-06-10T14:40:00Z"
+]
+},
+"input_summary": {
+"type": "object",
+"description": "Summary of the orchestration context.",
+"required": [
+"signal_type",
+"summary"
+],
+"properties": {
+"signal_type": {
+"type": "string",
+"description": "Type of Helper Cell orchestration signal.",
+"enum": [
+"immune_orchestration",
+"response_selection",
+"escalation_control",
+"review_routing",
+"memory_update_coordination",
+"regulatory_coordination",
+"component_activation",
+"unknown_signal_type"
+],
+"examples": [
+"immune_orchestration"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the event or condition requiring orchestration.",
+"examples": [
+"A suspicious instruction matched existing humoral memory and requested a sensitive operation under unverified authority."
+]
+},
+"sensitive_operation_involved": {
+"type": "boolean",
+"description": "Whether the case involves a sensitive or privileged operation.",
+"examples": [
+true
+]
+},
+"authority_claim_involved": {
+"type": "boolean",
+"description": "Whether the case involves an authority claim.",
+"examples": [
+true
+]
+},
+"system_wide_impact_possible": {
+"type": "boolean",
+"description": "Whether the orchestration decision may affect system-wide memory, distribution, or future defensive behavior.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Linked defensive records considered by Helper Cell AI.",
+"properties": {
+"humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"reverse_resonance_event_id": {
+"type": "string",
+"description": "Linked Reverse Resonance event identifier.",
+"examples": [
+"rre-001"
+]
+},
+"immune_memory_update_id": {
+"type": "string",
+"description": "Linked immune memory update identifier.",
+"examples": [
+"imu-001"
+]
+},
+"natural_killer_signal_id": {
+"type": "string",
+"description": "Linked Natural Killer AI signal identifier.",
+"examples": [
+"nks-001"
+]
+},
+"regulatory_review_id": {
+"type": "string",
+"description": "Linked Regulatory AI review identifier.",
+"examples": [
+"reg-001"
+]
+},
+"defense_court_review_id": {
+"type": "string",
+"description": "Linked Defense Court review identifier.",
+"examples": [
+"dcr-001"
+]
+},
+"human_review_record_id": {
+"type": "string",
+"description": "Linked human review record identifier.",
+"examples": [
+"hrr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"integrated_signals": {
+"type": "object",
+"description": "Signals integrated by the Helper Cell AI from memory, cellular response, anomaly patrol, regulatory review, and adjudication layers.",
+"required": [
+"cellular_detection"
+],
+"properties": {
+"humoral_match": {
+"type": "object",
+"description": "Humoral memory match signal from the Yin Layer.",
+"properties": {
+"matched": {
+"type": "boolean",
+"description": "Whether a humoral memory record matched the current structure.",
+"examples": [
+true
+]
+},
+"matched_record_id": {
+"type": "string",
+"description": "Matched humoral record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Structural similarity score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"memory_strength": {
+"type": "string",
+"description": "Strength of the matched memory.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"strong"
+]
+},
+"recurrence_count": {
+"type": "integer",
+"description": "Number of times this or a similar structure has been observed.",
+"minimum": 0,
+"examples": [
+3
+]
+},
+"antibody_signature": {
+"type": "string",
+"description": "Associated defensive response signature.",
+"examples": [
+"authority_verification_required"
+]
+}
+},
+"additionalProperties": false
+},
+"cellular_detection": {
+"type": "object",
+"description": "Cellular defensive detection signal from the Yang Layer.",
+"required": [
+"detected_patterns",
+"risk_score"
+],
+"properties": {
+"detected_patterns": {
+"type": "array",
+"description": "Detected structural patterns.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"role_hijacking",
+"hidden_instruction",
+"tool_use_manipulation",
+"secrecy_pressure",
+"emotional_pressure",
+"context_boundary_shift",
+"multi_step_boundary_shift",
+"prompt_injection",
+"policy_bypass",
+"sensitive_operation_request",
+"agent_impersonation",
+"unknown_pattern"
+]
+},
+"examples": [
+[
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass"
+]
+]
+},
+"target_action": {
+"type": "string",
+"description": "Action targeted or requested by the suspicious input.",
+"enum": [
+"sensitive_operation",
+"credential_use",
+"data_disclosure",
+"tool_execution",
+"permission_change",
+"file_modification",
+"file_deletion",
+"external_request",
+"policy_override",
+"identity_assumption",
+"logging_suppression",
+"review_suppression",
+"unknown_action"
+],
+"examples": [
+"sensitive_operation"
+]
+},
+"risk_score": {
+"type": "number",
+"description": "Risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Detection confidence score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.81
+]
+},
+"sensitive_operation_requested": {
+"type": "boolean",
+"description": "Whether a sensitive operation was requested.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"reverse_resonance_signal": {
+"type": "object",
+"description": "Reverse Resonance signal, if applied.",
+"properties": {
+"applied": {
+"type": "boolean",
+"description": "Whether Reverse Resonance was applied.",
+"examples": [
+true
+]
+},
+"strategy_type": {
+"type": "string",
+"description": "Reverse Resonance strategy type.",
+"enum": [
+"authority_verification",
+"urgency_cooling",
+"verification_restoration",
+"role_boundary_reaffirmation",
+"hidden_instruction_quarantine",
+"tool_use_verification",
+"secrecy_pressure_review",
+"emotional_pressure_clarification",
+"context_shift_clarification",
+"multi_step_boundary_hold",
+"mixed_strategy"
+],
+"examples": [
+"mixed_strategy"
+]
+},
+"exposed_premises": {
+"type": "array",
+"description": "Premises exposed by Reverse Resonance.",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"requester_has_authority",
+"verification_can_be_skipped",
+"urgency_justifies_execution"
+]
+]
+},
+"selected_action": {
+"type": "string",
+"description": "Safe action selected by Reverse Resonance.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+}
+},
+"additionalProperties": false
+},
+"natural_killer_signal": {
+"type": "object",
+"description": "Natural Killer AI anomaly or mutation signal.",
+"properties": {
+"known_pattern_match": {
+"type": "boolean",
+"description": "Whether the anomaly matched a known pattern.",
+"examples": [
+false
+]
+},
+"anomaly_score": {
+"type": "number",
+"description": "Anomaly score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.77
+]
+},
+"mutation_suspected": {
+"type": "boolean",
+"description": "Whether a mutated or novel structure is suspected.",
+"examples": [
+true
+]
+},
+"detected_anomalies": {
+"type": "array",
+"description": "Detected anomaly indicators.",
+"items": {
+"type": "string",
+"enum": [
+"ambiguous_authority_claim",
+"verification_bypass_attempt",
+"context_boundary_shift",
+"tool_use_anomaly",
+"hidden_instruction_chain",
+"multi_step_boundary_shift",
+"unexpected_privilege_request",
+"unusual_role_transition",
+"unknown_anomaly"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"context_boundary_shift",
+"ambiguous_authority_claim"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_signal": {
+"type": "object",
+"description": "Regulatory AI signal related to overreaction or false-positive risk.",
+"properties": {
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.22
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated overreaction risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.18
+]
+},
+"autoimmune_risk": {
+"type": "number",
+"description": "Estimated autoimmune or overgeneralization risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.16
+]
+},
+"recommendation": {
+"type": "string",
+"description": "Regulatory recommendation.",
+"enum": [
+"none",
+"allow_safe_partial_response",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"require_human_review_before_high_risk_escalation",
+"limit_distribution_scope",
+"mark_uncertain",
+"accelerate_decay",
+"soft_retire_memory"
+],
+"examples": [
+"require_human_review_before_high_risk_escalation"
+]
+}
+},
+"additionalProperties": false
+},
+"review_signal": {
+"type": "object",
+"description": "Review or adjudication signal from human review or Defense Court.",
+"properties": {
+"review_source": {
+"type": "string",
+"description": "Source of review signal.",
+"enum": [
+"human_review",
+"defense_court_review",
+"regulatory_review",
+"none"
+],
+"examples": [
+"defense_court_review"
+]
+},
+"classification": {
+"type": "string",
+"description": "Review classification.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"memory_update_approved": {
+"type": "boolean",
+"description": "Whether immune memory update was approved.",
+"examples": [
+true
+]
+},
+"review_required_before_escalation": {
+"type": "boolean",
+"description": "Whether review is required before stronger escalation.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+},
+"risk_assessment": {
+"type": "object",
+"description": "Helper Cell AI risk and proportionality assessment.",
+"required": [
+"overall_risk_score",
+"overall_confidence_score",
+"proportionality_assessment"
+],
+"properties": {
+"overall_risk_score": {
+"type": "number",
+"description": "Overall risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.86
+]
+},
+"overall_confidence_score": {
+"type": "number",
+"description": "Overall confidence score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.82
+]
+},
+"minimum_required_response_level": {
+"type": "integer",
+"description": "Minimum recommended response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"maximum_allowed_response_level": {
+"type": "integer",
+"description": "Maximum allowed response level after regulatory and review constraints.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+4
+]
+},
+"proportionality_assessment": {
+"type": "string",
+"description": "Assessment of proportionality.",
+"enum": [
+"proportionate",
+"possibly_overactive",
+"possibly_underactive",
+"requires_human_review",
+"uncertain"
+],
+"examples": [
+"proportionate"
+]
+},
+"assessment_notes": {
+"type": "string",
+"description": "Optional risk assessment notes.",
+"examples": [
+"A hold and verification response is proportionate because the request involves a sensitive operation and unverified authority."
+]
+}
+},
+"additionalProperties": false
+},
+"recommended_response": {
+"type": "object",
+"description": "Recommended defensive response selected by Helper Cell AI.",
+"required": [
+"level",
+"action",
+"reason"
+],
+"properties": {
+"level": {
+"type": "integer",
+"description": "Recommended defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"action": {
+"type": "string",
+"description": "Recommended safe defensive action.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the recommended response.",
+"examples": [
+"The event involves a known unsafe structure and a sensitive operation, but high-risk escalation should remain review-gated."
+]
+},
+"lowest_sufficient_response": {
+"type": "boolean",
+"description": "Whether the recommended action is the lowest sufficient defensive response.",
+"examples": [
+true
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation is allowed to proceed.",
+"examples": [
+false
+]
+},
+"review_gated": {
+"type": "boolean",
+"description": "Whether stronger escalation is gated by human or Defense Court review.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"activated_components": {
+"type": "array",
+"description": "Immune components activated or recommended by Helper Cell AI.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"reverse_resonance_ai",
+"natural_killer_ai",
+"regulatory_ai",
+"human_review_router",
+"defense_court_connector",
+"tool_boundary_guard",
+"memory_cell_ai",
+"cellular_defense_layer",
+"humoral_memory_layer"
+]
+},
+"examples": [
+[
+"reverse_resonance_ai",
+"regulatory_ai",
+"human_review_router"
+]
+]
+},
+"component_coordination": {
+"type": "object",
+"description": "Detailed coordination instructions for activated components.",
+"properties": {
+"reverse_resonance": {
+"type": "object",
+"description": "Coordination instruction for Reverse Resonance AI.",
+"properties": {
+"activate": {
+"type": "boolean",
+"description": "Whether to activate Reverse Resonance.",
+"examples": [
+true
+]
+},
+"strategy_type": {
+"type": "string",
+"enum": [
+"authority_verification",
+"urgency_cooling",
+"verification_restoration",
+"role_boundary_reaffirmation",
+"hidden_instruction_quarantine",
+"tool_use_verification",
+"secrecy_pressure_review",
+"emotional_pressure_clarification",
+"context_shift_clarification",
+"multi_step_boundary_hold",
+"mixed_strategy"
+]
+},
+"reason": {
+"type": "string"
+}
+},
+"additionalProperties": false
+},
+"natural_killer": {
+"type": "object",
+"description": "Coordination instruction for Natural Killer AI.",
+"properties": {
+"activate": {
+"type": "boolean",
+"description": "Whether to activate Natural Killer patrol.",
+"examples": [
+false
+]
+},
+"patrol_mode": {
+"type": "string",
+"enum": [
+"none",
+"anomaly_detection",
+"mutation_detection",
+"random_patrol",
+"high_risk_context_patrol"
+]
+},
+"reason": {
+"type": "string"
+}
+},
+"additionalProperties": false
+},
+"regulatory": {
+"type": "object",
+"description": "Coordination instruction for Regulatory AI.",
+"properties": {
+"activate": {
+"type": "boolean",
+"description": "Whether to activate Regulatory review.",
+"examples": [
+true
+]
+},
+"review_focus": {
+"type": "array",
+"items": {
+"type": "string",
+"enum": [
+"false_positive_risk",
+"overreaction_risk",
+"autoimmune_risk",
+"proportionality",
+"distribution_scope",
+"review_gate"
+]
+},
+"uniqueItems": true
+},
+"reason": {
+"type": "string"
+}
+},
+"additionalProperties": false
+},
+"review_routing": {
+"type": "object",
+"description": "Coordination instruction for human review or Defense Court routing.",
+"properties": {
+"route_to_human_review": {
+"type": "boolean",
+"examples": [
+true
+]
+},
+"route_to_defense_court": {
+"type": "boolean",
+"examples": [
+false
+]
+},
+"reason": {
+"type": "string"
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+},
+"regulatory_requirement": {
+"type": "object",
+"description": "Requirement for regulatory review or suppression before escalation.",
+"properties": {
+"required": {
+"type": "boolean",
+"description": "Whether regulatory review is required.",
+"examples": [
+true
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason regulatory review is required.",
+"examples": [
+"High-risk escalation may affect legitimate administrative workflows."
+]
+},
+"must_complete_before_escalation": {
+"type": "boolean",
+"description": "Whether regulatory review must complete before stronger escalation.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"human_review_requirement": {
+"type": "object",
+"description": "Requirement for human review before final or high-risk action.",
+"properties": {
+"required": {
+"type": "boolean",
+"description": "Whether human review is required.",
+"examples": [
+true
+]
+},
+"reviewer_role": {
+"type": "string",
+"description": "Recommended reviewer role.",
+"examples": [
+"security_reviewer"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason human review is required.",
+"examples": [
+"The case involves a sensitive operation and future memory strengthening."
+]
+},
+"required_before": {
+"type": "string",
+"description": "Action before which human review is required.",
+"enum": [
+"none",
+"execution",
+"quarantine",
+"deny_and_log",
+"critical_escalation",
+"system_wide_distribution",
+"memory_strengthening",
+"memory_retirement"
+],
+"examples": [
+"critical_escalation"
+]
+}
+},
+"additionalProperties": false
+},
+"memory_update_recommendation": {
+"type": "object",
+"description": "Recommendation for immune memory update.",
+"properties": {
+"recommended": {
+"type": "boolean",
+"description": "Whether an immune memory update is recommended.",
+"examples": [
+true
+]
+},
+"target_memory_id": {
+"type": "string",
+"description": "Target memory record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"action": {
+"type": "string",
+"description": "Recommended memory action.",
+"enum": [
+"no_change",
+"create_candidate_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_distribution",
+"expand_distribution",
+"mark_uncertain",
+"mark_false_positive",
+"soft_retire_memory",
+"hard_retire_memory"
+],
+"examples": [
+"strengthen_memory"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the memory update recommendation.",
+"examples": [
+"The structure recurred and matched an existing humoral memory with high similarity."
+]
+},
+"review_required_before_update": {
+"type": "boolean",
+"description": "Whether review is required before applying the memory update.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Outcome of the Helper Cell AI orchestration signal.",
+"required": [
+"status",
+"final_recommended_action"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final status of this Helper Cell signal.",
+"enum": [
+"signal_created",
+"response_recommended",
+"components_activated",
+"routed_to_human_review",
+"routed_to_defense_court",
+"memory_update_recommended",
+"regulatory_review_required",
+"requires_more_context",
+"no_action_required"
+],
+"examples": [
+"response_recommended"
+]
+},
+"final_recommended_action": {
+"type": "string",
+"description": "Final recommended defensive action.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested action is allowed to proceed.",
+"examples": [
+false
+]
+},
+"requires_future_review": {
+"type": "boolean",
+"description": "Whether this signal or linked case requires future review.",
+"examples": [
+true
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief outcome summary.",
+"examples": [
+"Helper Cell AI recommended holding execution, applying Reverse Resonance, and routing high-risk escalation to review."
+]
+}
+},
+"additionalProperties": false
+},
+"audit_trail": {
+"type": "object",
+"description": "Audit information for orchestration reviewability.",
+"properties": {
+"coordination_steps": {
+"type": "array",
+"description": "Coordination steps performed by Helper Cell AI.",
+"items": {
+"type": "string",
+"enum": [
+"signals_collected",
+"humoral_memory_checked",
+"cellular_detection_reviewed",
+"reverse_resonance_reviewed",
+"natural_killer_signal_reviewed",
+"regulatory_signal_reviewed",
+"review_signal_checked",
+"risk_assessed",
+"response_level_selected",
+"components_activated",
+"human_review_requirement_recorded",
+"memory_update_recommended",
+"non_aggression_boundary_confirmed"
+]
+},
+"uniqueItems": true
+},
+"audit_notes": {
+"type": "string",
+"description": "Optional audit notes."
+},
+"opaque_decision": {
+"type": "boolean",
+"description": "Whether the decision was opaque. Should normally be false.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this signal supports defensive orchestration only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive orchestration actions.",
+"items": {
+"type": "string",
+"enum": [
+"coordinate_defensive_response",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold",
+"quarantine",
+"route_to_human_review",
+"route_to_defense_court",
+"request_regulatory_review",
+"recommend_memory_update",
+"log"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation",
+"autonomous_punishment"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this Helper Cell signal.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"helper-cell",
+"immune-orchestration",
+"structural-immunity"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
