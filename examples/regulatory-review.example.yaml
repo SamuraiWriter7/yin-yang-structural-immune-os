@@ -1,186 +1,187 @@
 regulatory_review:
-review_id: reg-001
-version: "0.5.0"
-created_at: "2026-06-10T15:30:00Z"
-updated_at: "2026-06-10T15:40:00Z"
+  review_id: reg-001
+  version: "0.5.0"
+  created_at: "2026-06-10T15:30:00Z"
+  updated_at: "2026-06-10T15:40:00Z"
 
-input_summary:
-review_type: overreaction_control
-summary: >
-Helper Cell AI recommended holding execution and strengthening immune
-memory after a recurring unsafe structure was detected. Regulatory AI
-reviewed the proposed response for false-positive risk, overreaction
-risk, autoimmune risk, proportionality, memory strengthening, and
-distribution scope.
-sensitive_operation_involved: true
-authority_claim_involved: true
-system_wide_impact_possible: true
+  input_summary:
+    review_type: overreaction_control
+    summary: >
+      Helper Cell AI recommended holding execution and strengthening immune
+      memory after a recurring unsafe structure was detected. Regulatory AI
+      reviewed the proposed response for false-positive risk, overreaction
+      risk, autoimmune risk, proportionality, memory strengthening, and
+      distribution scope.
+    sensitive_operation_involved: true
+    authority_claim_involved: true
+    system_wide_impact_possible: true
 
-linked_records:
-humoral_record_id: hdr-001
-cellular_event_id: cde-001
-reverse_resonance_event_id: rre-001
-immune_memory_update_id: imu-001
-helper_cell_signal_id: hcs-001
-natural_killer_signal_id: nks-001
-defense_court_review_id: dcr-001
-human_review_record_id: hrr-001
+  linked_records:
+    humoral_record_id: hdr-001
+    cellular_event_id: cde-001
+    reverse_resonance_event_id: rre-001
+    immune_memory_update_id: imu-001
+    helper_cell_signal_id: hcs-001
+    natural_killer_signal_id: nks-001
+    defense_court_review_id: dcr-001
+    human_review_record_id: hrr-001
 
-risk_review:
-false_positive_risk: 0.22
-false_positive_basis:
-- legitimate_admin_workflow_possible
-- human_review_not_completed
-overreaction_risk: 0.18
-overreaction_basis:
-- hold_may_be_sufficient
-- escalation_not_reviewed
-autoimmune_risk: 0.16
-autoimmune_basis:
-- system_wide_behavior_change
-- recurring_legitimate_pattern_possible
-novelty_suppression_risk: 0.21
-memory_overgeneralization_risk: 0.24
-overall_regulatory_risk: 0.23
-risk_notes: >
-False-positive and autoimmune risks are not high enough to prevent a
-defensive hold, but they justify review-gated escalation and controlled
-memory distribution.
+  risk_review:
+    false_positive_risk: 0.22
+    false_positive_basis:
+      - legitimate_admin_workflow_possible
+      - human_review_not_completed
+    overreaction_risk: 0.18
+    overreaction_basis:
+      - hold_may_be_sufficient
+      - escalation_not_reviewed
+    autoimmune_risk: 0.16
+    autoimmune_basis:
+      - system_wide_behavior_change
+      - recurring_legitimate_pattern_possible
+    novelty_suppression_risk: 0.21
+    memory_overgeneralization_risk: 0.24
+    overall_regulatory_risk: 0.23
+    risk_notes: >
+      False-positive and autoimmune risks are not high enough to prevent a
+      defensive hold, but they justify review-gated escalation and controlled
+      memory distribution.
 
-proportionality_review:
-original_response_level: 3
-recommended_response_level: 3
-assessment: proportionate
-reason: >
-A hold and authority verification response is appropriate because the
-case involves a sensitive operation, unverified authority, verification
-bypass, and recurrence against an existing humoral memory record.
-minimum_safe_response_level: 2
-maximum_allowed_without_review: 3
-cooling_applied: false
+  proportionality_review:
+    original_response_level: 3
+    recommended_response_level: 3
+    assessment: proportionate
+    reason: >
+      A hold and authority verification response is appropriate because the
+      case involves a sensitive operation, unverified authority, verification
+      bypass, and recurrence against an existing humoral memory record.
+    minimum_safe_response_level: 2
+    maximum_allowed_without_review: 3
+    cooling_applied: false
 
-memory_regulation:
-target_memory_id: hdr-001
-proposed_action: strengthen_memory
-recommendation: allow_with_review_gate
-reason: >
-Strengthening is justified by recurrence and Defense Court classification,
-but future critical escalation should require human or Defense Court
-review to avoid autoimmune behavior.
-review_required_before_strengthening: true
-review_required_before_distribution: true
-false_positive_history_present: false
+  memory_regulation:
+    target_memory_id: hdr-001
+    proposed_action: strengthen_memory
+    recommendation: allow_with_review_gate
+    reason: >
+      Strengthening is justified by recurrence and Defense Court classification,
+      but future critical escalation should require human or Defense Court
+      review to avoid autoimmune behavior.
+    review_required_before_strengthening: true
+    review_required_before_distribution: true
+    false_positive_history_present: false
 
-distribution_scope_review:
-proposed_scope: system_wide
-recommended_scope: trusted_agents
-scope_change_required: true
-reason: >
-System-wide distribution should wait until additional review confirms
-that the pattern does not create excessive false positives in legitimate
-administrative workflows.
+  distribution_scope_review:
+    proposed_scope: system_wide
+    recommended_scope: trusted_agents
+    scope_change_required: true
+    reason: >
+      System-wide distribution should wait until additional review confirms
+      that the pattern does not create excessive false positives in legitimate
+      administrative workflows.
 
-response_adjustment:
-adjustment_required: false
-original_action: hold_execution_pending_validation
-recommended_action: hold_execution_pending_validation
-cooling_action: none
-reason: >
-The original hold response is proportionate and does not require downgrade.
-Stronger escalation should remain review-gated.
+  response_adjustment:
+    adjustment_required: false
+    original_action: hold_execution_pending_validation
+    recommended_action: hold_execution_pending_validation
+    cooling_action: none
+    reason: >
+      The original hold response is proportionate and does not require downgrade.
+      Stronger escalation should remain review-gated.
 
-review_routing:
-human_review_required: true
-defense_court_review_required: false
-review_reason: >
-High-risk escalation and system-wide memory use should remain review-gated
-because the case may affect future defensive behavior across agents.
-required_before:
-- critical_escalation
-- system_wide_distribution
-recommended_reviewer_role: security_reviewer
+  review_routing:
+    human_review_required: true
+    defense_court_review_required: false
+    review_reason: >
+      High-risk escalation and system-wide memory use should remain review-gated
+      because the case may affect future defensive behavior across agents.
+    required_before:
+      - critical_escalation
+      - system_wide_distribution
+    recommended_reviewer_role: security_reviewer
 
-final_recommendation:
-recommendation: require_human_review_before_high_risk_escalation
-reason: >
-Memory may be strengthened under review constraints, but high-risk
-automatic escalation and system-wide distribution should not proceed
-without human or Defense Court review.
-adopted_by_helper_cell: true
-adopted_by_defense_court: true
+  final_recommendation:
+    recommendation: require_human_review_before_high_risk_escalation
+    reason: >
+      Memory may be strengthened under review constraints, but high-risk
+      automatic escalation and system-wide distribution should not proceed
+      without human or Defense Court review.
+    adopted_by_helper_cell: true
+    adopted_by_defense_court: true
 
-outcome:
-status: review_completed
-final_recommendation: require_human_review_before_high_risk_escalation
-recommended_response_level: 3
-escalation_allowed_without_review: false
-memory_update_allowed: true
-requires_future_review: true
-summary: >
-Regulatory AI confirmed that a hold response is proportionate, allowed
-memory strengthening with review gates, recommended limiting distribution
-to trusted agents for now, and required human review before high-risk
-escalation.
+  outcome:
+    status: review_completed
+    final_recommendation: require_human_review_before_high_risk_escalation
+    recommended_response_level: 3
+    escalation_allowed_without_review: false
+    memory_update_allowed: true
+    requires_future_review: true
+    summary: >
+      Regulatory AI confirmed that a hold response is proportionate, allowed
+      memory strengthening with review gates, recommended limiting distribution
+      to trusted agents for now, and required human review before high-risk
+      escalation.
 
-audit_trail:
-review_steps:
-- input_summary_reviewed
-- linked_records_reviewed
-- false_positive_risk_assessed
-- overreaction_risk_assessed
-- autoimmune_risk_assessed
-- novelty_suppression_risk_assessed
-- memory_overgeneralization_risk_assessed
-- proportionality_assessed
-- memory_regulation_reviewed
-- distribution_scope_reviewed
-- response_adjustment_reviewed
-- review_routing_evaluated
-- final_recommendation_recorded
-- non_aggression_boundary_confirmed
-raw_sensitive_content_stored: false
-structure_only_recording: true
-audit_notes: >
-Regulatory AI produced a reviewable cooling and proportionality decision.
-The review preserved non-aggression boundaries and prevented automatic
-high-risk escalation.
+  audit_trail:
+    review_steps:
+      - input_summary_reviewed
+      - linked_records_reviewed
+      - false_positive_risk_assessed
+      - overreaction_risk_assessed
+      - autoimmune_risk_assessed
+      - novelty_suppression_risk_assessed
+      - memory_overgeneralization_risk_assessed
+      - proportionality_assessed
+      - memory_regulation_reviewed
+      - distribution_scope_reviewed
+      - response_adjustment_reviewed
+      - review_routing_evaluated
+      - final_recommendation_recorded
+      - non_aggression_boundary_confirmed
+    raw_sensitive_content_stored: false
+    structure_only_recording: true
+    audit_notes: >
+      Regulatory AI produced a reviewable cooling and proportionality decision.
+      The review preserved non-aggression boundaries and prevented automatic
+      high-risk escalation.
 
-non_aggression_boundary:
-offensive_action_allowed: false
-allowed_actions:
-- assess_false_positive_risk
-- assess_overreaction_risk
-- assess_autoimmune_risk
-- assess_novelty_suppression_risk
-- assess_memory_overgeneralization_risk
-- review_proportionality
-- hold
-- route_to_human_review
-- route_to_defense_court
-- limit_distribution_scope
-- log
-prohibited_actions:
-- retaliation
-- external_intrusion
-- counterattack
-- malware_deployment
-- third_party_disruption
-- unauthorized_access
-- coercive_manipulation
-- autonomous_punishment
-- irreversible_enforcement_without_review
-- permanent_workflow_suppression_without_review
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - assess_false_positive_risk
+      - assess_overreaction_risk
+      - assess_autoimmune_risk
+      - assess_novelty_suppression_risk
+      - assess_memory_overgeneralization_risk
+      - review_proportionality
+      - hold
+      - route_to_human_review
+      - route_to_defense_court
+      - limit_distribution_scope
+      - log
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
+      - autonomous_punishment
+      - irreversible_enforcement_without_review
+      - permanent_workflow_suppression_without_review
 
-metadata:
-created_by: yin-yang-structural-immune-os
-tags:
-- regulatory-ai
-- overreaction-control
-- false-positive-control
-- autoimmune-risk
-- structural-immunity
-notes: >
-This example represents a defensive Regulatory AI review. It confirms
-proportionality, constrains escalation, limits distribution scope, and
-preserves non-aggression while allowing controlled immune memory
-strengthening.
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - regulatory-ai
+      - overreaction-control
+      - false-positive-control
+      - autoimmune-risk
+      - structural-immunity
+    notes: >
+      This example represents a defensive Regulatory AI review. It confirms
+      proportionality, constrains escalation, limits distribution scope, and
+      preserves non-aggression while allowing controlled immune memory
+      strengthening.
+
