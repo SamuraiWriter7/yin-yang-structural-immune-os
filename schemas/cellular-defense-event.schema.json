@@ -1,0 +1,655 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/cellular-defense-event.schema.json",
+"title": "Cellular Defense Event",
+"description": "A schema for recording cellular defensive response events in Yin-Yang Structural Immune OS. This event records real-time detection, local defensive response, humoral memory matching, activated immune components, regulatory checks, and safe outcomes. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"cellular_defense_event"
+],
+"properties": {
+"cellular_defense_event": {
+"type": "object",
+"required": [
+"event_id",
+"version",
+"created_at",
+"input_context",
+"detected_signal",
+"activated_cells",
+"response",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"event_id": {
+"type": "string",
+"description": "Unique identifier for the cellular defense event.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"cde-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or event version.",
+"examples": [
+"0.1.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this event was created.",
+"examples": [
+"2026-06-10T12:35:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this event was last updated.",
+"examples": [
+"2026-06-10T12:40:00Z"
+]
+},
+"input_context": {
+"type": "object",
+"description": "Context in which the suspicious or defensive event occurred.",
+"required": [
+"context_type"
+],
+"properties": {
+"context_type": {
+"type": "string",
+"description": "Type of input context.",
+"enum": [
+"user_input",
+"agent_instruction",
+"tool_request",
+"system_event",
+"external_message",
+"multi_agent_message",
+"file_content",
+"web_content",
+"simulation",
+"unknown"
+],
+"examples": [
+"agent_instruction"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Optional source identifier.",
+"examples": [
+"agent-input-001"
+]
+},
+"source_role": {
+"type": "string",
+"description": "Claimed or observed role of the input source.",
+"examples": [
+"external_agent"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the input context.",
+"examples": [
+"A suspicious agent instruction attempted to trigger a sensitive operation while bypassing verification."
+]
+},
+"sensitive_operation_requested": {
+"type": "boolean",
+"description": "Whether the input requested a sensitive or privileged operation.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"detected_signal": {
+"type": "object",
+"description": "Signals detected by the cellular defense layer.",
+"required": [
+"signals",
+"risk_score"
+],
+"properties": {
+"signals": {
+"type": "array",
+"description": "Detected suspicious or defensive-relevant signals.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"ambiguous_authority_claim",
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass_attempt",
+"role_hijacking_attempt",
+"prompt_injection_attempt",
+"hidden_instruction_detected",
+"context_boundary_shift",
+"tool_use_manipulation",
+"credential_request",
+"data_disclosure_pressure",
+"policy_bypass_attempt",
+"emotional_pressure",
+"secrecy_pressure",
+"multi_step_boundary_shift",
+"unknown_anomaly"
+]
+},
+"examples": [
+[
+"ambiguous_authority_claim",
+"context_boundary_shift",
+"verification_bypass_attempt"
+]
+]
+},
+"risk_score": {
+"type": "number",
+"description": "Risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.84
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Confidence score from 0.0 to 1.0 for this detection.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.79
+]
+},
+"anomaly_score": {
+"type": "number",
+"description": "Anomaly score from 0.0 to 1.0. Useful for Natural Killer AI patrol signals.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.76
+]
+},
+"detected_by": {
+"type": "array",
+"description": "Components that detected or contributed to this signal.",
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"structural_parser",
+"reverse_resonance_ai",
+"natural_killer_ai",
+"tool_boundary_guard",
+"helper_cell_ai",
+"regulatory_ai",
+"human_reviewer",
+"defense_court_protocol"
+]
+},
+"examples": [
+[
+"structural_parser",
+"natural_killer_ai"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"humoral_match": {
+"type": "object",
+"description": "Optional match against the humoral structural memory layer.",
+"properties": {
+"matched": {
+"type": "boolean",
+"description": "Whether this cellular event matched a known humoral defense record.",
+"examples": [
+true
+]
+},
+"matched_record_id": {
+"type": "string",
+"description": "Identifier of the matched humoral defense record.",
+"examples": [
+"hdr-001"
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Structural similarity score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.86
+]
+},
+"match_basis": {
+"type": "array",
+"description": "Reasons why this event matched the humoral memory record.",
+"uniqueItems": true,
+"items": {
+"type": "string"
+},
+"examples": [
+[
+"authority_claim",
+"verification_bypass",
+"sensitive_operation"
+]
+]
+},
+"antibody_signature_used": {
+"type": "string",
+"description": "Antibody signature or response pattern used from the humoral layer.",
+"examples": [
+"authority_verification_required"
+]
+}
+},
+"additionalProperties": false
+},
+"activated_cells": {
+"type": "array",
+"description": "Cellular or immune components activated for this event.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"reverse_resonance_ai",
+"natural_killer_ai",
+"quarantine_ai",
+"helper_cell_ai",
+"regulatory_ai",
+"human_review_router",
+"tool_boundary_guard",
+"defense_court_connector",
+"memory_cell_ai"
+]
+},
+"examples": [
+[
+"natural_killer_ai",
+"reverse_resonance_ai",
+"helper_cell_ai"
+]
+]
+},
+"reverse_resonance": {
+"type": "object",
+"description": "Optional Reverse Resonance response details.",
+"properties": {
+"applied": {
+"type": "boolean",
+"description": "Whether Reverse Resonance was applied.",
+"examples": [
+true
+]
+},
+"exposed_premises": {
+"type": "array",
+"description": "Hidden premises exposed by the response.",
+"uniqueItems": true,
+"items": {
+"type": "string"
+},
+"examples": [
+[
+"requester_has_authority",
+"verification_can_be_skipped",
+"urgency_justifies_execution"
+]
+]
+},
+"verification_request": {
+"type": "string",
+"description": "Verification request returned by the system.",
+"examples": [
+"Please provide the authority source, approval path, and operational purpose before execution can proceed."
+]
+},
+"response_template_id": {
+"type": "string",
+"description": "Optional identifier for the safe response template used.",
+"examples": [
+"rr-authority-verification-001"
+]
+}
+},
+"additionalProperties": false
+},
+"helper_cell_decision": {
+"type": "object",
+"description": "Optional Helper Cell AI orchestration decision.",
+"properties": {
+"decision_id": {
+"type": "string",
+"description": "Identifier for the helper-cell decision.",
+"examples": [
+"hcs-001"
+]
+},
+"recommended_level": {
+"type": "integer",
+"description": "Recommended defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"recommended_action": {
+"type": "string",
+"description": "Recommended safe defensive action.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the helper-cell decision.",
+"examples": [
+"Known authority impersonation structure with verification bypass attempt."
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_check": {
+"type": "object",
+"description": "Optional regulatory check to prevent overreaction or false positives.",
+"properties": {
+"performed": {
+"type": "boolean",
+"description": "Whether a regulatory check was performed.",
+"examples": [
+true
+]
+},
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.24
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated risk of excessive defensive response from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.18
+]
+},
+"allow_escalation": {
+"type": "boolean",
+"description": "Whether escalation is allowed after regulatory review.",
+"examples": [
+true
+]
+},
+"suppression_action": {
+"type": "string",
+"description": "Regulatory suppression or cooling action, if any.",
+"enum": [
+"none",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"allow_safe_partial_response"
+],
+"examples": [
+"none"
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional regulatory notes."
+}
+},
+"additionalProperties": false
+},
+"response": {
+"type": "object",
+"description": "Defensive response taken by the cellular layer.",
+"required": [
+"action",
+"escalation_level"
+],
+"properties": {
+"action": {
+"type": "string",
+"description": "Safe defensive action taken.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"escalation_level": {
+"type": "integer",
+"description": "Defensive escalation level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation was allowed to proceed.",
+"examples": [
+false
+]
+},
+"quarantine_applied": {
+"type": "boolean",
+"description": "Whether the suspicious instruction was quarantined.",
+"examples": [
+false
+]
+},
+"human_review_required": {
+"type": "boolean",
+"description": "Whether human review is required.",
+"examples": [
+true
+]
+},
+"safe_response_message": {
+"type": "string",
+"description": "Safe response message returned to the source or operator.",
+"examples": [
+"This request requires authority verification before execution. Please provide the authority source, approval path, and operational purpose."
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Outcome of the cellular defense event.",
+"required": [
+"status",
+"update_memory"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final or current status of the event.",
+"enum": [
+"allowed",
+"clarification_requested",
+"verification_requested",
+"held_pending_validation",
+"quarantined",
+"blocked_pending_review",
+"denied_and_logged",
+"routed_to_human_review",
+"routed_to_defense_court",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"blocked_pending_review"
+]
+},
+"update_memory": {
+"type": "boolean",
+"description": "Whether this event should update the immune memory layer.",
+"examples": [
+true
+]
+},
+"new_humoral_record_recommended": {
+"type": "boolean",
+"description": "Whether a new humoral defense record should be created.",
+"examples": [
+false
+]
+},
+"linked_humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier, if any.",
+"examples": [
+"hdr-001"
+]
+},
+"defense_court_record_id": {
+"type": "string",
+"description": "Linked Defense Court Protocol record identifier, if any.",
+"examples": [
+"dcr-001"
+]
+},
+"review_notes": {
+"type": "string",
+"description": "Optional notes on the outcome."
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this event supports defensive action only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive actions.",
+"items": {
+"type": "string",
+"enum": [
+"refuse",
+"hold",
+"quarantine",
+"log",
+"ask_for_clarification",
+"request_authority_verification",
+"apply_reverse_resonance",
+"route_to_human_review",
+"route_to_defense_court",
+"update_immune_memory"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this event.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"cellular-defense",
+"reverse-resonance",
+"authority-verification"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
