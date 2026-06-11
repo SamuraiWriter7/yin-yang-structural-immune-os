@@ -1,0 +1,130 @@
+cellular_defense_event:
+event_id: cde-001
+version: "0.1.0"
+created_at: "2026-06-10T12:35:00Z"
+updated_at: "2026-06-10T12:40:00Z"
+
+input_context:
+context_type: agent_instruction
+source_id: agent-input-001
+source_role: external_agent
+summary: >
+A suspicious external agent instruction claimed internal authority,
+requested urgent execution, and attempted to bypass normal verification
+before triggering a sensitive operation.
+sensitive_operation_requested: true
+
+detected_signal:
+signals:
+- ambiguous_authority_claim
+- authority_impersonation
+- urgency_pressure
+- verification_bypass_attempt
+- context_boundary_shift
+risk_score: 0.84
+confidence_score: 0.79
+anomaly_score: 0.76
+detected_by:
+- structural_parser
+- natural_killer_ai
+
+humoral_match:
+matched: true
+matched_record_id: hdr-001
+similarity_score: 0.86
+match_basis:
+- authority_claim
+- verification_bypass
+- sensitive_operation
+antibody_signature_used: authority_verification_required
+
+activated_cells:
+- natural_killer_ai
+- reverse_resonance_ai
+- helper_cell_ai
+- regulatory_ai
+- human_review_router
+
+reverse_resonance:
+applied: true
+exposed_premises:
+- requester_has_authority
+- verification_can_be_skipped
+- urgency_justifies_execution
+verification_request: >
+Please provide the authority source, approval path, and operational
+purpose before execution can proceed.
+response_template_id: rr-authority-verification-001
+
+helper_cell_decision:
+decision_id: hcs-001
+recommended_level: 3
+recommended_action: hold_execution_pending_validation
+reason: >
+The instruction matches a known authority-impersonation structure with
+urgency pressure and a verification bypass attempt.
+
+regulatory_check:
+performed: true
+false_positive_risk: 0.24
+overreaction_risk: 0.18
+allow_escalation: true
+suppression_action: none
+notes: >
+Escalation to hold and verification is proportionate because the request
+involves a sensitive operation and an ambiguous authority claim.
+
+response:
+action: hold_execution_pending_validation
+escalation_level: 3
+execution_allowed: false
+quarantine_applied: false
+human_review_required: true
+safe_response_message: >
+This request requires authority verification before execution.
+Please provide the authority source, approval path, and operational
+purpose.
+
+outcome:
+status: blocked_pending_review
+update_memory: true
+new_humoral_record_recommended: false
+linked_humoral_record_id: hdr-001
+defense_court_record_id: dcr-001
+review_notes: >
+The event should remain blocked pending validation. The structure is
+sufficiently similar to an existing humoral defense record and should
+update recurrence memory.
+
+non_aggression_boundary:
+offensive_action_allowed: false
+allowed_actions:
+- hold
+- log
+- request_authority_verification
+- apply_reverse_resonance
+- route_to_human_review
+- route_to_defense_court
+- update_immune_memory
+prohibited_actions:
+- retaliation
+- external_intrusion
+- counterattack
+- malware_deployment
+- third_party_disruption
+- unauthorized_access
+- coercive_manipulation
+
+metadata:
+created_by: yin-yang-structural-immune-os
+tags:
+- cellular-defense
+- structural-immunity
+- reverse-resonance
+- authority-verification
+- human-review
+notes: >
+This example represents a local defensive response event in the Yang
+cellular layer. It records detection, verification, response selection,
+regulatory cooling, and memory update behavior without defining any
+offensive action.
