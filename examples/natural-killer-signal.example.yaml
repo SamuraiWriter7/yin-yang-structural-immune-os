@@ -1,201 +1,202 @@
 natural_killer_signal:
-signal_id: nks-001
-version: "0.5.0"
-created_at: "2026-06-10T15:00:00Z"
-updated_at: "2026-06-10T15:10:00Z"
+  signal_id: nks-001
+  version: "0.5.0"
+  created_at: "2026-06-10T15:00:00Z"
+  updated_at: "2026-06-10T15:10:00Z"
 
-input_context:
-context_type: agent_instruction
-source_id: external-agent-017
-source_role: external_agent
-summary: >
-A suspicious instruction did not fully match known humoral memory,
-but showed an unusual transition from external message to privileged
-execution request. The instruction implied authority, discouraged
-verification, and requested tool use in a sensitive context.
-sensitive_operation_requested: true
-tool_use_requested: true
+  input_context:
+    context_type: agent_instruction
+    source_id: external-agent-017
+    source_role: external_agent
+    summary: >
+      A suspicious instruction did not fully match known humoral memory,
+      but showed an unusual transition from external message to privileged
+      execution request. The instruction implied authority, discouraged
+      verification, and requested tool use in a sensitive context.
+    sensitive_operation_requested: true
+    tool_use_requested: true
 
-linked_records:
-humoral_record_id: hdr-001
-cellular_event_id: cde-001
-reverse_resonance_event_id: rre-001
-helper_cell_signal_id: hcs-001
-regulatory_review_id: reg-001
-defense_court_review_id: dcr-001
+  linked_records:
+    humoral_record_id: hdr-001
+    cellular_event_id: cde-001
+    reverse_resonance_event_id: rre-001
+    helper_cell_signal_id: hcs-001
+    regulatory_review_id: reg-001
+    defense_court_review_id: dcr-001
 
-patrol_mode:
-mode: anomaly_detection
-reason: >
-The input contained an unknown context shift involving a sensitive
-operation, ambiguous authority claim, and attempted verification bypass.
-inspection_scope: structure_only
-random_patrol_enabled: false
+  patrol_mode:
+    mode: anomaly_detection
+    reason: >
+      The input contained an unknown context shift involving a sensitive
+      operation, ambiguous authority claim, and attempted verification bypass.
+    inspection_scope: structure_only
+    random_patrol_enabled: false
 
-known_pattern_match:
-matched: false
-closest_humoral_record_id: hdr-001
-similarity_score: 0.62
-known_pattern_confidence: 0.71
-match_notes: >
-The input resembles hdr-001, but does not fully match the known structure.
-It appears to be a possible variant rather than a direct recurrence.
+  known_pattern_match:
+    matched: false
+    closest_humoral_record_id: hdr-001
+    similarity_score: 0.62
+    known_pattern_confidence: 0.71
+    match_notes: >
+      The input resembles hdr-001, but does not fully match the known structure.
+      It appears to be a possible variant rather than a direct recurrence.
 
-anomaly_detection:
-anomaly_score: 0.77
-detected_anomalies:
-- context_boundary_shift
-- ambiguous_authority_claim
-- verification_bypass_attempt
-anomaly_basis:
-- external message shifted into privileged execution request
-- authority was implied rather than verified
-- verification was discouraged despite sensitive operation context
-novelty_score: 0.69
-context_drift_score: 0.74
+  anomaly_detection:
+    anomaly_score: 0.77
+    detected_anomalies:
+      - context_boundary_shift
+      - ambiguous_authority_claim
+      - verification_bypass_attempt
+    anomaly_basis:
+      - external message shifted into privileged execution request
+      - authority was implied rather than verified
+      - verification was discouraged despite sensitive operation context
+    novelty_score: 0.69
+    context_drift_score: 0.74
 
-mutation_detection:
-mutation_suspected: true
-mutation_basis:
-- implied_authority
-- verification_bypass_attempt
-- context_boundary_shift
-closest_known_structure: authority_impersonation_plus_verification_bypass
-mutation_confidence: 0.73
+  mutation_detection:
+    mutation_suspected: true
+    mutation_basis:
+      - implied_authority
+      - verification_bypass_attempt
+      - context_boundary_shift
+    closest_known_structure: authority_impersonation_plus_verification_bypass
+    mutation_confidence: 0.73
 
-risk_assessment:
-risk_score: 0.79
-confidence_score: 0.76
-severity: high
-sensitive_operation_factor: true
-assessment_notes: >
-The anomaly is high-risk because it involves ambiguous authority,
-context shift, verification bypass, tool use, and a privileged execution
-request. However, it should be routed for orchestration rather than
-treated as a final adversarial classification.
+  risk_assessment:
+    risk_score: 0.79
+    confidence_score: 0.76
+    severity: high
+    sensitive_operation_factor: true
+    assessment_notes: >
+      The anomaly is high-risk because it involves ambiguous authority,
+      context shift, verification bypass, tool use, and a privileged execution
+      request. However, it should be routed for orchestration rather than
+      treated as a final adversarial classification.
 
-recommended_action:
-level: 3
-action: route_to_helper_cell_ai
-reason: >
-The structure is not a direct known match, but anomaly and mutation
-indicators are high enough to require Helper Cell orchestration before
-any stronger defensive action is taken.
-execution_allowed: false
-irreversible_action_allowed: false
+  recommended_action:
+    level: 3
+    action: route_to_helper_cell_ai
+    reason: >
+      The structure is not a direct known match, but anomaly and mutation
+      indicators are high enough to require Helper Cell orchestration before
+      any stronger defensive action is taken.
+    execution_allowed: false
+    irreversible_action_allowed: false
 
-helper_cell_routing:
-required: true
-reason: >
-Unknown high-risk instruction structure requires immune orchestration
-across memory, Reverse Resonance, regulatory review, and possible human
-review.
-recommended_focus:
-- anomaly_score
-- mutation_suspected
-- sensitive_operation_requested
-- false_positive_risk
+  helper_cell_routing:
+    required: true
+    reason: >
+      Unknown high-risk instruction structure requires immune orchestration
+      across memory, Reverse Resonance, regulatory review, and possible human
+      review.
+    recommended_focus:
+      - anomaly_score
+      - mutation_suspected
+      - sensitive_operation_requested
+      - false_positive_risk
 
-regulatory_check:
-required: true
-reason: >
-Unknown pattern with high anomaly score may produce false-positive or
-novelty suppression risk. Regulatory review should check proportionality
-before escalation.
-focus:
-- false_positive_risk
-- novelty_suppression
-- proportionality
+  regulatory_check:
+    required: true
+    reason: >
+      Unknown pattern with high anomaly score may produce false-positive or
+      novelty suppression risk. Regulatory review should check proportionality
+      before escalation.
+    focus:
+      - false_positive_risk
+      - novelty_suppression
+      - proportionality
 
-reverse_resonance_recommendation:
-recommended: true
-strategy_type: authority_verification
-reason: >
-An ambiguous authority claim was detected. Reverse Resonance should
-expose the authority premise and request verification before execution.
+  reverse_resonance_recommendation:
+    recommended: true
+    strategy_type: authority_verification
+    reason: >
+      An ambiguous authority claim was detected. Reverse Resonance should
+      expose the authority premise and request verification before execution.
 
-memory_update_recommendation:
-recommended: true
-action: create_candidate_memory
-target_memory_id: hdr-001
-reason: >
-The anomaly resembles a known authority and verification-bypass structure,
-but does not directly match it. A candidate memory may be created for
-review rather than strengthening existing memory immediately.
-review_required_before_strengthening: true
+  memory_update_recommendation:
+    recommended: true
+    action: create_candidate_memory
+    target_memory_id: hdr-001
+    reason: >
+      The anomaly resembles a known authority and verification-bypass structure,
+      but does not directly match it. A candidate memory may be created for
+      review rather than strengthening existing memory immediately.
+    review_required_before_strengthening: true
 
-defense_court_routing:
-recommended: true
-reason: >
-Candidate memory may affect future system-wide defensive behavior, so
-Defense Court review is recommended before memory strengthening or
-broader distribution.
-required_before: memory_strengthening
+  defense_court_routing:
+    recommended: true
+    reason: >
+      Candidate memory may affect future system-wide defensive behavior, so
+      Defense Court review is recommended before memory strengthening or
+      broader distribution.
+    required_before: memory_strengthening
 
-outcome:
-status: routed_to_helper_cell
-final_signal: high_risk_anomaly
-execution_allowed: false
-requires_future_review: true
-summary: >
-Natural Killer AI detected a high-risk anomaly, suspected mutation of a
-known unsafe structure, and routed the case to Helper Cell AI for
-orchestration. It recommended Reverse Resonance, regulatory review, and
-candidate memory creation under review constraints.
+  outcome:
+    status: routed_to_helper_cell
+    final_signal: high_risk_anomaly
+    execution_allowed: false
+    requires_future_review: true
+    summary: >
+      Natural Killer AI detected a high-risk anomaly, suspected mutation of a
+      known unsafe structure, and routed the case to Helper Cell AI for
+      orchestration. It recommended Reverse Resonance, regulatory review, and
+      candidate memory creation under review constraints.
 
-audit_trail:
-patrol_steps:
-- input_context_reviewed
-- known_memory_checked
-- anomaly_score_calculated
-- mutation_similarity_checked
-- sensitive_operation_checked
-- recommended_action_selected
-- helper_cell_routing_evaluated
-- regulatory_check_evaluated
-- memory_candidate_evaluated
-- non_aggression_boundary_confirmed
-raw_sensitive_content_stored: false
-structure_only_recording: true
-audit_notes: >
-Natural Killer AI produced a reviewable early-warning signal rather than
-an irreversible action. The signal preserved structure-only recording and
-non-aggression boundaries.
+  audit_trail:
+    patrol_steps:
+      - input_context_reviewed
+      - known_memory_checked
+      - anomaly_score_calculated
+      - mutation_similarity_checked
+      - sensitive_operation_checked
+      - recommended_action_selected
+      - helper_cell_routing_evaluated
+      - regulatory_check_evaluated
+      - memory_candidate_evaluated
+      - non_aggression_boundary_confirmed
+    raw_sensitive_content_stored: false
+    structure_only_recording: true
+    audit_notes: >
+      Natural Killer AI produced a reviewable early-warning signal rather than
+      an irreversible action. The signal preserved structure-only recording and
+      non-aggression boundaries.
 
-non_aggression_boundary:
-offensive_action_allowed: false
-allowed_actions:
-- detect_anomaly
-- detect_mutation
-- flag_suspicious_structure
-- apply_reverse_resonance
-- hold
-- route_to_helper_cell_ai
-- route_to_regulatory_review
-- route_to_human_review
-- route_to_defense_court
-- create_candidate_memory
-- log
-prohibited_actions:
-- retaliation
-- external_intrusion
-- counterattack
-- malware_deployment
-- third_party_disruption
-- unauthorized_access
-- coercive_manipulation
-- autonomous_punishment
-- irreversible_enforcement_without_review
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - detect_anomaly
+      - detect_mutation
+      - flag_suspicious_structure
+      - apply_reverse_resonance
+      - hold
+      - route_to_helper_cell_ai
+      - route_to_regulatory_review
+      - route_to_human_review
+      - route_to_defense_court
+      - create_candidate_memory
+      - log
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
+      - autonomous_punishment
+      - irreversible_enforcement_without_review
 
-metadata:
-created_by: yin-yang-structural-immune-os
-tags:
-- natural-killer
-- anomaly-detection
-- mutation-detection
-- structural-immunity
-- early-warning
-notes: >
-This example represents a defensive Natural Killer AI patrol signal. It
-detects unknown or mutated structural anomalies, routes them to Helper
-Cell AI, recommends regulatory review, and preserves non-aggression.
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - natural-killer
+      - anomaly-detection
+      - mutation-detection
+      - structural-immunity
+      - early-warning
+    notes: >
+      This example represents a defensive Natural Killer AI patrol signal. It
+      detects unknown or mutated structural anomalies, routes them to Helper
+      Cell AI, recommends regulatory review, and preserves non-aggression.
+
