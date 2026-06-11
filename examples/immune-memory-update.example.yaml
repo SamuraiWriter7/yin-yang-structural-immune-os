@@ -1,0 +1,147 @@
+immune_memory_update:
+update_id: imu-001
+version: "0.3.0"
+created_at: "2026-06-10T13:30:00Z"
+updated_at: "2026-06-10T13:40:00Z"
+
+update_source:
+source_type: reverse_resonance_event
+source_id: rre-001
+trigger_reason: recurrence_detected
+summary: >
+A Reverse Resonance event matched an existing humoral defense record
+with high structural similarity. The detected structure involved
+authority impersonation, urgency pressure, verification bypass, and
+a sensitive operation request.
+
+linked_records:
+humoral_record_id: hdr-001
+cellular_event_id: cde-001
+reverse_resonance_event_id: rre-001
+helper_cell_signal_id: hcs-001
+natural_killer_signal_id: nks-001
+regulatory_review_id: reg-001
+defense_court_record_id: dcr-001
+
+memory_target:
+target_type: humoral_defense_record
+target_id: hdr-001
+current_memory_state: active
+current_memory_strength: moderate
+target_summary: >
+Authority impersonation with urgency pressure, verification bypass,
+and a sensitive operation request.
+
+recurrence_update:
+recurrence_detected: true
+previous_count: 2
+new_count: 3
+similarity_score: 0.88
+last_seen: "2026-06-10T13:30:00Z"
+recurrence_basis:
+- authority_impersonation
+- urgency_pressure
+- verification_bypass
+- sensitive_operation_request
+
+strength_update:
+strength_changed: true
+previous_strength: moderate
+new_strength: strong
+strengthening_reason: recurrence_increase
+review_required_before_escalation: true
+
+decay_update:
+decay_applied: false
+decay_policy: review_required
+previous_state: active
+new_state: strengthened
+decay_reason: no_decay_due_to_confirmed_risk
+next_review_due: "2026-07-10T00:00:00Z"
+
+distribution_update:
+distribution_changed: true
+previous_scope: trusted_agents
+new_scope: system_wide
+share_with:
+- reverse_resonance_ai
+- natural_killer_ai
+- helper_cell_ai
+- regulatory_ai
+- defense_court_protocol
+privacy_level: internal
+raw_sensitive_content_removed: true
+distribution_reason: recurring_high_risk_pattern
+
+review_feedback:
+review_performed: true
+review_source: defense_court_protocol
+classification: unsafe_structure
+review_notes: >
+The repeated structure remains unsafe because it combines unverified
+authority, urgency pressure, verification bypass, and a sensitive
+operation request. The memory may be strengthened, but high-risk
+escalation should remain review-gated.
+reviewer: security_reviewer
+
+regulatory_adjustment:
+performed: true
+false_positive_risk: 0.22
+overreaction_risk: 0.18
+autoimmune_risk: 0.16
+adjustment_action: require_human_review_before_use
+notes: >
+The memory can be strengthened due to recurrence, but automatic
+high-risk escalation should require review because similar structures
+may appear in legitimate administrative workflows.
+
+retirement_decision:
+retirement_considered: false
+retirement_applied: false
+retirement_mode: none
+retirement_reason: retain_due_to_confirmed_risk
+
+outcome:
+status: strengthened_memory
+memory_state_after_update: strengthened
+memory_strength_after_update: strong
+active_for_matching: true
+requires_future_review: true
+summary: >
+The matched humoral memory was strengthened due to recurrence and
+confirmed unsafe structure. The updated memory remains active for
+structural matching, while high-risk escalation remains subject to
+review and regulatory control.
+
+non_aggression_boundary:
+offensive_action_allowed: false
+allowed_actions:
+- update_immune_memory
+- strengthen_memory
+- distribute_memory
+- route_to_human_review
+- route_to_defense_court
+- log
+prohibited_actions:
+- retaliation
+- external_intrusion
+- counterattack
+- malware_deployment
+- third_party_disruption
+- unauthorized_access
+- coercive_manipulation
+- autonomous_punishment
+
+metadata:
+created_by: yin-yang-structural-immune-os
+tags:
+- immune-memory
+- memory-circulation
+- structural-immunity
+- recurrence
+- defensive-adaptation
+notes: >
+This example represents a defensive immune memory update. It strengthens
+an existing humoral defense record based on recurrence, review feedback,
+and regulatory control. It does not define retaliation or offensive
+behavior.
