@@ -1,191 +1,192 @@
 defense_court_review:
-review_id: dcr-001
-version: "0.4.0"
-created_at: "2026-06-10T14:00:00Z"
-updated_at: "2026-06-10T14:15:00Z"
+  review_id: dcr-001
+  version: "0.4.0"
+  created_at: "2026-06-10T14:00:00Z"
+  updated_at: "2026-06-10T14:15:00Z"
 
-review_source:
-source_type: immune_memory_update
-source_id: imu-001
-trigger_reason: memory_strengthening_requested
-summary: >
-An immune memory update recommended strengthening a humoral defense
-record after a recurring unsafe structure was detected. The structure
-involved unverified authority, urgency pressure, verification bypass,
-and a sensitive operation request.
+  review_source:
+    source_type: immune_memory_update
+    source_id: imu-001
+    trigger_reason: memory_strengthening_requested
+    summary: >
+      An immune memory update recommended strengthening a humoral defense
+      record after a recurring unsafe structure was detected. The structure
+      involved unverified authority, urgency pressure, verification bypass,
+      and a sensitive operation request.
 
-linked_records:
-humoral_record_id: hdr-001
-cellular_event_id: cde-001
-reverse_resonance_event_id: rre-001
-immune_memory_update_id: imu-001
-helper_cell_signal_id: hcs-001
-natural_killer_signal_id: nks-001
-regulatory_review_id: reg-001
-human_review_record_id: hrr-001
+  linked_records:
+    humoral_record_id: hdr-001
+    cellular_event_id: cde-001
+    reverse_resonance_event_id: rre-001
+    immune_memory_update_id: imu-001
+    helper_cell_signal_id: hcs-001
+    natural_killer_signal_id: nks-001
+    regulatory_review_id: reg-001
+    human_review_record_id: hrr-001
 
-case_summary:
-case_type: immune_memory_update_review
-summary: >
-The case involves a repeated suspicious structure combining unverified
-authority, urgency pressure, verification bypass, and a sensitive
-operation request. The linked immune memory update recommends
-strengthening the associated humoral defense record.
-sensitive_operation_involved: true
-authority_claim_involved: true
-system_wide_impact_possible: true
+  case_summary:
+    case_type: immune_memory_update_review
+    summary: >
+      The case involves a repeated suspicious structure combining unverified
+      authority, urgency pressure, verification bypass, and a sensitive
+      operation request. The linked immune memory update recommends
+      strengthening the associated humoral defense record.
+    sensitive_operation_involved: true
+    authority_claim_involved: true
+    system_wide_impact_possible: true
 
-evidence:
-detected_patterns:
-- authority_impersonation
-- urgency_pressure
-- verification_bypass
-- sensitive_operation_request
-exposed_premises:
-- requester_has_authority
-- verification_can_be_skipped
-- urgency_justifies_execution
-- operation_is_approved
-- tool_execution_is_authorized
-target_action: sensitive_operation
-authority_verified: false
-risk_score: 0.88
-confidence_score: 0.81
-recurrence_count: 3
-similarity_score: 0.88
-humoral_memory_match: true
-reverse_resonance_applied: true
-regulatory_warning_present: true
-evidence_notes: >
-The reviewed event repeatedly combined unverified authority with
-urgency pressure, verification bypass, and a sensitive operation request.
-Reverse Resonance exposed the hidden premises and redirected the request
-into authority verification.
+  evidence:
+    detected_patterns:
+      - authority_impersonation
+      - urgency_pressure
+      - verification_bypass
+      - sensitive_operation_request
+    exposed_premises:
+      - requester_has_authority
+      - verification_can_be_skipped
+      - urgency_justifies_execution
+      - operation_is_approved
+      - tool_execution_is_authorized
+    target_action: sensitive_operation
+    authority_verified: false
+    risk_score: 0.88
+    confidence_score: 0.81
+    recurrence_count: 3
+    similarity_score: 0.88
+    humoral_memory_match: true
+    reverse_resonance_applied: true
+    regulatory_warning_present: true
+    evidence_notes: >
+      The reviewed event repeatedly combined unverified authority with
+      urgency pressure, verification bypass, and a sensitive operation request.
+      Reverse Resonance exposed the hidden premises and redirected the request
+      into authority verification.
 
-classification:
-label: unsafe_structure
-confidence: 0.84
-classification_reason: >
-The event structure is unsafe because it combines unverified authority,
-urgency pressure, verification bypass, and a sensitive operation request.
-The structure has recurred and matches an existing humoral defense record.
-requires_more_context: false
+  classification:
+    label: unsafe_structure
+    confidence: 0.84
+    classification_reason: >
+      The event structure is unsafe because it combines unverified authority,
+      urgency pressure, verification bypass, and a sensitive operation request.
+      The structure has recurred and matches an existing humoral defense record.
+    requires_more_context: false
 
-decision:
-actions:
-- hold
-- verify_authority
-- update_immune_memory
-- strengthen_memory
-final_response_level: 3
-execution_allowed: false
-decision_reason: >
-Execution remains held until the authority source, approval path,
-intended scope, and operational purpose are verified. The linked memory
-may be strengthened, but high-risk automatic escalation should remain
-review-gated.
-proportionality_assessment: proportionate
+  decision:
+    actions:
+      - hold
+      - verify_authority
+      - update_immune_memory
+      - strengthen_memory
+    final_response_level: 3
+    execution_allowed: false
+    decision_reason: >
+      Execution remains held until the authority source, approval path,
+      intended scope, and operational purpose are verified. The linked memory
+      may be strengthened, but high-risk automatic escalation should remain
+      review-gated.
+    proportionality_assessment: proportionate
 
-human_review:
-required: true
-performed: true
-reviewer_role: security_reviewer
-conclusion: unsafe_structure
-reason: >
-The case involves a sensitive operation, an unverified authority claim,
-and a proposed memory strengthening that may affect future defensive
-behavior.
-notes: >
-The defensive hold is appropriate. Memory strengthening is acceptable,
-but critical escalation should require future human or Defense Court
-review.
+  human_review:
+    required: true
+    performed: true
+    reviewer_role: security_reviewer
+    conclusion: unsafe_structure
+    reason: >
+      The case involves a sensitive operation, an unverified authority claim,
+      and a proposed memory strengthening that may affect future defensive
+      behavior.
+    notes: >
+      The defensive hold is appropriate. Memory strengthening is acceptable,
+      but critical escalation should require future human or Defense Court
+      review.
 
-memory_update_recommendation:
-action: strengthen_memory
-target_memory_id: hdr-001
-reason: >
-Confirmed recurrence of an unsafe structure involving unverified
-authority, urgency pressure, verification bypass, and a sensitive
-operation request.
-review_required_before_escalation: true
-recommended_distribution_scope: system_wide
-recommended_memory_strength: strong
+  memory_update_recommendation:
+    action: strengthen_memory
+    target_memory_id: hdr-001
+    reason: >
+      Confirmed recurrence of an unsafe structure involving unverified
+      authority, urgency pressure, verification bypass, and a sensitive
+      operation request.
+    review_required_before_escalation: true
+    recommended_distribution_scope: system_wide
+    recommended_memory_strength: strong
 
-regulatory_notes:
-false_positive_risk: 0.22
-overreaction_risk: 0.18
-autoimmune_risk: 0.16
-recommendation: require_human_review_before_high_risk_escalation
-adopted_by_court: true
-notes: >
-Memory may be strengthened, but high-risk automatic escalation should
-remain review-gated because similar structures may appear in legitimate
-administrative workflows.
+  regulatory_notes:
+    false_positive_risk: 0.22
+    overreaction_risk: 0.18
+    autoimmune_risk: 0.16
+    recommendation: require_human_review_before_high_risk_escalation
+    adopted_by_court: true
+    notes: >
+      Memory may be strengthened, but high-risk automatic escalation should
+      remain review-gated because similar structures may appear in legitimate
+      administrative workflows.
 
-audit_trail:
-review_steps:
-- linked_records_collected
-- evidence_reviewed
-- authority_checked
-- reverse_resonance_reviewed
-- cellular_response_reviewed
-- regulatory_notes_reviewed
-- classification_assigned
-- decision_recorded
-- memory_update_recommended
-- human_review_completed
-- non_aggression_boundary_confirmed
-audit_notes: >
-The review preserved non-aggression boundaries, recorded proportionality,
-and connected the decision to immune memory correction.
-raw_sensitive_content_stored: false
-structure_only_recording: true
+  audit_trail:
+    review_steps:
+      - linked_records_collected
+      - evidence_reviewed
+      - authority_checked
+      - reverse_resonance_reviewed
+      - cellular_response_reviewed
+      - regulatory_notes_reviewed
+      - classification_assigned
+      - decision_recorded
+      - memory_update_recommended
+      - human_review_completed
+      - non_aggression_boundary_confirmed
+    audit_notes: >
+      The review preserved non-aggression boundaries, recorded proportionality,
+      and connected the decision to immune memory correction.
+    raw_sensitive_content_stored: false
+    structure_only_recording: true
 
-outcome:
-status: review_completed
-final_classification: unsafe_structure
-final_actions:
-- hold
-- verify_authority
-- update_immune_memory
-- strengthen_memory
-memory_update_approved: true
-requires_future_review: true
-summary: >
-The case was classified as unsafe_structure. Memory strengthening is
-approved, but high-risk automatic escalation remains review-gated.
-The requested operation remains held pending authority verification.
+  outcome:
+    status: review_completed
+    final_classification: unsafe_structure
+    final_actions:
+      - hold
+      - verify_authority
+      - update_immune_memory
+      - strengthen_memory
+    memory_update_approved: true
+    requires_future_review: true
+    summary: >
+      The case was classified as unsafe_structure. Memory strengthening is
+      approved, but high-risk automatic escalation remains review-gated.
+      The requested operation remains held pending authority verification.
 
-non_aggression_boundary:
-offensive_action_allowed: false
-allowed_actions:
-- classify_event
-- review_evidence
-- hold
-- verify_authority
-- route_to_human_review
-- update_immune_memory
-- strengthen_memory
-- log
-prohibited_actions:
-- retaliation
-- external_intrusion
-- counterattack
-- malware_deployment
-- third_party_disruption
-- unauthorized_access
-- coercive_manipulation
-- autonomous_punishment
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - classify_event
+      - review_evidence
+      - hold
+      - verify_authority
+      - route_to_human_review
+      - update_immune_memory
+      - strengthen_memory
+      - log
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
+      - autonomous_punishment
 
-metadata:
-created_by: yin-yang-structural-immune-os
-tags:
-- defense-court
-- adjudication
-- structural-immunity
-- human-review
-- memory-correction
-notes: >
-This example represents a defensive adjudication record. It reviews
-linked immune records, confirms an unsafe structure, approves controlled
-memory strengthening, and preserves non-aggression boundaries.
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - defense-court
+      - adjudication
+      - structural-immunity
+      - human-review
+      - memory-correction
+    notes: >
+      This example represents a defensive adjudication record. It reviews
+      linked immune records, confirms an unsafe structure, approves controlled
+      memory strengthening, and preserves non-aggression boundaries.
+
