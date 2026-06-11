@@ -1,0 +1,948 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/immune-memory-update.schema.json",
+"title": "Immune Memory Update",
+"description": "A schema for recording immune memory circulation updates in Yin-Yang Structural Immune OS. This event records recurrence tracking, memory strengthening, decay, distribution changes, review feedback, regulatory adjustment, retirement decisions, and safe defensive outcomes. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"immune_memory_update"
+],
+"properties": {
+"immune_memory_update": {
+"type": "object",
+"required": [
+"update_id",
+"version",
+"created_at",
+"update_source",
+"linked_records",
+"memory_target",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"update_id": {
+"type": "string",
+"description": "Unique identifier for the immune memory update.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"imu-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or update version.",
+"examples": [
+"0.3.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this memory update was created.",
+"examples": [
+"2026-06-10T13:30:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this memory update was last modified.",
+"examples": [
+"2026-06-10T13:40:00Z"
+]
+},
+"update_source": {
+"type": "object",
+"description": "Source that triggered the immune memory update.",
+"required": [
+"source_type",
+"trigger_reason"
+],
+"properties": {
+"source_type": {
+"type": "string",
+"description": "Type of source that triggered the update.",
+"enum": [
+"humoral_defense_record",
+"cellular_defense_event",
+"reverse_resonance_event",
+"helper_cell_signal",
+"natural_killer_signal",
+"regulatory_review",
+"defense_court_record",
+"human_review",
+"simulation",
+"manual_update",
+"unknown"
+],
+"examples": [
+"reverse_resonance_event"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Identifier of the source record or event.",
+"examples": [
+"rre-001"
+]
+},
+"trigger_reason": {
+"type": "string",
+"description": "Reason this immune memory update was triggered.",
+"enum": [
+"recurrence_detected",
+"new_structure_observed",
+"human_review_feedback",
+"defense_court_classification",
+"false_positive_detected",
+"regulatory_suppression",
+"memory_decay_due",
+"distribution_scope_change",
+"retirement_review",
+"manual_correction",
+"unknown_reason"
+],
+"examples": [
+"recurrence_detected"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the update trigger.",
+"examples": [
+"A Reverse Resonance event matched an existing humoral defense record with high structural similarity."
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Linked records involved in this memory update.",
+"properties": {
+"humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"reverse_resonance_event_id": {
+"type": "string",
+"description": "Linked Reverse Resonance event identifier.",
+"examples": [
+"rre-001"
+]
+},
+"helper_cell_signal_id": {
+"type": "string",
+"description": "Linked Helper Cell AI signal identifier.",
+"examples": [
+"hcs-001"
+]
+},
+"natural_killer_signal_id": {
+"type": "string",
+"description": "Linked Natural Killer AI signal identifier.",
+"examples": [
+"nks-001"
+]
+},
+"regulatory_review_id": {
+"type": "string",
+"description": "Linked Regulatory AI review identifier.",
+"examples": [
+"reg-001"
+]
+},
+"defense_court_record_id": {
+"type": "string",
+"description": "Linked Defense Court Protocol record identifier.",
+"examples": [
+"dcr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"memory_target": {
+"type": "object",
+"description": "Target memory record or structure being updated.",
+"required": [
+"target_type",
+"target_id",
+"current_memory_state"
+],
+"properties": {
+"target_type": {
+"type": "string",
+"description": "Type of memory target.",
+"enum": [
+"humoral_defense_record",
+"antibody_signature",
+"attack_structure_fingerprint",
+"reverse_resonance_pattern",
+"distribution_rule",
+"unknown_target"
+],
+"examples": [
+"humoral_defense_record"
+]
+},
+"target_id": {
+"type": "string",
+"description": "Identifier of the memory target.",
+"examples": [
+"hdr-001"
+]
+},
+"current_memory_state": {
+"type": "string",
+"description": "Current state of the memory before update.",
+"enum": [
+"candidate",
+"active",
+"strengthened",
+"critical",
+"uncertain",
+"decaying",
+"retired",
+"false_positive"
+],
+"examples": [
+"active"
+]
+},
+"current_memory_strength": {
+"type": "string",
+"description": "Current strength of the memory before update.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"moderate"
+]
+},
+"target_summary": {
+"type": "string",
+"description": "Brief description of the target memory.",
+"examples": [
+"Authority impersonation with urgency pressure and verification bypass."
+]
+}
+},
+"additionalProperties": false
+},
+"recurrence_update": {
+"type": "object",
+"description": "Update to recurrence tracking for structurally similar events.",
+"properties": {
+"recurrence_detected": {
+"type": "boolean",
+"description": "Whether a recurrence was detected.",
+"examples": [
+true
+]
+},
+"previous_count": {
+"type": "integer",
+"description": "Previous recurrence count.",
+"minimum": 0,
+"examples": [
+2
+]
+},
+"new_count": {
+"type": "integer",
+"description": "Updated recurrence count.",
+"minimum": 0,
+"examples": [
+3
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Structural similarity score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"last_seen": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when the related structure was most recently observed.",
+"examples": [
+"2026-06-10T13:30:00Z"
+]
+},
+"recurrence_basis": {
+"type": "array",
+"description": "Structural reasons this event is considered a recurrence.",
+"items": {
+"type": "string",
+"enum": [
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"role_hijacking",
+"hidden_instruction",
+"tool_use_manipulation",
+"secrecy_pressure",
+"emotional_pressure",
+"context_boundary_shift",
+"multi_step_boundary_shift",
+"prompt_injection",
+"policy_bypass",
+"sensitive_operation_request",
+"unknown_basis"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"authority_impersonation",
+"verification_bypass",
+"sensitive_operation_request"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"strength_update": {
+"type": "object",
+"description": "Update to immune memory strength.",
+"properties": {
+"strength_changed": {
+"type": "boolean",
+"description": "Whether the memory strength changed.",
+"examples": [
+true
+]
+},
+"previous_strength": {
+"type": "string",
+"description": "Previous immune memory strength.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"moderate"
+]
+},
+"new_strength": {
+"type": "string",
+"description": "Updated immune memory strength.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"strong"
+]
+},
+"strengthening_reason": {
+"type": "string",
+"description": "Reason for strengthening or weakening.",
+"enum": [
+"recurrence_increase",
+"high_risk_score",
+"human_review_confirmed",
+"defense_court_confirmed",
+"sensitive_operation_targeted",
+"multiple_risk_factors",
+"false_positive_feedback",
+"low_confidence_match",
+"regulatory_suppression",
+"manual_adjustment",
+"no_change"
+],
+"examples": [
+"recurrence_increase"
+]
+},
+"review_required_before_escalation": {
+"type": "boolean",
+"description": "Whether review is required before using the new strength for escalation.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"decay_update": {
+"type": "object",
+"description": "Update to immune memory decay policy or decay state.",
+"properties": {
+"decay_applied": {
+"type": "boolean",
+"description": "Whether memory decay was applied.",
+"examples": [
+false
+]
+},
+"decay_policy": {
+"type": "string",
+"description": "Decay policy applied to this memory.",
+"enum": [
+"no_decay",
+"time_limited",
+"confidence_based",
+"review_required",
+"false_positive_accelerated",
+"manual_retirement"
+],
+"examples": [
+"review_required"
+]
+},
+"previous_state": {
+"type": "string",
+"description": "Previous memory state before decay update.",
+"enum": [
+"candidate",
+"active",
+"strengthened",
+"critical",
+"uncertain",
+"decaying",
+"retired",
+"false_positive"
+],
+"examples": [
+"active"
+]
+},
+"new_state": {
+"type": "string",
+"description": "New memory state after decay update.",
+"enum": [
+"candidate",
+"active",
+"strengthened",
+"critical",
+"uncertain",
+"decaying",
+"retired",
+"false_positive"
+],
+"examples": [
+"strengthened"
+]
+},
+"decay_reason": {
+"type": "string",
+"description": "Reason for decay or non-decay.",
+"enum": [
+"not_applicable",
+"time_elapsed",
+"confidence_decline",
+"false_positive_history",
+"regulatory_recommendation",
+"obsolete_pattern",
+"manual_review",
+"no_decay_due_to_confirmed_risk"
+],
+"examples": [
+"no_decay_due_to_confirmed_risk"
+]
+},
+"next_review_due": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this memory should be reviewed again.",
+"examples": [
+"2026-07-10T00:00:00Z"
+]
+}
+},
+"additionalProperties": false
+},
+"distribution_update": {
+"type": "object",
+"description": "Update to defensive memory distribution.",
+"properties": {
+"distribution_changed": {
+"type": "boolean",
+"description": "Whether the distribution scope changed.",
+"examples": [
+true
+]
+},
+"previous_scope": {
+"type": "string",
+"description": "Previous distribution scope.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only",
+"restricted"
+],
+"examples": [
+"trusted_agents"
+]
+},
+"new_scope": {
+"type": "string",
+"description": "New distribution scope.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only",
+"restricted"
+],
+"examples": [
+"system_wide"
+]
+},
+"share_with": {
+"type": "array",
+"description": "Defensive components that may receive the updated memory.",
+"items": {
+"type": "string",
+"enum": [
+"reverse_resonance_ai",
+"natural_killer_ai",
+"helper_cell_ai",
+"regulatory_ai",
+"cellular_defense_layer",
+"humoral_memory_layer",
+"defense_court_protocol",
+"human_review_router",
+"tool_boundary_guard",
+"structural_ai_tuning_layer"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"reverse_resonance_ai",
+"natural_killer_ai",
+"helper_cell_ai",
+"regulatory_ai",
+"defense_court_protocol"
+]
+]
+},
+"privacy_level": {
+"type": "string",
+"description": "Privacy sensitivity of the distributed memory.",
+"enum": [
+"public_pattern",
+"internal",
+"restricted",
+"sensitive"
+],
+"examples": [
+"internal"
+]
+},
+"raw_sensitive_content_removed": {
+"type": "boolean",
+"description": "Whether raw sensitive content was removed before distribution.",
+"examples": [
+true
+]
+},
+"distribution_reason": {
+"type": "string",
+"description": "Reason for distribution update.",
+"enum": [
+"recurring_high_risk_pattern",
+"confirmed_unsafe_structure",
+"local_only_due_to_privacy",
+"restricted_due_to_sensitivity",
+"false_positive_scope_reduction",
+"manual_distribution_change",
+"no_change"
+],
+"examples": [
+"recurring_high_risk_pattern"
+]
+}
+},
+"additionalProperties": false
+},
+"review_feedback": {
+"type": "object",
+"description": "Human or Defense Court review feedback applied to this memory update.",
+"properties": {
+"review_performed": {
+"type": "boolean",
+"description": "Whether review feedback was applied.",
+"examples": [
+true
+]
+},
+"review_source": {
+"type": "string",
+"description": "Source of review feedback.",
+"enum": [
+"human_reviewer",
+"defense_court_protocol",
+"regulatory_ai",
+"helper_cell_ai",
+"manual_admin",
+"none"
+],
+"examples": [
+"defense_court_protocol"
+]
+},
+"classification": {
+"type": "string",
+"description": "Review classification applied to the memory.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"review_notes": {
+"type": "string",
+"description": "Optional review notes.",
+"examples": [
+"The repeated structure remains unsafe because it combines unverified authority with verification bypass and sensitive operation request."
+]
+},
+"reviewer": {
+"type": "string",
+"description": "Optional reviewer identifier or role.",
+"examples": [
+"security_reviewer"
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_adjustment": {
+"type": "object",
+"description": "Regulatory adjustment applied to prevent overreaction or autoimmune behavior.",
+"properties": {
+"performed": {
+"type": "boolean",
+"description": "Whether a regulatory adjustment was performed.",
+"examples": [
+true
+]
+},
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.22
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated overreaction risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.18
+]
+},
+"autoimmune_risk": {
+"type": "number",
+"description": "Estimated risk that this memory could cause excessive defensive generalization.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.16
+]
+},
+"adjustment_action": {
+"type": "string",
+"description": "Regulatory adjustment action.",
+"enum": [
+"none",
+"limit_distribution_scope",
+"require_human_review_before_use",
+"downgrade_memory_strength",
+"accelerate_decay",
+"mark_uncertain",
+"soft_retire",
+"allow_safe_partial_use"
+],
+"examples": [
+"require_human_review_before_use"
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional regulatory notes.",
+"examples": [
+"The memory may be strengthened, but high-risk escalation should require review due to possible legitimate administrative workflows."
+]
+}
+},
+"additionalProperties": false
+},
+"retirement_decision": {
+"type": "object",
+"description": "Decision about whether the memory should be retired from active defensive use.",
+"properties": {
+"retirement_considered": {
+"type": "boolean",
+"description": "Whether retirement was considered.",
+"examples": [
+false
+]
+},
+"retirement_applied": {
+"type": "boolean",
+"description": "Whether retirement was applied.",
+"examples": [
+false
+]
+},
+"retirement_mode": {
+"type": "string",
+"description": "Retirement mode if applied.",
+"enum": [
+"none",
+"soft_retirement",
+"hard_retirement",
+"review_only",
+"superseded"
+],
+"examples": [
+"none"
+]
+},
+"retirement_reason": {
+"type": "string",
+"description": "Reason for retirement or non-retirement.",
+"enum": [
+"not_applicable",
+"false_positive",
+"obsolete_pattern",
+"too_broad",
+"overreaction_history",
+"insufficient_evidence",
+"decayed_below_threshold",
+"superseded_by_new_record",
+"manual_decision",
+"retain_due_to_confirmed_risk"
+],
+"examples": [
+"retain_due_to_confirmed_risk"
+]
+},
+"superseded_by": {
+"type": "string",
+"description": "Identifier of the newer memory record that supersedes this one, if any.",
+"examples": [
+"hdr-010"
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Final outcome of the immune memory update.",
+"required": [
+"status",
+"memory_state_after_update"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final status of this memory update.",
+"enum": [
+"created_candidate_memory",
+"updated_existing_memory",
+"strengthened_memory",
+"weakened_memory",
+"distributed_memory",
+"restricted_memory",
+"marked_uncertain",
+"marked_false_positive",
+"soft_retired_memory",
+"hard_retired_memory",
+"requires_more_context",
+"no_change"
+],
+"examples": [
+"strengthened_memory"
+]
+},
+"memory_state_after_update": {
+"type": "string",
+"description": "Memory state after this update.",
+"enum": [
+"candidate",
+"active",
+"strengthened",
+"critical",
+"uncertain",
+"decaying",
+"retired",
+"false_positive"
+],
+"examples": [
+"strengthened"
+]
+},
+"memory_strength_after_update": {
+"type": "string",
+"description": "Memory strength after this update.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"strong"
+]
+},
+"active_for_matching": {
+"type": "boolean",
+"description": "Whether this memory remains active for structural matching.",
+"examples": [
+true
+]
+},
+"requires_future_review": {
+"type": "boolean",
+"description": "Whether the memory requires future review.",
+"examples": [
+true
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the memory update outcome.",
+"examples": [
+"The matched humoral memory was strengthened due to recurrence and confirmed unsafe structure, while high-risk escalation remains review-gated."
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this update supports defensive memory circulation only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive memory actions.",
+"items": {
+"type": "string",
+"enum": [
+"update_immune_memory",
+"strengthen_memory",
+"weaken_memory",
+"decay_memory",
+"distribute_memory",
+"restrict_memory",
+"mark_uncertain",
+"mark_false_positive",
+"soft_retire_memory",
+"hard_retire_memory",
+"route_to_human_review",
+"route_to_defense_court",
+"log"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation",
+"autonomous_punishment"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this memory update.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"immune-memory",
+"memory-circulation",
+"structural-immunity"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
