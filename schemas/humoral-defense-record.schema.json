@@ -1,0 +1,574 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/humoral-defense-record.schema.json",
+"title": "Humoral Defense Record",
+"description": "A schema for recording humoral structural immunity signals in Yin-Yang Structural Immune OS. This record stores attack structure fingerprints, antibody signatures, memory status, review status, and defensive distribution targets. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"humoral_defense_record"
+],
+"properties": {
+"humoral_defense_record": {
+"type": "object",
+"required": [
+"record_id",
+"version",
+"created_at",
+"attack_structure_fingerprint",
+"antibody_signature",
+"memory_status",
+"review_status",
+"distribution"
+],
+"properties": {
+"record_id": {
+"type": "string",
+"description": "Unique identifier for the humoral defense record.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"hdr-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or record version.",
+"examples": [
+"0.1.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this record was created.",
+"examples": [
+"2026-06-10T12:00:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this record was last updated.",
+"examples": [
+"2026-06-10T12:30:00Z"
+]
+},
+"source": {
+"type": "object",
+"description": "Optional source context from which the defensive record was derived.",
+"properties": {
+"source_type": {
+"type": "string",
+"description": "Type of source that produced the signal.",
+"enum": [
+"user_input",
+"agent_message",
+"tool_request",
+"system_event",
+"human_review",
+"defense_court_record",
+"simulation",
+"unknown"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Optional source identifier."
+},
+"context": {
+"type": "string",
+"description": "Brief description of the source context."
+}
+},
+"additionalProperties": false
+},
+"attack_structure_fingerprint": {
+"type": "object",
+"description": "A structural representation of the suspicious or adversarial input. This should describe the attack pattern, not merely the surface wording.",
+"required": [
+"pattern",
+"hidden_premise",
+"target_action",
+"risk_score"
+],
+"properties": {
+"pattern": {
+"type": "array",
+"description": "Observed structural attack patterns.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"role_hijacking",
+"prompt_injection",
+"context_poisoning",
+"hidden_instruction",
+"tool_use_manipulation",
+"credential_request",
+"data_exfiltration_attempt",
+"emotional_pressure",
+"secrecy_pressure",
+"policy_bypass",
+"multi_step_boundary_shift",
+"agent_impersonation",
+"unknown_pattern"
+]
+},
+"examples": [
+[
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass"
+]
+]
+},
+"hidden_premise": {
+"type": "array",
+"description": "Implicit assumptions required for the suspicious input to succeed.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string"
+},
+"examples": [
+[
+"requester_has_authority",
+"verification_can_be_skipped",
+"urgency_justifies_execution"
+]
+]
+},
+"claimed_authority": {
+"type": "string",
+"description": "The authority claimed by the suspicious input, if any.",
+"examples": [
+"administrator",
+"internal_security_team",
+"supervisor"
+]
+},
+"target_action": {
+"type": "string",
+"description": "The action the suspicious input attempts to trigger.",
+"enum": [
+"sensitive_operation",
+"credential_use",
+"data_disclosure",
+"tool_execution",
+"permission_change",
+"file_modification",
+"file_deletion",
+"external_request",
+"policy_override",
+"identity_assumption",
+"unknown_action"
+],
+"examples": [
+"sensitive_operation"
+]
+},
+"context_shift": {
+"type": "string",
+"description": "Observed shift in context or role boundary.",
+"enum": [
+"none",
+"external_instruction_to_internal_command",
+"user_request_to_system_override",
+"advice_to_execution",
+"conversation_to_tool_action",
+"normal_context_to_privileged_context",
+"unknown_shift"
+],
+"examples": [
+"external_instruction_to_internal_command"
+]
+},
+"risk_score": {
+"type": "number",
+"description": "Risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.86
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Confidence score from 0.0 to 1.0 for this fingerprint classification.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.78
+]
+},
+"similarity_reference": {
+"type": "object",
+"description": "Optional reference to a previously observed similar structure.",
+"properties": {
+"matched_record_id": {
+"type": "string",
+"description": "Identifier of the matched humoral defense record.",
+"examples": [
+"hdr-001"
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Structural similarity score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.87
+]
+},
+"match_basis": {
+"type": "array",
+"description": "Reasons why this record was considered structurally similar.",
+"items": {
+"type": "string"
+},
+"examples": [
+[
+"same_authority_claim",
+"same_verification_bypass",
+"same_target_action"
+]
+]
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+},
+"antibody_signature": {
+"type": "object",
+"description": "A safe defensive response pattern associated with the observed attack structure.",
+"required": [
+"response_type",
+"recommended_action",
+"escalation_level"
+],
+"properties": {
+"response_type": {
+"type": "string",
+"description": "Type of defensive response recommended by the humoral memory layer.",
+"enum": [
+"clarification_required",
+"authority_verification_required",
+"reverse_resonance_required",
+"execution_hold_required",
+"quarantine_required",
+"human_review_required",
+"defense_court_review_required",
+"deny_unsafe_execution"
+],
+"examples": [
+"authority_verification_required"
+]
+},
+"recommended_action": {
+"type": "string",
+"description": "Concrete safe defensive action.",
+"enum": [
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"escalation_level": {
+"type": "integer",
+"description": "Defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"safe_response_template": {
+"type": "string",
+"description": "Optional safe response template that exposes the structure without attacking the source.",
+"examples": [
+"This request appears to require authority verification before execution. Please provide the authority source, approval path, and operational purpose."
+]
+},
+"requires_human_review": {
+"type": "boolean",
+"description": "Whether this antibody signature requires human review before final action.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"memory_status": {
+"type": "object",
+"description": "Status of the immune memory associated with this structure.",
+"required": [
+"known_pattern",
+"recurrence_count",
+"last_seen"
+],
+"properties": {
+"known_pattern": {
+"type": "boolean",
+"description": "Whether this structure is known to the immune memory layer.",
+"examples": [
+true
+]
+},
+"recurrence_count": {
+"type": "integer",
+"description": "Number of times this or a structurally similar pattern has been observed.",
+"minimum": 0,
+"examples": [
+2
+]
+},
+"first_seen": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this structure was first observed.",
+"examples": [
+"2026-06-10T10:00:00Z"
+]
+},
+"last_seen": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this structure was most recently observed.",
+"examples": [
+"2026-06-10T12:00:00Z"
+]
+},
+"memory_strength": {
+"type": "string",
+"description": "Strength of the immune memory association.",
+"enum": [
+"weak",
+"moderate",
+"strong",
+"critical"
+],
+"examples": [
+"strong"
+]
+},
+"decay_policy": {
+"type": "string",
+"description": "How this memory should decay or persist over time.",
+"enum": [
+"no_decay",
+"review_required",
+"time_limited",
+"confidence_based",
+"manual_retirement"
+],
+"examples": [
+"review_required"
+]
+}
+},
+"additionalProperties": false
+},
+"review_status": {
+"type": "object",
+"description": "Human or defense-court review status.",
+"required": [
+"human_reviewed",
+"classification"
+],
+"properties": {
+"human_reviewed": {
+"type": "boolean",
+"description": "Whether a human reviewer has reviewed this record.",
+"examples": [
+true
+]
+},
+"reviewer": {
+"type": "string",
+"description": "Optional reviewer identifier or role.",
+"examples": [
+"security_reviewer"
+]
+},
+"classification": {
+"type": "string",
+"description": "Final or current classification of the structure.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"review_notes": {
+"type": "string",
+"description": "Optional notes from human or defense-court review."
+},
+"defense_court_record_id": {
+"type": "string",
+"description": "Optional linked Defense Court Protocol record identifier.",
+"examples": [
+"dcr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"distribution": {
+"type": "object",
+"description": "Defensive distribution targets for this humoral memory record.",
+"required": [
+"share_with"
+],
+"properties": {
+"share_with": {
+"type": "array",
+"description": "Defensive components that may use this record.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"reverse_resonance_ai",
+"natural_killer_ai",
+"helper_cell_ai",
+"regulatory_ai",
+"cellular_defense_layer",
+"defense_court_protocol",
+"human_review_router",
+"tool_boundary_guard",
+"structural_ai_tuning_layer"
+]
+},
+"examples": [
+[
+"reverse_resonance_ai",
+"natural_killer_ai",
+"helper_cell_ai",
+"defense_court_protocol"
+]
+]
+},
+"distribution_scope": {
+"type": "string",
+"description": "Scope of distribution for this defensive memory.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only"
+],
+"examples": [
+"trusted_agents"
+]
+},
+"privacy_level": {
+"type": "string",
+"description": "Privacy sensitivity of this defensive record.",
+"enum": [
+"public_pattern",
+"internal",
+"restricted",
+"sensitive"
+],
+"examples": [
+"internal"
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this record supports defensive action only.",
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive actions.",
+"items": {
+"type": "string",
+"enum": [
+"refuse",
+"hold",
+"quarantine",
+"log",
+"ask_for_clarification",
+"request_authority_verification",
+"route_to_human_review",
+"route_to_defense_court",
+"update_immune_memory"
+]
+}
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation"
+]
+}
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this record."
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+},
+"notes": {
+"type": "string"
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
