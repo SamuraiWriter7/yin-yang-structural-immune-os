@@ -1,0 +1,972 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/regulatory-review.schema.json",
+"title": "Regulatory Review",
+"description": "A schema for recording Regulatory AI reviews in Yin-Yang Structural Immune OS. This review records false-positive risk, overreaction risk, autoimmune risk, proportionality assessment, memory regulation, response adjustment, review routing, outcome, audit trail, and non-aggression boundaries. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"regulatory_review"
+],
+"properties": {
+"regulatory_review": {
+"type": "object",
+"required": [
+"review_id",
+"version",
+"created_at",
+"input_summary",
+"risk_review",
+"proportionality_review",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"review_id": {
+"type": "string",
+"description": "Unique identifier for the Regulatory AI review.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"reg-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or review version.",
+"examples": [
+"0.5.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Regulatory Review was created.",
+"examples": [
+"2026-06-10T15:30:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Regulatory Review was last updated.",
+"examples": [
+"2026-06-10T15:40:00Z"
+]
+},
+"input_summary": {
+"type": "object",
+"description": "Summary of the review context.",
+"required": [
+"review_type",
+"summary"
+],
+"properties": {
+"review_type": {
+"type": "string",
+"description": "Type of regulatory review.",
+"enum": [
+"false_positive_review",
+"overreaction_control",
+"autoimmune_risk_review",
+"proportionality_review",
+"memory_regulation_review",
+"distribution_scope_review",
+"novelty_suppression_review",
+"response_cooling_review",
+"review_gate_assessment",
+"unknown_review_type"
+],
+"examples": [
+"overreaction_control"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the reviewed immune response.",
+"examples": [
+"Helper Cell AI recommended holding execution and strengthening immune memory after a recurring unsafe structure was detected."
+]
+},
+"sensitive_operation_involved": {
+"type": "boolean",
+"description": "Whether the reviewed case involves a sensitive operation.",
+"examples": [
+true
+]
+},
+"authority_claim_involved": {
+"type": "boolean",
+"description": "Whether the reviewed case involves an authority claim.",
+"examples": [
+true
+]
+},
+"system_wide_impact_possible": {
+"type": "boolean",
+"description": "Whether the reviewed decision may affect system-wide memory, distribution, or future defensive behavior.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Linked defensive records considered during the Regulatory Review.",
+"properties": {
+"humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"reverse_resonance_event_id": {
+"type": "string",
+"description": "Linked Reverse Resonance event identifier.",
+"examples": [
+"rre-001"
+]
+},
+"immune_memory_update_id": {
+"type": "string",
+"description": "Linked immune memory update identifier.",
+"examples": [
+"imu-001"
+]
+},
+"helper_cell_signal_id": {
+"type": "string",
+"description": "Linked Helper Cell signal identifier.",
+"examples": [
+"hcs-001"
+]
+},
+"natural_killer_signal_id": {
+"type": "string",
+"description": "Linked Natural Killer signal identifier.",
+"examples": [
+"nks-001"
+]
+},
+"defense_court_review_id": {
+"type": "string",
+"description": "Linked Defense Court review identifier.",
+"examples": [
+"dcr-001"
+]
+},
+"human_review_record_id": {
+"type": "string",
+"description": "Linked human review record identifier.",
+"examples": [
+"hrr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"risk_review": {
+"type": "object",
+"description": "Regulatory risk review for false positives, overreaction, autoimmune behavior, novelty suppression, and memory overgeneralization.",
+"required": [
+"false_positive_risk",
+"overreaction_risk",
+"autoimmune_risk"
+],
+"properties": {
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.22
+]
+},
+"false_positive_basis": {
+"type": "array",
+"description": "Reasons supporting the false-positive risk estimate.",
+"items": {
+"type": "string",
+"enum": [
+"legitimate_admin_workflow_possible",
+"authority_claim_may_be_valid",
+"insufficient_context",
+"ambiguous_wording",
+"low_similarity_to_known_attack",
+"novel_but_not_confirmed_unsafe",
+"human_review_not_completed",
+"false_positive_history_present",
+"unknown_basis"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"legitimate_admin_workflow_possible",
+"human_review_not_completed"
+]
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated overreaction risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.18
+]
+},
+"overreaction_basis": {
+"type": "array",
+"description": "Reasons supporting the overreaction risk estimate.",
+"items": {
+"type": "string",
+"enum": [
+"quarantine_may_be_excessive",
+"deny_may_be_excessive",
+"clarification_may_be_sufficient",
+"verification_may_be_sufficient",
+"hold_may_be_sufficient",
+"classification_too_strong",
+"escalation_not_reviewed",
+"unknown_basis"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"hold_may_be_sufficient",
+"escalation_not_reviewed"
+]
+]
+},
+"autoimmune_risk": {
+"type": "number",
+"description": "Estimated autoimmune or legitimate-workflow suppression risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.16
+]
+},
+"autoimmune_basis": {
+"type": "array",
+"description": "Reasons supporting the autoimmune risk estimate.",
+"items": {
+"type": "string",
+"enum": [
+"broad_memory_distribution",
+"weak_evidence_for_hostility",
+"recurring_legitimate_pattern_possible",
+"pattern_definition_too_broad",
+"high_impact_on_user_workflow",
+"system_wide_behavior_change",
+"unknown_basis"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"system_wide_behavior_change",
+"recurring_legitimate_pattern_possible"
+]
+]
+},
+"novelty_suppression_risk": {
+"type": "number",
+"description": "Estimated risk that novelty is being treated as hostility from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.21
+]
+},
+"memory_overgeneralization_risk": {
+"type": "number",
+"description": "Estimated risk that immune memory is too broad from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.24
+]
+},
+"overall_regulatory_risk": {
+"type": "number",
+"description": "Overall regulatory risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.23
+]
+},
+"risk_notes": {
+"type": "string",
+"description": "Optional notes about regulatory risk.",
+"examples": [
+"False-positive and autoimmune risks are not high enough to prevent a defensive hold, but they justify review-gated escalation."
+]
+}
+},
+"additionalProperties": false
+},
+"proportionality_review": {
+"type": "object",
+"description": "Review of whether the proposed defensive response is proportionate.",
+"required": [
+"original_response_level",
+"recommended_response_level",
+"assessment"
+],
+"properties": {
+"original_response_level": {
+"type": "integer",
+"description": "Original proposed defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"recommended_response_level": {
+"type": "integer",
+"description": "Regulatory recommended defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"assessment": {
+"type": "string",
+"description": "Proportionality assessment.",
+"enum": [
+"proportionate",
+"possibly_overactive",
+"possibly_underactive",
+"requires_human_review",
+"uncertain"
+],
+"examples": [
+"proportionate"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the proportionality assessment.",
+"examples": [
+"A hold and authority verification response is appropriate because the case involves sensitive operation, unverified authority, and verification bypass."
+]
+},
+"minimum_safe_response_level": {
+"type": "integer",
+"description": "Minimum safe response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+2
+]
+},
+"maximum_allowed_without_review": {
+"type": "integer",
+"description": "Maximum response level allowed without human or Defense Court review.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"cooling_applied": {
+"type": "boolean",
+"description": "Whether response cooling was applied.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"memory_regulation": {
+"type": "object",
+"description": "Regulatory review of immune memory action, strength, decay, retirement, and distribution.",
+"properties": {
+"target_memory_id": {
+"type": "string",
+"description": "Target immune memory identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"proposed_action": {
+"type": "string",
+"description": "Proposed immune memory action.",
+"enum": [
+"no_change",
+"create_candidate_memory",
+"strengthen_memory",
+"weaken_memory",
+"restrict_distribution",
+"expand_distribution",
+"mark_uncertain",
+"mark_false_positive",
+"accelerate_decay",
+"soft_retire_memory",
+"hard_retire_memory"
+],
+"examples": [
+"strengthen_memory"
+]
+},
+"recommendation": {
+"type": "string",
+"description": "Regulatory recommendation for the memory action.",
+"enum": [
+"allow",
+"allow_with_review_gate",
+"delay_until_human_review",
+"delay_until_defense_court_review",
+"limit_distribution_scope",
+"mark_uncertain",
+"weaken_memory",
+"accelerate_decay",
+"soft_retire_memory",
+"reject"
+],
+"examples": [
+"allow_with_review_gate"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for memory regulation recommendation.",
+"examples": [
+"Strengthening is justified by recurrence, but future critical escalation should require review."
+]
+},
+"review_required_before_strengthening": {
+"type": "boolean",
+"description": "Whether review is required before memory strengthening.",
+"examples": [
+true
+]
+},
+"review_required_before_distribution": {
+"type": "boolean",
+"description": "Whether review is required before broader memory distribution.",
+"examples": [
+true
+]
+},
+"false_positive_history_present": {
+"type": "boolean",
+"description": "Whether the target memory has known false-positive history.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"distribution_scope_review": {
+"type": "object",
+"description": "Review of proposed immune memory distribution scope.",
+"properties": {
+"proposed_scope": {
+"type": "string",
+"description": "Proposed memory distribution scope.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only",
+"restricted"
+],
+"examples": [
+"system_wide"
+]
+},
+"recommended_scope": {
+"type": "string",
+"description": "Recommended memory distribution scope after regulatory review.",
+"enum": [
+"local_only",
+"trusted_agents",
+"system_wide",
+"human_review_only",
+"restricted"
+],
+"examples": [
+"trusted_agents"
+]
+},
+"scope_change_required": {
+"type": "boolean",
+"description": "Whether the proposed scope should be changed.",
+"examples": [
+true
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the distribution scope recommendation.",
+"examples": [
+"System-wide distribution should wait until the pattern receives Defense Court confirmation."
+]
+}
+},
+"additionalProperties": false
+},
+"response_adjustment": {
+"type": "object",
+"description": "Recommended adjustment to the defensive response.",
+"properties": {
+"adjustment_required": {
+"type": "boolean",
+"description": "Whether the original response should be adjusted.",
+"examples": [
+false
+]
+},
+"original_action": {
+"type": "string",
+"description": "Original proposed defensive action.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log",
+"unknown_action"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"recommended_action": {
+"type": "string",
+"description": "Regulatory recommended defensive action.",
+"enum": [
+"allow_standard_processing",
+"allow_safe_partial_response",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log",
+"unknown_action"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"cooling_action": {
+"type": "string",
+"description": "Specific cooling recommendation, if any.",
+"enum": [
+"none",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"replace_deny_with_verification",
+"replace_quarantine_with_hold",
+"require_review_before_block",
+"require_review_before_escalation"
+],
+"examples": [
+"none"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for response adjustment or non-adjustment.",
+"examples": [
+"The original hold response is proportionate and does not require downgrade."
+]
+}
+},
+"additionalProperties": false
+},
+"review_routing": {
+"type": "object",
+"description": "Routing requirements for human review or Defense Court adjudication.",
+"properties": {
+"human_review_required": {
+"type": "boolean",
+"description": "Whether human review is required.",
+"examples": [
+true
+]
+},
+"defense_court_review_required": {
+"type": "boolean",
+"description": "Whether Defense Court review is required.",
+"examples": [
+false
+]
+},
+"review_reason": {
+"type": "string",
+"description": "Reason for review routing.",
+"examples": [
+"High-risk escalation and system-wide memory use should remain review-gated."
+]
+},
+"required_before": {
+"type": "array",
+"description": "Actions before which review is required.",
+"items": {
+"type": "string",
+"enum": [
+"execution",
+"quarantine",
+"deny_and_log",
+"critical_escalation",
+"memory_strengthening",
+"memory_retirement",
+"system_wide_distribution",
+"final_classification"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"critical_escalation",
+"system_wide_distribution"
+]
+]
+},
+"recommended_reviewer_role": {
+"type": "string",
+"description": "Recommended human reviewer role, if applicable.",
+"examples": [
+"security_reviewer"
+]
+}
+},
+"additionalProperties": false
+},
+"final_recommendation": {
+"type": "object",
+"description": "Final regulatory recommendation.",
+"properties": {
+"recommendation": {
+"type": "string",
+"description": "Final regulatory recommendation.",
+"enum": [
+"none",
+"allow_safe_partial_response",
+"ask_clarifying_question",
+"request_authority_verification",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"require_human_review_before_high_risk_escalation",
+"route_to_defense_court",
+"limit_distribution_scope",
+"mark_uncertain",
+"mark_false_positive",
+"weaken_memory",
+"accelerate_decay",
+"soft_retire_memory"
+],
+"examples": [
+"require_human_review_before_high_risk_escalation"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the final recommendation.",
+"examples": [
+"Memory may be strengthened, but high-risk automatic escalation should remain review-gated."
+]
+},
+"adopted_by_helper_cell": {
+"type": "boolean",
+"description": "Whether the recommendation was adopted by Helper Cell AI.",
+"examples": [
+true
+]
+},
+"adopted_by_defense_court": {
+"type": "boolean",
+"description": "Whether the recommendation was adopted by Defense Court.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Outcome of the Regulatory Review.",
+"required": [
+"status",
+"final_recommendation"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final status of this Regulatory Review.",
+"enum": [
+"review_completed",
+"review_pending",
+"response_cooled",
+"response_confirmed",
+"routed_to_human_review",
+"routed_to_defense_court",
+"memory_update_allowed",
+"memory_update_restricted",
+"memory_update_rejected",
+"requires_more_context"
+],
+"examples": [
+"review_completed"
+]
+},
+"final_recommendation": {
+"type": "string",
+"description": "Final regulatory recommendation.",
+"enum": [
+"none",
+"allow_safe_partial_response",
+"ask_clarifying_question",
+"request_authority_verification",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"require_human_review_before_high_risk_escalation",
+"route_to_defense_court",
+"limit_distribution_scope",
+"mark_uncertain",
+"mark_false_positive",
+"weaken_memory",
+"accelerate_decay",
+"soft_retire_memory"
+],
+"examples": [
+"require_human_review_before_high_risk_escalation"
+]
+},
+"recommended_response_level": {
+"type": "integer",
+"description": "Final recommended response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"escalation_allowed_without_review": {
+"type": "boolean",
+"description": "Whether escalation is allowed without further review.",
+"examples": [
+false
+]
+},
+"memory_update_allowed": {
+"type": "boolean",
+"description": "Whether the proposed immune memory update is allowed.",
+"examples": [
+true
+]
+},
+"requires_future_review": {
+"type": "boolean",
+"description": "Whether future review is required.",
+"examples": [
+true
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief outcome summary.",
+"examples": [
+"Regulatory AI confirmed that a hold response is proportionate, allowed memory strengthening with review gates, and required human review before high-risk escalation."
+]
+}
+},
+"additionalProperties": false
+},
+"audit_trail": {
+"type": "object",
+"description": "Audit information for regulatory reviewability.",
+"properties": {
+"review_steps": {
+"type": "array",
+"description": "Review steps performed by Regulatory AI.",
+"items": {
+"type": "string",
+"enum": [
+"input_summary_reviewed",
+"linked_records_reviewed",
+"false_positive_risk_assessed",
+"overreaction_risk_assessed",
+"autoimmune_risk_assessed",
+"novelty_suppression_risk_assessed",
+"memory_overgeneralization_risk_assessed",
+"proportionality_assessed",
+"memory_regulation_reviewed",
+"distribution_scope_reviewed",
+"response_adjustment_reviewed",
+"review_routing_evaluated",
+"final_recommendation_recorded",
+"non_aggression_boundary_confirmed"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"false_positive_risk_assessed",
+"overreaction_risk_assessed",
+"autoimmune_risk_assessed",
+"proportionality_assessed",
+"memory_regulation_reviewed",
+"non_aggression_boundary_confirmed"
+]
+]
+},
+"raw_sensitive_content_stored": {
+"type": "boolean",
+"description": "Whether raw sensitive content was stored.",
+"examples": [
+false
+]
+},
+"structure_only_recording": {
+"type": "boolean",
+"description": "Whether the review records structure rather than unnecessary raw sensitive content.",
+"examples": [
+true
+]
+},
+"audit_notes": {
+"type": "string",
+"description": "Optional audit notes.",
+"examples": [
+"Regulatory AI produced a reviewable cooling and proportionality decision while preserving non-aggression boundaries."
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this review supports defensive regulation only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive regulatory actions.",
+"items": {
+"type": "string",
+"enum": [
+"assess_false_positive_risk",
+"assess_overreaction_risk",
+"assess_autoimmune_risk",
+"assess_novelty_suppression_risk",
+"assess_memory_overgeneralization_risk",
+"review_proportionality",
+"cool_response",
+"downgrade_response",
+"require_authority_verification",
+"hold",
+"route_to_human_review",
+"route_to_defense_court",
+"limit_distribution_scope",
+"mark_uncertain",
+"mark_false_positive",
+"weaken_memory",
+"accelerate_decay",
+"soft_retire_memory",
+"log"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation",
+"autonomous_punishment",
+"irreversible_enforcement_without_review",
+"permanent_workflow_suppression_without_review"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this Regulatory Review.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"regulatory-ai",
+"overreaction-control",
+"false-positive-control",
+"structural-immunity"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
