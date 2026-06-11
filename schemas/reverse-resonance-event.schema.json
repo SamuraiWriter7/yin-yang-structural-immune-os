@@ -1,0 +1,747 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/reverse-resonance-event.schema.json",
+"title": "Reverse Resonance Event",
+"description": "A schema for recording Reverse Resonance defensive events in Yin-Yang Structural Immune OS. This event captures detected suspicious structures, exposed premises, authority claims, resonance strategy, safe response, regulatory checks, linked immune records, and non-aggression boundaries. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"reverse_resonance_event"
+],
+"properties": {
+"reverse_resonance_event": {
+"type": "object",
+"required": [
+"event_id",
+"version",
+"created_at",
+"input_context",
+"detected_attack_structure",
+"exposed_premises",
+"resonance_strategy",
+"safe_response",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"event_id": {
+"type": "string",
+"description": "Unique identifier for the Reverse Resonance event.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"rre-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or event version.",
+"examples": [
+"0.2.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this event was created.",
+"examples": [
+"2026-06-10T13:00:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this event was last updated.",
+"examples": [
+"2026-06-10T13:10:00Z"
+]
+},
+"input_context": {
+"type": "object",
+"description": "Context in which the suspicious input or instruction appeared.",
+"required": [
+"context_type",
+"summary"
+],
+"properties": {
+"context_type": {
+"type": "string",
+"description": "Type of input context.",
+"enum": [
+"user_input",
+"agent_instruction",
+"tool_request",
+"system_event",
+"external_message",
+"multi_agent_message",
+"file_content",
+"web_content",
+"simulation",
+"unknown"
+],
+"examples": [
+"agent_instruction"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Optional source identifier.",
+"examples": [
+"agent-input-002"
+]
+},
+"source_role": {
+"type": "string",
+"description": "Claimed or observed role of the input source.",
+"examples": [
+"external_agent"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief summary of the suspicious input context.",
+"examples": [
+"An external agent instruction claimed urgency and attempted to bypass verification before requesting a sensitive operation."
+]
+},
+"sensitive_operation_requested": {
+"type": "boolean",
+"description": "Whether the input requested a sensitive or privileged operation.",
+"examples": [
+true
+]
+},
+"tool_use_requested": {
+"type": "boolean",
+"description": "Whether the input requested tool, API, file, or external system usage.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"detected_attack_structure": {
+"type": "object",
+"description": "Detected suspicious or adversarial input structure.",
+"required": [
+"patterns",
+"risk_score"
+],
+"properties": {
+"patterns": {
+"type": "array",
+"description": "Detected Reverse Resonance pattern types.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass",
+"role_hijacking",
+"hidden_instruction",
+"tool_use_manipulation",
+"secrecy_pressure",
+"emotional_pressure",
+"context_boundary_shift",
+"multi_step_boundary_shift",
+"prompt_injection",
+"policy_bypass",
+"agent_impersonation",
+"unknown_pattern"
+]
+},
+"examples": [
+[
+"authority_impersonation",
+"urgency_pressure",
+"verification_bypass"
+]
+]
+},
+"target_action": {
+"type": "string",
+"description": "Action the suspicious input attempts to trigger.",
+"enum": [
+"sensitive_operation",
+"credential_use",
+"data_disclosure",
+"tool_execution",
+"permission_change",
+"file_modification",
+"file_deletion",
+"external_request",
+"policy_override",
+"identity_assumption",
+"logging_suppression",
+"review_suppression",
+"unknown_action"
+],
+"examples": [
+"sensitive_operation"
+]
+},
+"context_shift": {
+"type": "string",
+"description": "Observed shift in context or role boundary.",
+"enum": [
+"none",
+"external_instruction_to_internal_command",
+"user_request_to_system_override",
+"advice_to_execution",
+"conversation_to_tool_action",
+"normal_context_to_privileged_context",
+"simulation_to_real_execution",
+"unknown_shift"
+],
+"examples": [
+"external_instruction_to_internal_command"
+]
+},
+"risk_score": {
+"type": "number",
+"description": "Risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.88
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Confidence score from 0.0 to 1.0 for this structural classification.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.81
+]
+},
+"detected_by": {
+"type": "array",
+"description": "Components that detected or contributed to this structure.",
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"structural_parser",
+"reverse_resonance_ai",
+"natural_killer_ai",
+"helper_cell_ai",
+"tool_boundary_guard",
+"human_reviewer",
+"defense_court_protocol"
+]
+},
+"examples": [
+[
+"structural_parser",
+"natural_killer_ai"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"authority_claims": {
+"type": "object",
+"description": "Authority claims detected in the suspicious input.",
+"properties": {
+"claimed_authority": {
+"type": "string",
+"description": "The claimed authority, if any.",
+"examples": [
+"internal_security_team"
+]
+},
+"authority_verified": {
+"type": "boolean",
+"description": "Whether the claimed authority was verified.",
+"examples": [
+false
+]
+},
+"verification_required": {
+"type": "boolean",
+"description": "Whether authority verification is required before proceeding.",
+"examples": [
+true
+]
+},
+"approval_path_required": {
+"type": "boolean",
+"description": "Whether an approval path is required before action.",
+"examples": [
+true
+]
+},
+"authority_issue": {
+"type": "string",
+"description": "Detected issue with the authority claim.",
+"enum": [
+"none",
+"ambiguous_authority",
+"unverified_authority",
+"conflicting_authority",
+"missing_approval_path",
+"authority_scope_unclear",
+"unknown_authority_issue"
+],
+"examples": [
+"unverified_authority"
+]
+}
+},
+"additionalProperties": false
+},
+"exposed_premises": {
+"type": "array",
+"description": "Hidden premises exposed by the Reverse Resonance response.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string"
+},
+"examples": [
+[
+"requester_has_authority",
+"verification_can_be_skipped",
+"urgency_justifies_execution",
+"operation_is_approved"
+]
+]
+},
+"premise_classification": {
+"type": "object",
+"description": "Optional classification of exposed premises.",
+"properties": {
+"authority_premises": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+},
+"urgency_premises": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+},
+"verification_premises": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+},
+"execution_premises": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+},
+"oversight_premises": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"resonance_strategy": {
+"type": "object",
+"description": "Strategy used to convert suspicious pressure into verification or review.",
+"required": [
+"strategy_type",
+"response_level",
+"selected_action"
+],
+"properties": {
+"strategy_type": {
+"type": "string",
+"description": "Type of Reverse Resonance strategy applied.",
+"enum": [
+"authority_verification",
+"urgency_cooling",
+"verification_restoration",
+"role_boundary_reaffirmation",
+"hidden_instruction_quarantine",
+"tool_use_verification",
+"secrecy_pressure_review",
+"emotional_pressure_clarification",
+"context_shift_clarification",
+"multi_step_boundary_hold",
+"mixed_strategy"
+],
+"examples": [
+"authority_verification"
+]
+},
+"response_level": {
+"type": "integer",
+"description": "Defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"selected_action": {
+"type": "string",
+"description": "Safe defensive action selected by the strategy.",
+"enum": [
+"allow_standard_processing",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_human_review",
+"route_to_defense_court",
+"deny_execution_and_log"
+],
+"examples": [
+"hold_execution_pending_validation"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for selecting this strategy.",
+"examples": [
+"The input combined unverified authority, urgency pressure, and verification bypass."
+]
+},
+"lowest_sufficient_response": {
+"type": "boolean",
+"description": "Whether this response was selected as the lowest sufficient defensive action.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"safe_response": {
+"type": "object",
+"description": "Safe response generated by Reverse Resonance.",
+"required": [
+"response_template",
+"execution_allowed"
+],
+"properties": {
+"response_template_id": {
+"type": "string",
+"description": "Identifier for the safe response template used.",
+"examples": [
+"rr-authority-verification-001"
+]
+},
+"response_template": {
+"type": "string",
+"description": "Safe response message that exposes premises and requests verification.",
+"examples": [
+"This request appears to depend on an authority claim and a verification bypass. Please provide the authority source, approval path, and operational purpose before execution can proceed."
+]
+},
+"verification_request": {
+"type": "string",
+"description": "Specific verification request made by the system.",
+"examples": [
+"Please provide the authority source, approval path, and operational purpose."
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation was allowed to proceed.",
+"examples": [
+false
+]
+},
+"requires_human_review": {
+"type": "boolean",
+"description": "Whether the event requires human review.",
+"examples": [
+true
+]
+},
+"quarantine_applied": {
+"type": "boolean",
+"description": "Whether the suspicious instruction was quarantined.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Optional links to related immune, cellular, or review records.",
+"properties": {
+"linked_cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"linked_humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"linked_helper_cell_signal_id": {
+"type": "string",
+"description": "Linked helper-cell signal identifier.",
+"examples": [
+"hcs-001"
+]
+},
+"linked_natural_killer_signal_id": {
+"type": "string",
+"description": "Linked natural-killer signal identifier.",
+"examples": [
+"nks-001"
+]
+},
+"defense_court_record_id": {
+"type": "string",
+"description": "Linked Defense Court Protocol record identifier.",
+"examples": [
+"dcr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_check": {
+"type": "object",
+"description": "Optional regulatory check to prevent overreaction or false positives.",
+"properties": {
+"performed": {
+"type": "boolean",
+"description": "Whether a regulatory check was performed.",
+"examples": [
+true
+]
+},
+"false_positive_risk": {
+"type": "number",
+"description": "Estimated false-positive risk from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.21
+]
+},
+"overreaction_risk": {
+"type": "number",
+"description": "Estimated risk of excessive defensive response from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.17
+]
+},
+"allow_escalation": {
+"type": "boolean",
+"description": "Whether escalation is allowed after regulatory review.",
+"examples": [
+true
+]
+},
+"suppression_action": {
+"type": "string",
+"description": "Regulatory suppression or cooling action, if any.",
+"enum": [
+"none",
+"downgrade_to_clarification",
+"downgrade_to_verification",
+"replace_block_with_hold",
+"require_human_review_before_block",
+"allow_safe_partial_response"
+],
+"examples": [
+"none"
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional regulatory notes.",
+"examples": [
+"Hold and verification are proportionate because the requested operation is sensitive."
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Outcome of the Reverse Resonance event.",
+"required": [
+"status",
+"memory_update_recommended"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final or current status of the event.",
+"enum": [
+"clarification_requested",
+"verification_requested",
+"held_pending_validation",
+"quarantined",
+"blocked_pending_review",
+"denied_and_logged",
+"routed_to_human_review",
+"routed_to_defense_court",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"held_pending_validation"
+]
+},
+"memory_update_recommended": {
+"type": "boolean",
+"description": "Whether this event should update the immune memory layer.",
+"examples": [
+true
+]
+},
+"new_humoral_record_recommended": {
+"type": "boolean",
+"description": "Whether a new humoral defense record should be created.",
+"examples": [
+false
+]
+},
+"cellular_event_update_recommended": {
+"type": "boolean",
+"description": "Whether a linked cellular defense event should be updated.",
+"examples": [
+true
+]
+},
+"classification": {
+"type": "string",
+"description": "Current classification of the event.",
+"enum": [
+"safe",
+"ambiguous",
+"suspicious_structure",
+"unsafe_structure",
+"confirmed_adversarial_structure",
+"false_positive",
+"requires_more_context"
+],
+"examples": [
+"unsafe_structure"
+]
+},
+"review_notes": {
+"type": "string",
+"description": "Optional notes on the event outcome.",
+"examples": [
+"The input structure should remain held until authority and approval path are verified."
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this event supports defensive action only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive actions.",
+"items": {
+"type": "string",
+"enum": [
+"refuse",
+"hold",
+"quarantine",
+"log",
+"ask_for_clarification",
+"request_authority_verification",
+"apply_reverse_resonance",
+"route_to_human_review",
+"route_to_defense_court",
+"update_immune_memory"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this event.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"reverse-resonance",
+"structural-immunity",
+"authority-verification"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
