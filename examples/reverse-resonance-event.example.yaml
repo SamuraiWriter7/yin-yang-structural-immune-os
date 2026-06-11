@@ -1,141 +1,141 @@
 reverse_resonance_event:
-event_id: rre-001
-version: "0.2.0"
-created_at: "2026-06-10T13:00:00Z"
-updated_at: "2026-06-10T13:10:00Z"
+  event_id: rre-001
+  version: "0.2.0"
+  created_at: "2026-06-10T13:00:00Z"
+  updated_at: "2026-06-10T13:10:00Z"
 
-input_context:
-context_type: agent_instruction
-source_id: agent-input-002
-source_role: external_agent
-summary: >
-An external agent instruction claimed internal authority, applied urgency
-pressure, and attempted to bypass verification before requesting a
-sensitive operation.
-sensitive_operation_requested: true
-tool_use_requested: true
+  input_context:
+    context_type: agent_instruction
+    source_id: agent-input-002
+    source_role: external_agent
+    summary: >
+      An external agent instruction claimed internal authority, applied urgency
+      pressure, and attempted to bypass verification before requesting a
+      sensitive operation.
+    sensitive_operation_requested: true
+    tool_use_requested: true
 
-detected_attack_structure:
-patterns:
-- authority_impersonation
-- urgency_pressure
-- verification_bypass
-- tool_use_manipulation
-- context_boundary_shift
-target_action: sensitive_operation
-context_shift: external_instruction_to_internal_command
-risk_score: 0.88
-confidence_score: 0.81
-detected_by:
-- structural_parser
-- natural_killer_ai
+  detected_attack_structure:
+    patterns:
+      - authority_impersonation
+      - urgency_pressure
+      - verification_bypass
+      - tool_use_manipulation
+      - context_boundary_shift
+    target_action: sensitive_operation
+    context_shift: external_instruction_to_internal_command
+    risk_score: 0.88
+    confidence_score: 0.81
+    detected_by:
+      - structural_parser
+      - natural_killer_ai
 
-authority_claims:
-claimed_authority: internal_security_team
-authority_verified: false
-verification_required: true
-approval_path_required: true
-authority_issue: unverified_authority
+  authority_claims:
+    claimed_authority: internal_security_team
+    authority_verified: false
+    verification_required: true
+    approval_path_required: true
+    authority_issue: unverified_authority
 
-exposed_premises:
-- requester_has_authority
-- verification_can_be_skipped
-- urgency_justifies_execution
-- operation_is_approved
-- tool_execution_is_authorized
+  exposed_premises:
+    - requester_has_authority
+    - verification_can_be_skipped
+    - urgency_justifies_execution
+    - operation_is_approved
+    - tool_execution_is_authorized
 
-premise_classification:
-authority_premises:
-- requester_has_authority
-- operation_is_approved
-urgency_premises:
-- urgency_justifies_execution
-verification_premises:
-- verification_can_be_skipped
-execution_premises:
-- tool_execution_is_authorized
-oversight_premises:
-- normal_review_can_be_delayed
+  premise_classification:
+    authority_premises:
+      - requester_has_authority
+      - operation_is_approved
+    urgency_premises:
+      - urgency_justifies_execution
+    verification_premises:
+      - verification_can_be_skipped
+    execution_premises:
+      - tool_execution_is_authorized
+    oversight_premises:
+      - normal_review_can_be_delayed
 
-resonance_strategy:
-strategy_type: mixed_strategy
-response_level: 3
-selected_action: hold_execution_pending_validation
-reason: >
-The input combined unverified authority, urgency pressure, verification
-bypass, and a sensitive tool-use request. Reverse Resonance was applied
-to expose the hidden premises and redirect the request into verification.
-lowest_sufficient_response: true
+  resonance_strategy:
+    strategy_type: mixed_strategy
+    response_level: 3
+    selected_action: hold_execution_pending_validation
+    reason: >
+      The input combined unverified authority, urgency pressure, verification
+      bypass, and a sensitive tool-use request. Reverse Resonance was applied
+      to expose the hidden premises and redirect the request into verification.
+    lowest_sufficient_response: true
 
-safe_response:
-response_template_id: rr-authority-verification-001
-response_template: >
-This request appears to depend on an authority claim, urgency pressure,
-and a verification bypass. Please provide the authority source, approval
-path, intended scope, and operational purpose before execution can proceed.
-verification_request: >
-Please provide the authority source, approval path, intended scope, and
-operational purpose.
-execution_allowed: false
-requires_human_review: true
-quarantine_applied: false
+  safe_response:
+    response_template_id: rr-authority-verification-001
+    response_template: >
+      This request appears to depend on an authority claim, urgency pressure,
+      and a verification bypass. Please provide the authority source, approval
+      path, intended scope, and operational purpose before execution can proceed.
+    verification_request: >
+      Please provide the authority source, approval path, intended scope, and
+      operational purpose.
+    execution_allowed: false
+    requires_human_review: true
+    quarantine_applied: false
 
-linked_records:
-linked_cellular_event_id: cde-001
-linked_humoral_record_id: hdr-001
-linked_helper_cell_signal_id: hcs-001
-linked_natural_killer_signal_id: nks-001
-defense_court_record_id: dcr-001
+  linked_records:
+    linked_cellular_event_id: cde-001
+    linked_humoral_record_id: hdr-001
+    linked_helper_cell_signal_id: hcs-001
+    linked_natural_killer_signal_id: nks-001
+    defense_court_record_id: dcr-001
 
-regulatory_check:
-performed: true
-false_positive_risk: 0.21
-overreaction_risk: 0.17
-allow_escalation: true
-suppression_action: none
-notes: >
-Hold and verification are proportionate because the requested operation
-is sensitive and the authority claim is unverified.
+  regulatory_check:
+    performed: true
+    false_positive_risk: 0.21
+    overreaction_risk: 0.17
+    allow_escalation: true
+    suppression_action: none
+    notes: >
+      Hold and verification are proportionate because the requested operation
+      is sensitive and the authority claim is unverified.
 
-outcome:
-status: held_pending_validation
-memory_update_recommended: true
-new_humoral_record_recommended: false
-cellular_event_update_recommended: true
-classification: unsafe_structure
-review_notes: >
-The event should remain held until the authority source, approval path,
-intended scope, and operational purpose are verified. The exposed
-premises should update the linked humoral defense record.
+  outcome:
+    status: held_pending_validation
+    memory_update_recommended: true
+    new_humoral_record_recommended: false
+    cellular_event_update_recommended: true
+    classification: unsafe_structure
+    review_notes: >
+      The event should remain held until the authority source, approval path,
+      intended scope, and operational purpose are verified. The exposed
+      premises should update the linked humoral defense record.
 
-non_aggression_boundary:
-offensive_action_allowed: false
-allowed_actions:
-- hold
-- log
-- request_authority_verification
-- apply_reverse_resonance
-- route_to_human_review
-- route_to_defense_court
-- update_immune_memory
-prohibited_actions:
-- retaliation
-- external_intrusion
-- counterattack
-- malware_deployment
-- third_party_disruption
-- unauthorized_access
-- coercive_manipulation
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - hold
+      - log
+      - request_authority_verification
+      - apply_reverse_resonance
+      - route_to_human_review
+      - route_to_defense_court
+      - update_immune_memory
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
 
-metadata:
-created_by: yin-yang-structural-immune-os
-tags:
-- reverse-resonance
-- structural-immunity
-- authority-verification
-- urgency-cooling
-- verification-bypass
-notes: >
-This example represents a defensive Reverse Resonance event. It exposes
-hidden premises, requests verification, holds execution, and recommends
-immune memory update without defining any offensive behavior.
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - reverse-resonance
+      - structural-immunity
+      - authority-verification
+      - urgency-cooling
+      - verification-bypass
+    notes: >
+      This example represents a defensive Reverse Resonance event. It exposes
+      hidden premises, requests verification, holds execution, and recommends
+      immune memory update without defining any offensive behavior.
