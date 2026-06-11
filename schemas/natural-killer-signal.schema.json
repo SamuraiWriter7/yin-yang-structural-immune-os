@@ -1,0 +1,965 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://example.org/schemas/natural-killer-signal.schema.json",
+"title": "Natural Killer Signal",
+"description": "A schema for recording Natural Killer AI patrol signals in Yin-Yang Structural Immune OS. This signal records anomaly detection, mutation suspicion, known-pattern matching, recommended defensive routing, regulatory checks, memory recommendations, outcome, and non-aggression boundaries. It is strictly defensive and does not define offensive behavior.",
+"type": "object",
+"required": [
+"natural_killer_signal"
+],
+"properties": {
+"natural_killer_signal": {
+"type": "object",
+"required": [
+"signal_id",
+"version",
+"created_at",
+"input_context",
+"patrol_mode",
+"known_pattern_match",
+"anomaly_detection",
+"risk_assessment",
+"recommended_action",
+"outcome",
+"non_aggression_boundary"
+],
+"properties": {
+"signal_id": {
+"type": "string",
+"description": "Unique identifier for the Natural Killer AI signal.",
+"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+"examples": [
+"nks-001"
+]
+},
+"version": {
+"type": "string",
+"description": "Schema or signal version.",
+"examples": [
+"0.5.0"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Natural Killer signal was created.",
+"examples": [
+"2026-06-10T15:00:00Z"
+]
+},
+"updated_at": {
+"type": "string",
+"format": "date-time",
+"description": "Timestamp when this Natural Killer signal was last updated.",
+"examples": [
+"2026-06-10T15:10:00Z"
+]
+},
+"input_context": {
+"type": "object",
+"description": "Context in which the anomaly or mutated structure was detected.",
+"required": [
+"context_type",
+"summary"
+],
+"properties": {
+"context_type": {
+"type": "string",
+"description": "Type of context being inspected.",
+"enum": [
+"user_input",
+"agent_instruction",
+"tool_request",
+"system_event",
+"external_message",
+"multi_agent_message",
+"file_content",
+"web_content",
+"simulation",
+"unknown"
+],
+"examples": [
+"agent_instruction"
+]
+},
+"source_id": {
+"type": "string",
+"description": "Optional source identifier.",
+"examples": [
+"external-agent-017"
+]
+},
+"source_role": {
+"type": "string",
+"description": "Claimed or observed role of the source.",
+"examples": [
+"external_agent"
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief structural summary of the inspected input.",
+"examples": [
+"A suspicious instruction did not fully match known humoral memory, but showed an unusual transition from external message to privileged execution request."
+]
+},
+"sensitive_operation_requested": {
+"type": "boolean",
+"description": "Whether the input requested a sensitive or privileged operation.",
+"examples": [
+true
+]
+},
+"tool_use_requested": {
+"type": "boolean",
+"description": "Whether the input requested tool use.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"linked_records": {
+"type": "object",
+"description": "Linked defensive records considered by Natural Killer AI.",
+"properties": {
+"humoral_record_id": {
+"type": "string",
+"description": "Linked humoral defense record identifier.",
+"examples": [
+"hdr-001"
+]
+},
+"cellular_event_id": {
+"type": "string",
+"description": "Linked cellular defense event identifier.",
+"examples": [
+"cde-001"
+]
+},
+"reverse_resonance_event_id": {
+"type": "string",
+"description": "Linked Reverse Resonance event identifier.",
+"examples": [
+"rre-001"
+]
+},
+"helper_cell_signal_id": {
+"type": "string",
+"description": "Linked Helper Cell signal identifier.",
+"examples": [
+"hcs-001"
+]
+},
+"regulatory_review_id": {
+"type": "string",
+"description": "Linked Regulatory AI review identifier.",
+"examples": [
+"reg-001"
+]
+},
+"defense_court_review_id": {
+"type": "string",
+"description": "Linked Defense Court review identifier.",
+"examples": [
+"dcr-001"
+]
+}
+},
+"additionalProperties": false
+},
+"patrol_mode": {
+"type": "object",
+"description": "Patrol mode used by Natural Killer AI.",
+"required": [
+"mode",
+"reason"
+],
+"properties": {
+"mode": {
+"type": "string",
+"description": "Natural Killer patrol mode.",
+"enum": [
+"passive_monitoring",
+"anomaly_detection",
+"mutation_detection",
+"random_patrol",
+"high_risk_context_patrol",
+"post_event_review"
+],
+"examples": [
+"anomaly_detection"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the selected patrol mode.",
+"examples": [
+"Unknown context shift involving a sensitive operation and ambiguous authority claim."
+]
+},
+"inspection_scope": {
+"type": "string",
+"description": "Scope of inspection.",
+"enum": [
+"structure_only",
+"metadata_only",
+"limited_content",
+"review_required_content",
+"unknown_scope"
+],
+"examples": [
+"structure_only"
+]
+},
+"random_patrol_enabled": {
+"type": "boolean",
+"description": "Whether random patrol was used.",
+"examples": [
+false
+]
+}
+},
+"additionalProperties": false
+},
+"known_pattern_match": {
+"type": "object",
+"description": "Known-pattern matching result against existing immune memory.",
+"required": [
+"matched"
+],
+"properties": {
+"matched": {
+"type": "boolean",
+"description": "Whether the structure directly matched a known pattern.",
+"examples": [
+false
+]
+},
+"closest_humoral_record_id": {
+"type": "string",
+"description": "Closest humoral record identifier, if any.",
+"examples": [
+"hdr-001"
+]
+},
+"similarity_score": {
+"type": "number",
+"description": "Similarity score against the closest known structure from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.62
+]
+},
+"known_pattern_confidence": {
+"type": "number",
+"description": "Confidence in known-pattern match assessment from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.71
+]
+},
+"match_notes": {
+"type": "string",
+"description": "Optional notes about known-pattern matching.",
+"examples": [
+"The input resembles hdr-001 but lacks a direct wording or full structural match."
+]
+}
+},
+"additionalProperties": false
+},
+"anomaly_detection": {
+"type": "object",
+"description": "Detected anomalies and anomaly score.",
+"required": [
+"anomaly_score",
+"detected_anomalies"
+],
+"properties": {
+"anomaly_score": {
+"type": "number",
+"description": "Anomaly score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.77
+]
+},
+"detected_anomalies": {
+"type": "array",
+"description": "Detected anomaly indicators.",
+"minItems": 1,
+"uniqueItems": true,
+"items": {
+"type": "string",
+"enum": [
+"ambiguous_authority_claim",
+"verification_bypass_attempt",
+"context_boundary_shift",
+"tool_use_anomaly",
+"hidden_instruction_chain",
+"multi_step_boundary_shift",
+"unexpected_privilege_request",
+"unusual_role_transition",
+"unknown_anomaly"
+]
+},
+"examples": [
+[
+"context_boundary_shift",
+"ambiguous_authority_claim",
+"verification_bypass_attempt"
+]
+]
+},
+"anomaly_basis": {
+"type": "array",
+"description": "Structural basis for anomaly detection.",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"external message shifted into privileged execution request",
+"authority was implied rather than verified"
+]
+]
+},
+"novelty_score": {
+"type": "number",
+"description": "Novelty score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.69
+]
+},
+"context_drift_score": {
+"type": "number",
+"description": "Context drift score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.74
+]
+}
+},
+"additionalProperties": false
+},
+"mutation_detection": {
+"type": "object",
+"description": "Mutation detection result for variants of known unsafe structures.",
+"properties": {
+"mutation_suspected": {
+"type": "boolean",
+"description": "Whether a mutated or variant structure is suspected.",
+"examples": [
+true
+]
+},
+"mutation_basis": {
+"type": "array",
+"description": "Structural basis for suspected mutation.",
+"items": {
+"type": "string",
+"enum": [
+"implied_authority",
+"urgency_pressure",
+"verification_bypass_attempt",
+"role_boundary_shift",
+"tool_use_shift",
+"context_boundary_shift",
+"hidden_instruction_variant",
+"multi_step_escalation",
+"unknown_mutation_basis"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"implied_authority",
+"verification_bypass_attempt",
+"context_boundary_shift"
+]
+]
+},
+"closest_known_structure": {
+"type": "string",
+"description": "Name or identifier of the closest known structure.",
+"examples": [
+"authority_impersonation_plus_verification_bypass"
+]
+},
+"mutation_confidence": {
+"type": "number",
+"description": "Confidence in mutation suspicion from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.73
+]
+}
+},
+"additionalProperties": false
+},
+"risk_assessment": {
+"type": "object",
+"description": "Natural Killer AI risk and severity assessment.",
+"required": [
+"risk_score",
+"confidence_score",
+"severity"
+],
+"properties": {
+"risk_score": {
+"type": "number",
+"description": "Overall risk score from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.79
+]
+},
+"confidence_score": {
+"type": "number",
+"description": "Confidence in the Natural Killer assessment from 0.0 to 1.0.",
+"minimum": 0,
+"maximum": 1,
+"examples": [
+0.76
+]
+},
+"severity": {
+"type": "string",
+"description": "Natural Killer signal severity.",
+"enum": [
+"low",
+"moderate",
+"high",
+"critical"
+],
+"examples": [
+"high"
+]
+},
+"sensitive_operation_factor": {
+"type": "boolean",
+"description": "Whether sensitive operation involvement increased the risk assessment.",
+"examples": [
+true
+]
+},
+"assessment_notes": {
+"type": "string",
+"description": "Optional risk assessment notes.",
+"examples": [
+"The anomaly is high-risk because it involves ambiguous authority, context shift, and a privileged execution request."
+]
+}
+},
+"additionalProperties": false
+},
+"recommended_action": {
+"type": "object",
+"description": "Safe defensive action recommended by Natural Killer AI.",
+"required": [
+"level",
+"action",
+"reason"
+],
+"properties": {
+"level": {
+"type": "integer",
+"description": "Recommended defensive response level from 0 to 5.",
+"minimum": 0,
+"maximum": 5,
+"examples": [
+3
+]
+},
+"action": {
+"type": "string",
+"description": "Recommended safe defensive action.",
+"enum": [
+"observe_only",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold_execution_pending_validation",
+"quarantine_instruction",
+"route_to_helper_cell_ai",
+"route_to_regulatory_review",
+"route_to_human_review",
+"route_to_defense_court",
+"create_candidate_memory"
+],
+"examples": [
+"route_to_helper_cell_ai"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for the recommended action.",
+"examples": [
+"The structure is not a direct known match, but anomaly and mutation indicators are high enough to require orchestration."
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation is allowed to proceed.",
+"examples": [
+false
+]
+},
+"irreversible_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Natural Killer AI must not authorize irreversible final action by itself."
+}
+},
+"additionalProperties": false
+},
+"helper_cell_routing": {
+"type": "object",
+"description": "Routing recommendation to Helper Cell AI Orchestrator.",
+"properties": {
+"required": {
+"type": "boolean",
+"description": "Whether routing to Helper Cell AI is required.",
+"examples": [
+true
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for Helper Cell routing.",
+"examples": [
+"Unknown high-risk instruction structure requires immune orchestration."
+]
+},
+"recommended_focus": {
+"type": "array",
+"description": "Recommended focus areas for Helper Cell AI.",
+"items": {
+"type": "string",
+"enum": [
+"anomaly_score",
+"mutation_suspected",
+"sensitive_operation_requested",
+"authority_claim",
+"tool_use_request",
+"false_positive_risk",
+"proportional_response",
+"memory_candidate_review"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"anomaly_score",
+"mutation_suspected",
+"sensitive_operation_requested",
+"false_positive_risk"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"regulatory_check": {
+"type": "object",
+"description": "Regulatory review requirement for overreaction and false-positive control.",
+"properties": {
+"required": {
+"type": "boolean",
+"description": "Whether regulatory review is required.",
+"examples": [
+true
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason regulatory review is required.",
+"examples": [
+"Unknown pattern with high anomaly score may produce false-positive or novelty suppression risk."
+]
+},
+"focus": {
+"type": "array",
+"description": "Focus areas for regulatory review.",
+"items": {
+"type": "string",
+"enum": [
+"false_positive_risk",
+"novelty_suppression",
+"overreaction_risk",
+"autoimmune_risk",
+"proportionality",
+"privacy_impact",
+"distribution_scope"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"false_positive_risk",
+"novelty_suppression",
+"proportionality"
+]
+]
+}
+},
+"additionalProperties": false
+},
+"reverse_resonance_recommendation": {
+"type": "object",
+"description": "Recommendation for Reverse Resonance response.",
+"properties": {
+"recommended": {
+"type": "boolean",
+"description": "Whether Reverse Resonance is recommended.",
+"examples": [
+true
+]
+},
+"strategy_type": {
+"type": "string",
+"description": "Recommended Reverse Resonance strategy type.",
+"enum": [
+"authority_verification",
+"urgency_cooling",
+"verification_restoration",
+"role_boundary_reaffirmation",
+"hidden_instruction_quarantine",
+"tool_use_verification",
+"secrecy_pressure_review",
+"emotional_pressure_clarification",
+"context_shift_clarification",
+"multi_step_boundary_hold",
+"mixed_strategy"
+],
+"examples": [
+"authority_verification"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason Reverse Resonance is recommended.",
+"examples": [
+"Ambiguous authority claim detected."
+]
+}
+},
+"additionalProperties": false
+},
+"memory_update_recommendation": {
+"type": "object",
+"description": "Recommendation for immune memory update based on anomaly or mutation signal.",
+"properties": {
+"recommended": {
+"type": "boolean",
+"description": "Whether immune memory update is recommended.",
+"examples": [
+true
+]
+},
+"action": {
+"type": "string",
+"description": "Recommended memory action.",
+"enum": [
+"no_change",
+"create_candidate_memory",
+"strengthen_existing_memory",
+"mark_uncertain",
+"route_to_defense_court_before_memory_update"
+],
+"examples": [
+"create_candidate_memory"
+]
+},
+"target_memory_id": {
+"type": "string",
+"description": "Target existing memory record identifier, if applicable.",
+"examples": [
+"hdr-001"
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for memory recommendation.",
+"examples": [
+"Unknown anomaly with repeated structural indicators may require candidate memory creation."
+]
+},
+"review_required_before_strengthening": {
+"type": "boolean",
+"description": "Whether review is required before strengthening memory.",
+"examples": [
+true
+]
+}
+},
+"additionalProperties": false
+},
+"defense_court_routing": {
+"type": "object",
+"description": "Defense Court routing recommendation.",
+"properties": {
+"recommended": {
+"type": "boolean",
+"description": "Whether Defense Court routing is recommended.",
+"examples": [
+true
+]
+},
+"reason": {
+"type": "string",
+"description": "Reason for Defense Court routing.",
+"examples": [
+"Candidate memory may affect future system-wide defensive behavior."
+]
+},
+"required_before": {
+"type": "string",
+"description": "Action before which Defense Court review is required.",
+"enum": [
+"none",
+"memory_strengthening",
+"system_wide_distribution",
+"critical_escalation",
+"final_classification"
+],
+"examples": [
+"memory_strengthening"
+]
+}
+},
+"additionalProperties": false
+},
+"outcome": {
+"type": "object",
+"description": "Outcome of the Natural Killer patrol signal.",
+"required": [
+"status",
+"final_signal"
+],
+"properties": {
+"status": {
+"type": "string",
+"description": "Final status of this Natural Killer signal.",
+"enum": [
+"signal_created",
+"anomaly_detected",
+"mutation_suspected",
+"routed_to_helper_cell",
+"routed_to_regulatory_review",
+"routed_to_human_review",
+"routed_to_defense_court",
+"candidate_memory_recommended",
+"no_action_required",
+"requires_more_context"
+],
+"examples": [
+"routed_to_helper_cell"
+]
+},
+"final_signal": {
+"type": "string",
+"description": "Final Natural Killer signal classification.",
+"enum": [
+"no_anomaly",
+"minor_anomaly",
+"suspicious_anomaly",
+"high_risk_anomaly",
+"mutation_suspected",
+"requires_more_context"
+],
+"examples": [
+"high_risk_anomaly"
+]
+},
+"execution_allowed": {
+"type": "boolean",
+"description": "Whether the requested operation is allowed to proceed.",
+"examples": [
+false
+]
+},
+"requires_future_review": {
+"type": "boolean",
+"description": "Whether this signal requires future review.",
+"examples": [
+true
+]
+},
+"summary": {
+"type": "string",
+"description": "Brief outcome summary.",
+"examples": [
+"Natural Killer AI detected a high-risk anomaly and routed the case to Helper Cell AI for orchestration."
+]
+}
+},
+"additionalProperties": false
+},
+"audit_trail": {
+"type": "object",
+"description": "Audit information for Natural Killer signal reviewability.",
+"properties": {
+"patrol_steps": {
+"type": "array",
+"description": "Patrol steps performed by Natural Killer AI.",
+"items": {
+"type": "string",
+"enum": [
+"input_context_reviewed",
+"known_memory_checked",
+"anomaly_score_calculated",
+"mutation_similarity_checked",
+"sensitive_operation_checked",
+"recommended_action_selected",
+"helper_cell_routing_evaluated",
+"regulatory_check_evaluated",
+"memory_candidate_evaluated",
+"non_aggression_boundary_confirmed"
+]
+},
+"uniqueItems": true,
+"examples": [
+[
+"input_context_reviewed",
+"known_memory_checked",
+"anomaly_score_calculated",
+"mutation_similarity_checked",
+"recommended_action_selected",
+"non_aggression_boundary_confirmed"
+]
+]
+},
+"raw_sensitive_content_stored": {
+"type": "boolean",
+"description": "Whether raw sensitive content was stored.",
+"examples": [
+false
+]
+},
+"structure_only_recording": {
+"type": "boolean",
+"description": "Whether the signal records structure rather than unnecessary raw sensitive content.",
+"examples": [
+true
+]
+},
+"audit_notes": {
+"type": "string",
+"description": "Optional audit notes.",
+"examples": [
+"Natural Killer AI produced a reviewable signal rather than an irreversible action."
+]
+}
+},
+"additionalProperties": false
+},
+"non_aggression_boundary": {
+"type": "object",
+"description": "Explicit safety boundary confirming that this signal supports defensive patrol only.",
+"required": [
+"offensive_action_allowed"
+],
+"properties": {
+"offensive_action_allowed": {
+"type": "boolean",
+"const": false,
+"description": "Must always be false."
+},
+"allowed_actions": {
+"type": "array",
+"description": "Allowed defensive patrol actions.",
+"items": {
+"type": "string",
+"enum": [
+"detect_anomaly",
+"detect_mutation",
+"flag_suspicious_structure",
+"observe_only",
+"ask_clarifying_question",
+"request_authority_verification",
+"apply_reverse_resonance",
+"hold",
+"quarantine",
+"route_to_helper_cell_ai",
+"route_to_regulatory_review",
+"route_to_human_review",
+"route_to_defense_court",
+"create_candidate_memory",
+"log"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"description": "Prohibited actions.",
+"items": {
+"type": "string",
+"enum": [
+"retaliation",
+"external_intrusion",
+"counterattack",
+"malware_deployment",
+"third_party_disruption",
+"unauthorized_access",
+"coercive_manipulation",
+"autonomous_punishment",
+"irreversible_enforcement_without_review"
+]
+},
+"uniqueItems": true
+}
+},
+"additionalProperties": false
+},
+"metadata": {
+"type": "object",
+"description": "Optional implementation-specific metadata.",
+"properties": {
+"created_by": {
+"type": "string",
+"description": "Creator of this Natural Killer signal.",
+"examples": [
+"yin-yang-structural-immune-os"
+]
+},
+"tags": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"uniqueItems": true,
+"examples": [
+[
+"natural-killer",
+"anomaly-detection",
+"mutation-detection",
+"structural-immunity"
+]
+]
+},
+"notes": {
+"type": "string",
+"description": "Optional notes."
+}
+},
+"additionalProperties": true
+}
+},
+"additionalProperties": false
+}
+},
+"additionalProperties": false
+}
