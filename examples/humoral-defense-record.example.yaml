@@ -1,101 +1,103 @@
 humoral_defense_record:
-record_id: hdr-001
-version: "0.1.0"
-created_at: "2026-06-10T12:00:00Z"
-updated_at: "2026-06-10T12:30:00Z"
+  record_id: hdr-001
+  version: "0.1.0"
+  created_at: "2026-06-10T12:00:00Z"
+  updated_at: "2026-06-10T12:30:00Z"
 
-source:
-source_type: agent_message
-source_id: agent-input-001
-context: >
-A suspicious agent instruction claimed internal authority,
-applied urgency pressure, and attempted to bypass normal verification
-before requesting a sensitive operation.
+  source:
+    source_type: agent_message
+    source_id: agent-input-001
+    context: >
+      A suspicious agent instruction claimed internal authority,
+      applied urgency pressure, and attempted to bypass normal verification
+      before requesting a sensitive operation.
 
-attack_structure_fingerprint:
-pattern:
-- authority_impersonation
-- urgency_pressure
-- verification_bypass
-hidden_premise:
-- requester_has_authority
-- verification_can_be_skipped
-- urgency_justifies_execution
-claimed_authority: internal_security_team
-target_action: sensitive_operation
-context_shift: external_instruction_to_internal_command
-risk_score: 0.86
-confidence_score: 0.78
-similarity_reference:
-matched_record_id: hdr-000
-similarity_score: 0.87
-match_basis:
-- same_authority_claim
-- same_verification_bypass
-- same_target_action
+  attack_structure_fingerprint:
+    pattern:
+      - authority_impersonation
+      - urgency_pressure
+      - verification_bypass
+    hidden_premise:
+      - requester_has_authority
+      - verification_can_be_skipped
+      - urgency_justifies_execution
+    claimed_authority: internal_security_team
+    target_action: sensitive_operation
+    context_shift: external_instruction_to_internal_command
+    risk_score: 0.86
+    confidence_score: 0.78
 
-antibody_signature:
-response_type: authority_verification_required
-recommended_action: hold_execution_pending_validation
-escalation_level: 3
-safe_response_template: >
-This request appears to require authority verification before execution.
-Please provide the authority source, approval path, and operational purpose.
-requires_human_review: true
+    similarity_reference:
+      matched_record_id: hdr-000
+      similarity_score: 0.87
+      match_basis:
+        - same_authority_claim
+        - same_verification_bypass
+        - same_target_action
 
-memory_status:
-known_pattern: true
-recurrence_count: 2
-first_seen: "2026-06-10T10:00:00Z"
-last_seen: "2026-06-10T12:00:00Z"
-memory_strength: strong
-decay_policy: review_required
+  antibody_signature:
+    response_type: authority_verification_required
+    recommended_action: hold_execution_pending_validation
+    escalation_level: 3
+    safe_response_template: >
+      This request appears to require authority verification before execution.
+      Please provide the authority source, approval path, and operational purpose.
+    requires_human_review: true
 
-review_status:
-human_reviewed: true
-reviewer: security_reviewer
-classification: unsafe_structure
-review_notes: >
-The input structure combined authority impersonation, urgency pressure,
-and verification bypass. Execution should remain blocked until the
-claimed authority and approval path are verified.
-defense_court_record_id: dcr-001
+  memory_status:
+    known_pattern: true
+    recurrence_count: 2
+    first_seen: "2026-06-10T10:00:00Z"
+    last_seen: "2026-06-10T12:00:00Z"
+    memory_strength: strong
+    decay_policy: review_required
 
-distribution:
-share_with:
-- reverse_resonance_ai
-- natural_killer_ai
-- helper_cell_ai
-- defense_court_protocol
-distribution_scope: trusted_agents
-privacy_level: internal
+  review_status:
+    human_reviewed: true
+    reviewer: security_reviewer
+    classification: unsafe_structure
+    review_notes: >
+      The input structure combined authority impersonation, urgency pressure,
+      and verification bypass. Execution should remain blocked until the
+      claimed authority and approval path are verified.
+    defense_court_record_id: dcr-001
 
-non_aggression_boundary:
-offensive_action_allowed: false
-allowed_actions:
-- hold
-- quarantine
-- log
-- request_authority_verification
-- route_to_human_review
-- route_to_defense_court
-- update_immune_memory
-prohibited_actions:
-- retaliation
-- external_intrusion
-- counterattack
-- malware_deployment
-- third_party_disruption
-- unauthorized_access
-- coercive_manipulation
+  distribution:
+    share_with:
+      - reverse_resonance_ai
+      - natural_killer_ai
+      - helper_cell_ai
+      - defense_court_protocol
+    distribution_scope: trusted_agents
+    privacy_level: internal
 
-metadata:
-created_by: yin-yang-structural-immune-os
-tags:
-- humoral-defense
-- structural-immunity
-- authority-verification
-- reverse-resonance
-notes: >
-This example represents a defensive memory record for a known suspicious
-structure. It does not define offensive behavior.
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - hold
+      - quarantine
+      - log
+      - request_authority_verification
+      - route_to_human_review
+      - route_to_defense_court
+      - update_immune_memory
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
+
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - humoral-defense
+      - structural-immunity
+      - authority-verification
+      - reverse-resonance
+    notes: >
+      This example represents a defensive memory record for a known suspicious
+      structure. It does not define offensive behavior.
+
