@@ -1,232 +1,233 @@
-signal_id: hcs-001
-version: "0.5.0"
-created_at: "2026-06-10T14:30:00Z"
-updated_at: "2026-06-10T14:40:00Z"
+helper_cell_signal:
+  signal_id: hcs-001
+  version: "0.5.0"
+  created_at: "2026-06-10T14:30:00Z"
+  updated_at: "2026-06-10T14:40:00Z"
 
-input_summary:
-  signal_type: immune_orchestration
-  summary: >
-    A suspicious instruction matched existing humoral memory and requested
-    a sensitive operation under unverified authority. Helper Cell AI
-    integrated memory, cellular detection, Reverse Resonance, regulatory,
-    and review signals to recommend a proportionate defensive response.
-  sensitive_operation_involved: true
-  authority_claim_involved: true
-  system_wide_impact_possible: true
+  input_summary:
+    signal_type: immune_orchestration
+    summary: >
+      A suspicious instruction matched existing humoral memory and requested
+      a sensitive operation under unverified authority. Helper Cell AI
+      integrated memory, cellular detection, Reverse Resonance, regulatory,
+      and review signals to recommend a proportionate defensive response.
+    sensitive_operation_involved: true
+    authority_claim_involved: true
+    system_wide_impact_possible: true
 
-linked_records:
-  humoral_record_id: hdr-001
-  cellular_event_id: cde-001
-  reverse_resonance_event_id: rre-001
-  immune_memory_update_id: imu-001
-  natural_killer_signal_id: nks-001
-  regulatory_review_id: reg-001
-  defense_court_review_id: dcr-001
-  human_review_record_id: hrr-001
+  linked_records:
+    humoral_record_id: hdr-001
+    cellular_event_id: cde-001
+    reverse_resonance_event_id: rre-001
+    immune_memory_update_id: imu-001
+    natural_killer_signal_id: nks-001
+    regulatory_review_id: reg-001
+    defense_court_review_id: dcr-001
+    human_review_record_id: hrr-001
 
-integrated_signals:
-  humoral_match:
-    matched: true
-    matched_record_id: hdr-001
-    similarity_score: 0.88
-    memory_strength: strong
-    recurrence_count: 3
-    antibody_signature: authority_verification_required
+  integrated_signals:
+    humoral_match:
+      matched: true
+      matched_record_id: hdr-001
+      similarity_score: 0.88
+      memory_strength: strong
+      recurrence_count: 3
+      antibody_signature: authority_verification_required
 
-  cellular_detection:
-    detected_patterns:
-      - authority_impersonation
-      - urgency_pressure
-      - verification_bypass
-      - sensitive_operation_request
-    target_action: sensitive_operation
-    risk_score: 0.88
-    confidence_score: 0.81
-    sensitive_operation_requested: true
+    cellular_detection:
+      detected_patterns:
+        - authority_impersonation
+        - urgency_pressure
+        - verification_bypass
+        - sensitive_operation_request
+      target_action: sensitive_operation
+      risk_score: 0.88
+      confidence_score: 0.81
+      sensitive_operation_requested: true
 
-  reverse_resonance_signal:
-    applied: true
-    strategy_type: mixed_strategy
-    exposed_premises:
-      - requester_has_authority
-      - verification_can_be_skipped
-      - urgency_justifies_execution
-      - operation_is_approved
-    selected_action: hold_execution_pending_validation
+    reverse_resonance_signal:
+      applied: true
+      strategy_type: mixed_strategy
+      exposed_premises:
+        - requester_has_authority
+        - verification_can_be_skipped
+        - urgency_justifies_execution
+        - operation_is_approved
+      selected_action: hold_execution_pending_validation
 
-  natural_killer_signal:
-    known_pattern_match: false
-    anomaly_score: 0.77
-    mutation_suspected: true
-    detected_anomalies:
-      - context_boundary_shift
-      - ambiguous_authority_claim
-      - verification_bypass_attempt
+    natural_killer_signal:
+      known_pattern_match: false
+      anomaly_score: 0.77
+      mutation_suspected: true
+      detected_anomalies:
+        - context_boundary_shift
+        - ambiguous_authority_claim
+        - verification_bypass_attempt
 
-  regulatory_signal:
-    false_positive_risk: 0.22
-    overreaction_risk: 0.18
-    autoimmune_risk: 0.16
-    recommendation: require_human_review_before_high_risk_escalation
+    regulatory_signal:
+      false_positive_risk: 0.22
+      overreaction_risk: 0.18
+      autoimmune_risk: 0.16
+      recommendation: require_human_review_before_high_risk_escalation
 
-  review_signal:
-    review_source: defense_court_review
-    classification: unsafe_structure
-    memory_update_approved: true
-    review_required_before_escalation: true
+    review_signal:
+      review_source: defense_court_review
+      classification: unsafe_structure
+      memory_update_approved: true
+      review_required_before_escalation: true
 
-risk_assessment:
-  overall_risk_score: 0.86
-  overall_confidence_score: 0.82
-  minimum_required_response_level: 3
-  maximum_allowed_response_level: 4
-  proportionality_assessment: proportionate
-  assessment_notes: >
-    A hold and verification response is proportionate because the request
-    involves a sensitive operation, an unverified authority claim, and a
-    known unsafe structure. Stronger escalation should remain review-gated.
+  risk_assessment:
+    overall_risk_score: 0.86
+    overall_confidence_score: 0.82
+    minimum_required_response_level: 3
+    maximum_allowed_response_level: 4
+    proportionality_assessment: proportionate
+    assessment_notes: >
+      A hold and verification response is proportionate because the request
+      involves a sensitive operation, an unverified authority claim, and a
+      known unsafe structure. Stronger escalation should remain review-gated.
 
-recommended_response:
-  level: 3
-  action: hold_execution_pending_validation
-  reason: >
-    The event involves a known unsafe structure and a sensitive operation,
-    but high-risk escalation should remain subject to human or Defense Court
-    review because similar structures may appear in legitimate administrative
-    workflows.
-  lowest_sufficient_response: true
-  execution_allowed: false
-  review_gated: true
-
-activated_components:
-  - reverse_resonance_ai
-  - regulatory_ai
-  - human_review_router
-  - defense_court_connector
-  - memory_cell_ai
-
-component_coordination:
-  reverse_resonance:
-    activate: true
-    strategy_type: mixed_strategy
+  recommended_response:
+    level: 3
+    action: hold_execution_pending_validation
     reason: >
-      The input contains unverified authority, urgency pressure, and
-      verification bypass. Reverse Resonance should expose the hidden
-      premises and request authority verification.
+      The event involves a known unsafe structure and a sensitive operation,
+      but high-risk escalation should remain subject to human or Defense Court
+      review because similar structures may appear in legitimate administrative
+      workflows.
+    lowest_sufficient_response: true
+    execution_allowed: false
+    review_gated: true
 
-  natural_killer:
-    activate: false
-    patrol_mode: none
+  activated_components:
+    - reverse_resonance_ai
+    - regulatory_ai
+    - human_review_router
+    - defense_court_connector
+    - memory_cell_ai
+
+  component_coordination:
+    reverse_resonance:
+      activate: true
+      strategy_type: mixed_strategy
+      reason: >
+        The input contains unverified authority, urgency pressure, and
+        verification bypass. Reverse Resonance should expose the hidden
+        premises and request authority verification.
+
+    natural_killer:
+      activate: false
+      patrol_mode: none
+      reason: >
+        Natural Killer AI already produced an anomaly signal. Additional patrol
+        is not required for this event unless new unknown anomalies appear.
+
+    regulatory:
+      activate: true
+      review_focus:
+        - false_positive_risk
+        - overreaction_risk
+        - autoimmune_risk
+        - proportionality
+        - review_gate
+      reason: >
+        Regulatory review is required to prevent high-risk escalation from
+        becoming automatic or overgeneralized.
+
+    review_routing:
+      route_to_human_review: true
+      route_to_defense_court: false
+      reason: >
+        Human review is required before critical escalation or system-wide
+        automated use of the strengthened immune memory.
+
+  regulatory_requirement:
+    required: true
     reason: >
-      Natural Killer AI already produced an anomaly signal. Additional patrol
-      is not required for this event unless new unknown anomalies appear.
+      High-risk escalation may affect legitimate administrative workflows,
+      so regulatory cooling must remain active.
+    must_complete_before_escalation: true
 
-  regulatory:
-    activate: true
-    review_focus:
-      - false_positive_risk
-      - overreaction_risk
-      - autoimmune_risk
-      - proportionality
-      - review_gate
+  human_review_requirement:
+    required: true
+    reviewer_role: security_reviewer
     reason: >
-      Regulatory review is required to prevent high-risk escalation from
-      becoming automatic or overgeneralized.
+      The case involves a sensitive operation, unverified authority, and future
+      immune memory strengthening.
+    required_before: critical_escalation
 
-  review_routing:
-    route_to_human_review: true
-    route_to_defense_court: false
+  memory_update_recommendation:
+    recommended: true
+    target_memory_id: hdr-001
+    action: strengthen_memory
     reason: >
-      Human review is required before critical escalation or system-wide
-      automated use of the strengthened immune memory.
+      The structure recurred and matched an existing humoral memory with high
+      similarity. Strengthening is appropriate, but high-risk escalation should
+      remain review-gated.
+    review_required_before_update: true
 
-regulatory_requirement:
-  required: true
-  reason: >
-    High-risk escalation may affect legitimate administrative workflows,
-    so regulatory cooling must remain active.
-  must_complete_before_escalation: true
+  outcome:
+    status: response_recommended
+    final_recommended_action: hold_execution_pending_validation
+    execution_allowed: false
+    requires_future_review: true
+    summary: >
+      Helper Cell AI recommended holding execution, applying Reverse Resonance,
+      routing high-risk escalation to review, and strengthening immune memory
+      only under regulatory and human-review constraints.
 
-human_review_requirement:
-  required: true
-  reviewer_role: security_reviewer
-  reason: >
-    The case involves a sensitive operation, unverified authority, and future
-    immune memory strengthening.
-  required_before: critical_escalation
+  audit_trail:
+    coordination_steps:
+      - signals_collected
+      - humoral_memory_checked
+      - cellular_detection_reviewed
+      - reverse_resonance_reviewed
+      - natural_killer_signal_reviewed
+      - regulatory_signal_reviewed
+      - review_signal_checked
+      - risk_assessed
+      - response_level_selected
+      - components_activated
+      - human_review_requirement_recorded
+      - memory_update_recommended
+      - non_aggression_boundary_confirmed
+    audit_notes: >
+      The orchestration decision selected the lowest sufficient defensive
+      response, preserved review gates, and confirmed non-aggression boundaries.
+    opaque_decision: false
 
-memory_update_recommendation:
-  recommended: true
-  target_memory_id: hdr-001
-  action: strengthen_memory
-  reason: >
-    The structure recurred and matched an existing humoral memory with high
-    similarity. Strengthening is appropriate, but high-risk escalation should
-    remain review-gated.
-  review_required_before_update: true
+  non_aggression_boundary:
+    offensive_action_allowed: false
+    allowed_actions:
+      - coordinate_defensive_response
+      - request_authority_verification
+      - apply_reverse_resonance
+      - hold
+      - route_to_human_review
+      - route_to_defense_court
+      - request_regulatory_review
+      - recommend_memory_update
+      - log
+    prohibited_actions:
+      - retaliation
+      - external_intrusion
+      - counterattack
+      - malware_deployment
+      - third_party_disruption
+      - unauthorized_access
+      - coercive_manipulation
+      - autonomous_punishment
 
-outcome:
-  status: response_recommended
-  final_recommended_action: hold_execution_pending_validation
-  execution_allowed: false
-  requires_future_review: true
-  summary: >
-    Helper Cell AI recommended holding execution, applying Reverse Resonance,
-    routing high-risk escalation to review, and strengthening immune memory
-    only under regulatory and human-review constraints.
-
-audit_trail:
-  coordination_steps:
-    - signals_collected
-    - humoral_memory_checked
-    - cellular_detection_reviewed
-    - reverse_resonance_reviewed
-    - natural_killer_signal_reviewed
-    - regulatory_signal_reviewed
-    - review_signal_checked
-    - risk_assessed
-    - response_level_selected
-    - components_activated
-    - human_review_requirement_recorded
-    - memory_update_recommended
-    - non_aggression_boundary_confirmed
-  audit_notes: >
-    The orchestration decision selected the lowest sufficient defensive
-    response, preserved review gates, and confirmed non-aggression boundaries.
-  opaque_decision: false
-
-non_aggression_boundary:
-  offensive_action_allowed: false
-  allowed_actions:
-    - coordinate_defensive_response
-    - request_authority_verification
-    - apply_reverse_resonance
-    - hold
-    - route_to_human_review
-    - route_to_defense_court
-    - request_regulatory_review
-    - recommend_memory_update
-    - log
-  prohibited_actions:
-    - retaliation
-    - external_intrusion
-    - counterattack
-    - malware_deployment
-    - third_party_disruption
-    - unauthorized_access
-    - coercive_manipulation
-    - autonomous_punishment
-
-metadata:
-  created_by: yin-yang-structural-immune-os
-  tags:
-    - helper-cell
-    - immune-orchestration
-    - structural-immunity
-    - response-selection
-    - regulatory-cooling
-  notes: >
-    This example represents a defensive Helper Cell AI orchestration signal.
-    It coordinates memory, detection, Reverse Resonance, regulatory review,
-    human review, and immune memory update recommendations without defining
-    any offensive behavior.
+  metadata:
+    created_by: yin-yang-structural-immune-os
+    tags:
+      - helper-cell
+      - immune-orchestration
+      - structural-immunity
+      - response-selection
+      - regulatory-cooling
+    notes: >
+      This example represents a defensive Helper Cell AI orchestration signal.
+      It coordinates memory, detection, Reverse Resonance, regulatory review,
+      human review, and immune memory update recommendations without defining
+      any offensive behavior.
